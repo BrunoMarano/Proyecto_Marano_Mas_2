@@ -36,6 +36,9 @@ namespace AvicolaVentas
             MessageBox.Show("Botón Proveedores presionado");
         }
 
-        
+        private void BUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

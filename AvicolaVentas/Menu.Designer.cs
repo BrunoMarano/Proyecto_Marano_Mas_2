@@ -121,6 +121,7 @@
             BUsuario.TabIndex = 5;
             BUsuario.Text = "Usuario";
             BUsuario.UseVisualStyleBackColor = false;
+            BUsuario.Click += BUsuario_Click;
             // 
             // LMBienvenido
             // 
@@ -157,7 +158,7 @@
             Controls.Add(LMBienvenido);
             Controls.Add(PMenu);
             Name = "Menu";
-            Text = "Form1";
+            Text = "Avicola Santa Ana S.A";
             Load += Menu_Load;
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             PMenu.ResumeLayout(false);
