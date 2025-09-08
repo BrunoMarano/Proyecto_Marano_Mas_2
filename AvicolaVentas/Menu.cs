@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace AvicolaVentas
 {
-    public partial class FMenu : Form
+    public partial class Menu : Form
     {
-        public FMenu()
+        public Menu()
         {
             InitializeComponent();
         }
@@ -21,7 +21,7 @@ namespace AvicolaVentas
         // Se ejecuta al cargar el formulario
         private void Menu_Load(object sender, EventArgs e)
         {
-            // Acá va el código que quieras al abrir el form
+            
         }
 
         // Evento al hacer clic en "Clientes"

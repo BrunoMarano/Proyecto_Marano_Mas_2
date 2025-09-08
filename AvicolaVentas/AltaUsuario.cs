@@ -95,7 +95,9 @@ namespace AvicolaVentas
             DTPFechaNacimientoUsuario.Value = DateTime.Today;
             DTPFechaNacimientoUsuario.Checked = false;
 
-            PBImagenUsuario.Image = Image.FromFile(@"C:\Users\Bruno\source\repos\AvicolaVentas\AvicolaVentas\img\huevo_Neutro.jpg");
+            PBImagenUsuario.Image = Properties.Resources.Huevo_Neutro;
+
+
         }
 
         private void PBImagenUsuario_Click(object sender, EventArgs e)
@@ -107,7 +109,8 @@ namespace AvicolaVentas
         {
             if (RBHombreUsuario.Checked)
             {
-                PBImagenUsuario.Image = Image.FromFile(@"C:\Users\Bruno\source\repos\AvicolaVentas\AvicolaVentas\img\Huevo_Hombre.jpg");
+                PBImagenUsuario.Image = Properties.Resources.Huevo_Hombre;
+
             }
         }
 
@@ -115,7 +118,8 @@ namespace AvicolaVentas
         {
             if (RBMujerUsuario.Checked)
             {
-                PBImagenUsuario.Image = Image.FromFile(@"C:\Users\Bruno\source\repos\AvicolaVentas\AvicolaVentas\img\Huevo_Mujer.jpg");
+                PBImagenUsuario.Image = Properties.Resources.Huevo_Mujer;
+
             }
         }
     }
