@@ -31,5 +31,92 @@ namespace AvicolaVentas
         {
 
         }
+
+        private void TBDniUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show("NO SE PERMITEN LETRAS", "CUIDADO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true; // Cancela la tecla presionada
+                
+            }
+           
+        }
+
+        private void TBNombreUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                MessageBox.Show("NO SE PERMITEN NUMEROS", "CUIDADO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true;
+            }
+            
+        }
+
+        private void TBApellidoUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                MessageBox.Show("NO SE PERMITEN NUMEROS", "CUIDADO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true;
+                
+            }
+            
+        }
+
+        private void TBTelefonoUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show("NO SE PERMITEN LETRAS", "CUIDADO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true; // Cancela la tecla presionada
+                
+            }
+            
+        }
+
+        private void DTPFechaNacimientoUsuario_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BLimpiarAltaUsuario_Click(object sender, EventArgs e)
+        {
+            TBNombreUsuario.Text = "";
+            TBApellidoUsuario.Text = "";
+            TBDniUsuario.Text = "(Opcional)";
+            TBCorreoUsuario.Text = "";
+            TBDirrecionUsuariuo.Text = "";
+            TBTelefonoUsuario.Text = "";
+
+            RBHombreUsuario.Checked = false;
+            RBMujerUsuario.Checked = false;
+
+            DTPFechaNacimientoUsuario.Value = DateTime.Today;
+            DTPFechaNacimientoUsuario.Checked = false;
+
+            PBImagenUsuario.Image = Image.FromFile(@"C:\Users\Bruno\source\repos\AvicolaVentas\AvicolaVentas\img\huevo_Neutro.jpg");
+        }
+
+        private void PBImagenUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RBHombreUsuario_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RBHombreUsuario.Checked)
+            {
+                PBImagenUsuario.Image = Image.FromFile(@"C:\Users\Bruno\source\repos\AvicolaVentas\AvicolaVentas\img\Huevo_Hombre.jpg");
+            }
+        }
+
+        private void RBMujerUsuario_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RBMujerUsuario.Checked)
+            {
+                PBImagenUsuario.Image = Image.FromFile(@"C:\Users\Bruno\source\repos\AvicolaVentas\AvicolaVentas\img\Huevo_Mujer.jpg");
+            }
+        }
     }
 }

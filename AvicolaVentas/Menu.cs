@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace AvicolaVentas
 {
-    public partial class Menu : Form
+    public partial class FMenu : Form
     {
-        public Menu()
+        public FMenu()
         {
             InitializeComponent();
         }

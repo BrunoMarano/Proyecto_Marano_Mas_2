@@ -156,6 +156,7 @@
             TBNombreUsuario.Name = "TBNombreUsuario";
             TBNombreUsuario.Size = new Size(203, 23);
             TBNombreUsuario.TabIndex = 5;
+            TBNombreUsuario.KeyPress += TBNombreUsuario_KeyPress;
             // 
             // TBApellidoUsuario
             // 
@@ -163,6 +164,7 @@
             TBApellidoUsuario.Name = "TBApellidoUsuario";
             TBApellidoUsuario.Size = new Size(203, 23);
             TBApellidoUsuario.TabIndex = 7;
+            TBApellidoUsuario.KeyPress += TBApellidoUsuario_KeyPress;
             // 
             // LApellidoUsuarioo
             // 
@@ -182,6 +184,7 @@
             TBDniUsuario.Size = new Size(203, 23);
             TBDniUsuario.TabIndex = 9;
             TBDniUsuario.Text = "(Opcional)";
+            TBDniUsuario.KeyPress += TBDniUsuario_KeyPress;
             // 
             // LDniUsuario
             // 
@@ -246,6 +249,7 @@
             TBTelefonoUsuario.Name = "TBTelefonoUsuario";
             TBTelefonoUsuario.Size = new Size(203, 23);
             TBTelefonoUsuario.TabIndex = 16;
+            TBTelefonoUsuario.KeyPress += TBTelefonoUsuario_KeyPress;
             // 
             // LTelefonoUsuario
             // 
@@ -270,6 +274,7 @@
             RBHombreUsuario.TabStop = true;
             RBHombreUsuario.Text = "Hombre";
             RBHombreUsuario.UseVisualStyleBackColor = false;
+            RBHombreUsuario.CheckedChanged += RBHombreUsuario_CheckedChanged;
             // 
             // RBMujerUsuario
             // 
@@ -283,6 +288,7 @@
             RBMujerUsuario.TabStop = true;
             RBMujerUsuario.Text = "Mujer";
             RBMujerUsuario.UseVisualStyleBackColor = false;
+            RBMujerUsuario.CheckedChanged += RBMujerUsuario_CheckedChanged;
             // 
             // LFechaNacimientoUusario
             // 
@@ -302,22 +308,25 @@
             DTPFechaNacimientoUsuario.Name = "DTPFechaNacimientoUsuario";
             DTPFechaNacimientoUsuario.Size = new Size(200, 23);
             DTPFechaNacimientoUsuario.TabIndex = 20;
+            DTPFechaNacimientoUsuario.ValueChanged += DTPFechaNacimientoUsuario_ValueChanged;
             // 
             // PImaagenUsuario
             // 
             PImaagenUsuario.Controls.Add(PBImagenUsuario);
-            PImaagenUsuario.Location = new Point(523, 54);
+            PImaagenUsuario.Location = new Point(560, 54);
             PImaagenUsuario.Name = "PImaagenUsuario";
-            PImaagenUsuario.Size = new Size(216, 129);
+            PImaagenUsuario.Size = new Size(150, 133);
             PImaagenUsuario.TabIndex = 21;
             // 
             // PBImagenUsuario
             // 
-            PBImagenUsuario.Location = new Point(9, 6);
+            PBImagenUsuario.Image = (Image)resources.GetObject("PBImagenUsuario.Image");
+            PBImagenUsuario.Location = new Point(12, 6);
             PBImagenUsuario.Name = "PBImagenUsuario";
-            PBImagenUsuario.Size = new Size(200, 120);
+            PBImagenUsuario.Size = new Size(125, 120);
             PBImagenUsuario.TabIndex = 0;
             PBImagenUsuario.TabStop = false;
+            PBImagenUsuario.Click += PBImagenUsuario_Click;
             // 
             // BAltaUsuario
             // 
@@ -338,6 +347,7 @@
             BLimpiarAltaUsuario.TabIndex = 23;
             BLimpiarAltaUsuario.Text = "Limpiar";
             BLimpiarAltaUsuario.UseVisualStyleBackColor = false;
+            BLimpiarAltaUsuario.Click += BLimpiarAltaUsuario_Click;
             // 
             // FAltaUsuario
             // 

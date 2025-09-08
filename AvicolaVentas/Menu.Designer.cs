@@ -1,6 +1,6 @@
 ﻿namespace AvicolaVentas
 {
-    partial class Menu
+    partial class FMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMenu));
             bindingSource1 = new BindingSource(components);
             PMenu = new TableLayoutPanel();
             BVentas = new Button();
@@ -147,7 +147,7 @@
             PLogoAvicola.Size = new Size(202, 205);
             PLogoAvicola.TabIndex = 2;
             // 
-            // Menu
+            // FMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -157,7 +157,7 @@
             Controls.Add(PLogoAvicola);
             Controls.Add(LMBienvenido);
             Controls.Add(PMenu);
-            Name = "Menu";
+            Name = "FMenu";
             Text = "Avicola Santa Ana S.A";
             Load += Menu_Load;
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
