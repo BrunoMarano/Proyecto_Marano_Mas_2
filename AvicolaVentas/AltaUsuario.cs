@@ -38,9 +38,9 @@ namespace AvicolaVentas
             {
                 MessageBox.Show("NO SE PERMITEN LETRAS", "CUIDADO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Handled = true; // Cancela la tecla presionada
-                
+
             }
-           
+
         }
 
         private void TBNombreUsuario_KeyPress(object sender, KeyPressEventArgs e)
@@ -50,7 +50,7 @@ namespace AvicolaVentas
                 MessageBox.Show("NO SE PERMITEN NUMEROS", "CUIDADO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Handled = true;
             }
-            
+
         }
 
         private void TBApellidoUsuario_KeyPress(object sender, KeyPressEventArgs e)
@@ -59,9 +59,9 @@ namespace AvicolaVentas
             {
                 MessageBox.Show("NO SE PERMITEN NUMEROS", "CUIDADO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Handled = true;
-                
+
             }
-            
+
         }
 
         private void TBTelefonoUsuario_KeyPress(object sender, KeyPressEventArgs e)
@@ -70,9 +70,9 @@ namespace AvicolaVentas
             {
                 MessageBox.Show("NO SE PERMITEN LETRAS", "CUIDADO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Handled = true; // Cancela la tecla presionada
-                
+
             }
-            
+
         }
 
         private void DTPFechaNacimientoUsuario_ValueChanged(object sender, EventArgs e)
@@ -121,6 +121,16 @@ namespace AvicolaVentas
                 PBImagenUsuario.Image = Properties.Resources.Huevo_Mujer;
 
             }
+        }
+
+        private void buttonSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void TBDniUsuario_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

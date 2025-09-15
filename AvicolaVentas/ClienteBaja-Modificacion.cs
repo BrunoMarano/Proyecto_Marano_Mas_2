@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace AvicolaVentas
 {
-    public partial class Form1 : Form
+    public partial class FormClienteBajaModificacion : Form
     {
-        public Form1()
+        public FormClienteBajaModificacion()
         {
             InitializeComponent();
+        }
+
+        private void buttonSalirUsuarioBaja_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

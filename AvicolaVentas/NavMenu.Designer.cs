@@ -31,28 +31,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             panelMenu = new Panel();
             panelUsuario = new Panel();
-            buttonModificacionUsuariuo = new Button();
-            buttonBajaUsuario = new Button();
+            buttonBajaModificacionUsuario = new Button();
             buttonAltaUsuario = new Button();
             BUsuario = new Button();
             panelVenta = new Panel();
             buttonMisVentas = new Button();
-            buttonEliminarVenta = new Button();
             buttonNuevaVenta = new Button();
             BVenta = new Button();
             panelProductos = new Panel();
-            buttonModificacionProducto = new Button();
-            buttonBajaProducto = new Button();
+            buttonBajaModificacionProducto = new Button();
             buttonAltaProducto = new Button();
             BProductos = new Button();
             panelProveedores = new Panel();
-            buttonModificacionProveedores = new Button();
-            buttonBajaProveedores = new Button();
+            buttonBajaModificacionProveedores = new Button();
             buttonAltaProveedores = new Button();
             BPorveedores = new Button();
             panelClientes = new Panel();
-            buttonModificacionCliente = new Button();
-            buttonBajaCliente = new Button();
+            buttonBajaModificacionCliente = new Button();
             buttonAltaCliente = new Button();
             BClientes = new Button();
             label1 = new Label();
@@ -60,6 +55,7 @@
             pcLogo = new PictureBox();
             panelApp = new Panel();
             panelContenedor = new Panel();
+            labelUsuarioBienvenido = new Label();
             PLogoAvicola = new Panel();
             LMBienvenido = new Label();
             panelMenu.SuspendLayout();
@@ -99,45 +95,28 @@
             // 
             // panelUsuario
             // 
-            panelUsuario.Controls.Add(buttonModificacionUsuariuo);
-            panelUsuario.Controls.Add(buttonBajaUsuario);
+            panelUsuario.Controls.Add(buttonBajaModificacionUsuario);
             panelUsuario.Controls.Add(buttonAltaUsuario);
             panelUsuario.Dock = DockStyle.Top;
-            panelUsuario.Location = new Point(0, 913);
+            panelUsuario.Location = new Point(0, 739);
             panelUsuario.Name = "panelUsuario";
-            panelUsuario.Size = new Size(227, 125);
+            panelUsuario.Size = new Size(227, 79);
             panelUsuario.TabIndex = 13;
             // 
-            // buttonModificacionUsuariuo
+            // buttonBajaModificacionUsuario
             // 
-            buttonModificacionUsuariuo.BackColor = Color.Gray;
-            buttonModificacionUsuariuo.Dock = DockStyle.Top;
-            buttonModificacionUsuariuo.FlatAppearance.BorderSize = 0;
-            buttonModificacionUsuariuo.Font = new Font("Segoe UI", 11.25F);
-            buttonModificacionUsuariuo.Location = new Point(0, 80);
-            buttonModificacionUsuariuo.Name = "buttonModificacionUsuariuo";
-            buttonModificacionUsuariuo.Padding = new Padding(50, 0, 0, 0);
-            buttonModificacionUsuariuo.Size = new Size(227, 40);
-            buttonModificacionUsuariuo.TabIndex = 7;
-            buttonModificacionUsuariuo.Text = "Modificacion";
-            buttonModificacionUsuariuo.TextAlign = ContentAlignment.MiddleLeft;
-            buttonModificacionUsuariuo.UseVisualStyleBackColor = false;
-            buttonModificacionUsuariuo.Click += buttonModificacionUsuariuo_Click;
-            // 
-            // buttonBajaUsuario
-            // 
-            buttonBajaUsuario.BackColor = Color.Gray;
-            buttonBajaUsuario.Dock = DockStyle.Top;
-            buttonBajaUsuario.FlatAppearance.BorderSize = 0;
-            buttonBajaUsuario.Font = new Font("Segoe UI", 11.25F);
-            buttonBajaUsuario.Location = new Point(0, 40);
-            buttonBajaUsuario.Name = "buttonBajaUsuario";
-            buttonBajaUsuario.Padding = new Padding(50, 0, 0, 0);
-            buttonBajaUsuario.Size = new Size(227, 40);
-            buttonBajaUsuario.TabIndex = 6;
-            buttonBajaUsuario.Text = "Baja";
-            buttonBajaUsuario.TextAlign = ContentAlignment.MiddleLeft;
-            buttonBajaUsuario.UseVisualStyleBackColor = false;
+            buttonBajaModificacionUsuario.BackColor = Color.Gray;
+            buttonBajaModificacionUsuario.Dock = DockStyle.Top;
+            buttonBajaModificacionUsuario.FlatAppearance.BorderSize = 0;
+            buttonBajaModificacionUsuario.Font = new Font("Segoe UI", 11.25F);
+            buttonBajaModificacionUsuario.Location = new Point(0, 40);
+            buttonBajaModificacionUsuario.Name = "buttonBajaModificacionUsuario";
+            buttonBajaModificacionUsuario.Padding = new Padding(50, 0, 0, 0);
+            buttonBajaModificacionUsuario.Size = new Size(227, 40);
+            buttonBajaModificacionUsuario.TabIndex = 6;
+            buttonBajaModificacionUsuario.Text = "Baja-Modificacion";
+            buttonBajaModificacionUsuario.TextAlign = ContentAlignment.MiddleLeft;
+            buttonBajaModificacionUsuario.UseVisualStyleBackColor = false;
             // 
             // buttonAltaUsuario
             // 
@@ -161,7 +140,7 @@
             BUsuario.FlatAppearance.BorderSize = 0;
             BUsuario.FlatStyle = FlatStyle.Flat;
             BUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BUsuario.Location = new Point(0, 856);
+            BUsuario.Location = new Point(0, 682);
             BUsuario.Name = "BUsuario";
             BUsuario.Padding = new Padding(20, 0, 0, 0);
             BUsuario.Size = new Size(227, 57);
@@ -174,12 +153,11 @@
             // panelVenta
             // 
             panelVenta.Controls.Add(buttonMisVentas);
-            panelVenta.Controls.Add(buttonEliminarVenta);
             panelVenta.Controls.Add(buttonNuevaVenta);
             panelVenta.Dock = DockStyle.Top;
-            panelVenta.Location = new Point(0, 731);
+            panelVenta.Location = new Point(0, 599);
             panelVenta.Name = "panelVenta";
-            panelVenta.Size = new Size(227, 125);
+            panelVenta.Size = new Size(227, 83);
             panelVenta.TabIndex = 11;
             // 
             // buttonMisVentas
@@ -188,7 +166,7 @@
             buttonMisVentas.Dock = DockStyle.Top;
             buttonMisVentas.FlatAppearance.BorderSize = 0;
             buttonMisVentas.Font = new Font("Segoe UI", 11.25F);
-            buttonMisVentas.Location = new Point(0, 80);
+            buttonMisVentas.Location = new Point(0, 40);
             buttonMisVentas.Name = "buttonMisVentas";
             buttonMisVentas.Padding = new Padding(50, 0, 0, 0);
             buttonMisVentas.Size = new Size(227, 40);
@@ -196,21 +174,6 @@
             buttonMisVentas.Text = "Mis Ventas";
             buttonMisVentas.TextAlign = ContentAlignment.MiddleLeft;
             buttonMisVentas.UseVisualStyleBackColor = false;
-            // 
-            // buttonEliminarVenta
-            // 
-            buttonEliminarVenta.BackColor = Color.Gray;
-            buttonEliminarVenta.Dock = DockStyle.Top;
-            buttonEliminarVenta.FlatAppearance.BorderSize = 0;
-            buttonEliminarVenta.Font = new Font("Segoe UI", 11.25F);
-            buttonEliminarVenta.Location = new Point(0, 40);
-            buttonEliminarVenta.Name = "buttonEliminarVenta";
-            buttonEliminarVenta.Padding = new Padding(50, 0, 0, 0);
-            buttonEliminarVenta.Size = new Size(227, 40);
-            buttonEliminarVenta.TabIndex = 6;
-            buttonEliminarVenta.Text = "Eliminar Venta";
-            buttonEliminarVenta.TextAlign = ContentAlignment.MiddleLeft;
-            buttonEliminarVenta.UseVisualStyleBackColor = false;
             // 
             // buttonNuevaVenta
             // 
@@ -234,7 +197,7 @@
             BVenta.FlatAppearance.BorderSize = 0;
             BVenta.FlatStyle = FlatStyle.Flat;
             BVenta.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BVenta.Location = new Point(0, 674);
+            BVenta.Location = new Point(0, 542);
             BVenta.Name = "BVenta";
             BVenta.Padding = new Padding(20, 0, 0, 0);
             BVenta.Size = new Size(227, 57);
@@ -246,44 +209,28 @@
             // 
             // panelProductos
             // 
-            panelProductos.Controls.Add(buttonModificacionProducto);
-            panelProductos.Controls.Add(buttonBajaProducto);
+            panelProductos.Controls.Add(buttonBajaModificacionProducto);
             panelProductos.Controls.Add(buttonAltaProducto);
             panelProductos.Dock = DockStyle.Top;
-            panelProductos.Location = new Point(0, 549);
+            panelProductos.Location = new Point(0, 461);
             panelProductos.Name = "panelProductos";
-            panelProductos.Size = new Size(227, 125);
+            panelProductos.Size = new Size(227, 81);
             panelProductos.TabIndex = 9;
             // 
-            // buttonModificacionProducto
+            // buttonBajaModificacionProducto
             // 
-            buttonModificacionProducto.BackColor = Color.Gray;
-            buttonModificacionProducto.Dock = DockStyle.Top;
-            buttonModificacionProducto.FlatAppearance.BorderSize = 0;
-            buttonModificacionProducto.Font = new Font("Segoe UI", 11.25F);
-            buttonModificacionProducto.Location = new Point(0, 80);
-            buttonModificacionProducto.Name = "buttonModificacionProducto";
-            buttonModificacionProducto.Padding = new Padding(50, 0, 0, 0);
-            buttonModificacionProducto.Size = new Size(227, 40);
-            buttonModificacionProducto.TabIndex = 7;
-            buttonModificacionProducto.Text = "Modificacion";
-            buttonModificacionProducto.TextAlign = ContentAlignment.MiddleLeft;
-            buttonModificacionProducto.UseVisualStyleBackColor = false;
-            // 
-            // buttonBajaProducto
-            // 
-            buttonBajaProducto.BackColor = Color.Gray;
-            buttonBajaProducto.Dock = DockStyle.Top;
-            buttonBajaProducto.FlatAppearance.BorderSize = 0;
-            buttonBajaProducto.Font = new Font("Segoe UI", 11.25F);
-            buttonBajaProducto.Location = new Point(0, 40);
-            buttonBajaProducto.Name = "buttonBajaProducto";
-            buttonBajaProducto.Padding = new Padding(50, 0, 0, 0);
-            buttonBajaProducto.Size = new Size(227, 40);
-            buttonBajaProducto.TabIndex = 6;
-            buttonBajaProducto.Text = "Baja";
-            buttonBajaProducto.TextAlign = ContentAlignment.MiddleLeft;
-            buttonBajaProducto.UseVisualStyleBackColor = false;
+            buttonBajaModificacionProducto.BackColor = Color.Gray;
+            buttonBajaModificacionProducto.Dock = DockStyle.Top;
+            buttonBajaModificacionProducto.FlatAppearance.BorderSize = 0;
+            buttonBajaModificacionProducto.Font = new Font("Segoe UI", 11.25F);
+            buttonBajaModificacionProducto.Location = new Point(0, 40);
+            buttonBajaModificacionProducto.Name = "buttonBajaModificacionProducto";
+            buttonBajaModificacionProducto.Padding = new Padding(50, 0, 0, 0);
+            buttonBajaModificacionProducto.Size = new Size(227, 40);
+            buttonBajaModificacionProducto.TabIndex = 6;
+            buttonBajaModificacionProducto.Text = "Baja-Modificacion";
+            buttonBajaModificacionProducto.TextAlign = ContentAlignment.MiddleLeft;
+            buttonBajaModificacionProducto.UseVisualStyleBackColor = false;
             // 
             // buttonAltaProducto
             // 
@@ -307,7 +254,7 @@
             BProductos.FlatAppearance.BorderSize = 0;
             BProductos.FlatStyle = FlatStyle.Flat;
             BProductos.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BProductos.Location = new Point(0, 492);
+            BProductos.Location = new Point(0, 404);
             BProductos.Name = "BProductos";
             BProductos.Padding = new Padding(20, 0, 0, 0);
             BProductos.Size = new Size(227, 57);
@@ -319,44 +266,29 @@
             // 
             // panelProveedores
             // 
-            panelProveedores.Controls.Add(buttonModificacionProveedores);
-            panelProveedores.Controls.Add(buttonBajaProveedores);
+            panelProveedores.Controls.Add(buttonBajaModificacionProveedores);
             panelProveedores.Controls.Add(buttonAltaProveedores);
             panelProveedores.Dock = DockStyle.Top;
-            panelProveedores.Location = new Point(0, 367);
+            panelProveedores.Location = new Point(0, 322);
             panelProveedores.Name = "panelProveedores";
-            panelProveedores.Size = new Size(227, 125);
+            panelProveedores.Size = new Size(227, 82);
             panelProveedores.TabIndex = 7;
             // 
-            // buttonModificacionProveedores
+            // buttonBajaModificacionProveedores
             // 
-            buttonModificacionProveedores.BackColor = Color.Gray;
-            buttonModificacionProveedores.Dock = DockStyle.Top;
-            buttonModificacionProveedores.FlatAppearance.BorderSize = 0;
-            buttonModificacionProveedores.Font = new Font("Segoe UI", 11.25F);
-            buttonModificacionProveedores.Location = new Point(0, 80);
-            buttonModificacionProveedores.Name = "buttonModificacionProveedores";
-            buttonModificacionProveedores.Padding = new Padding(50, 0, 0, 0);
-            buttonModificacionProveedores.Size = new Size(227, 40);
-            buttonModificacionProveedores.TabIndex = 7;
-            buttonModificacionProveedores.Text = "Modificacion";
-            buttonModificacionProveedores.TextAlign = ContentAlignment.MiddleLeft;
-            buttonModificacionProveedores.UseVisualStyleBackColor = false;
-            // 
-            // buttonBajaProveedores
-            // 
-            buttonBajaProveedores.BackColor = Color.Gray;
-            buttonBajaProveedores.Dock = DockStyle.Top;
-            buttonBajaProveedores.FlatAppearance.BorderSize = 0;
-            buttonBajaProveedores.Font = new Font("Segoe UI", 11.25F);
-            buttonBajaProveedores.Location = new Point(0, 40);
-            buttonBajaProveedores.Name = "buttonBajaProveedores";
-            buttonBajaProveedores.Padding = new Padding(50, 0, 0, 0);
-            buttonBajaProveedores.Size = new Size(227, 40);
-            buttonBajaProveedores.TabIndex = 6;
-            buttonBajaProveedores.Text = "Baja";
-            buttonBajaProveedores.TextAlign = ContentAlignment.MiddleLeft;
-            buttonBajaProveedores.UseVisualStyleBackColor = false;
+            buttonBajaModificacionProveedores.BackColor = Color.Gray;
+            buttonBajaModificacionProveedores.Dock = DockStyle.Top;
+            buttonBajaModificacionProveedores.FlatAppearance.BorderSize = 0;
+            buttonBajaModificacionProveedores.Font = new Font("Segoe UI", 11.25F);
+            buttonBajaModificacionProveedores.Location = new Point(0, 40);
+            buttonBajaModificacionProveedores.Name = "buttonBajaModificacionProveedores";
+            buttonBajaModificacionProveedores.Padding = new Padding(50, 0, 0, 0);
+            buttonBajaModificacionProveedores.Size = new Size(227, 40);
+            buttonBajaModificacionProveedores.TabIndex = 6;
+            buttonBajaModificacionProveedores.Text = "Baja-Modificacion";
+            buttonBajaModificacionProveedores.TextAlign = ContentAlignment.MiddleLeft;
+            buttonBajaModificacionProveedores.UseVisualStyleBackColor = false;
+            buttonBajaModificacionProveedores.Click += buttonBajaModificacionProveedores_Click_1;
             // 
             // buttonAltaProveedores
             // 
@@ -372,6 +304,7 @@
             buttonAltaProveedores.Text = "Alta";
             buttonAltaProveedores.TextAlign = ContentAlignment.MiddleLeft;
             buttonAltaProveedores.UseVisualStyleBackColor = false;
+            buttonAltaProveedores.Click += buttonAltaProveedores_Click;
             // 
             // BPorveedores
             // 
@@ -380,7 +313,7 @@
             BPorveedores.FlatAppearance.BorderSize = 0;
             BPorveedores.FlatStyle = FlatStyle.Flat;
             BPorveedores.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BPorveedores.Location = new Point(0, 310);
+            BPorveedores.Location = new Point(0, 265);
             BPorveedores.Name = "BPorveedores";
             BPorveedores.Padding = new Padding(20, 0, 0, 0);
             BPorveedores.Size = new Size(227, 57);
@@ -392,45 +325,29 @@
             // 
             // panelClientes
             // 
-            panelClientes.Controls.Add(buttonModificacionCliente);
-            panelClientes.Controls.Add(buttonBajaCliente);
+            panelClientes.Controls.Add(buttonBajaModificacionCliente);
             panelClientes.Controls.Add(buttonAltaCliente);
             panelClientes.Dock = DockStyle.Top;
             panelClientes.Location = new Point(0, 185);
             panelClientes.Name = "panelClientes";
-            panelClientes.Size = new Size(227, 125);
+            panelClientes.Size = new Size(227, 80);
             panelClientes.TabIndex = 5;
             // 
-            // buttonModificacionCliente
+            // buttonBajaModificacionCliente
             // 
-            buttonModificacionCliente.BackColor = Color.Gray;
-            buttonModificacionCliente.Dock = DockStyle.Top;
-            buttonModificacionCliente.FlatAppearance.BorderSize = 0;
-            buttonModificacionCliente.Font = new Font("Segoe UI", 11.25F);
-            buttonModificacionCliente.Location = new Point(0, 80);
-            buttonModificacionCliente.Name = "buttonModificacionCliente";
-            buttonModificacionCliente.Padding = new Padding(50, 0, 0, 0);
-            buttonModificacionCliente.Size = new Size(227, 40);
-            buttonModificacionCliente.TabIndex = 7;
-            buttonModificacionCliente.Text = "Modificacion";
-            buttonModificacionCliente.TextAlign = ContentAlignment.MiddleLeft;
-            buttonModificacionCliente.UseVisualStyleBackColor = false;
-            buttonModificacionCliente.Click += buttonModificacionCliente_Click;
-            // 
-            // buttonBajaCliente
-            // 
-            buttonBajaCliente.BackColor = Color.Gray;
-            buttonBajaCliente.Dock = DockStyle.Top;
-            buttonBajaCliente.FlatAppearance.BorderSize = 0;
-            buttonBajaCliente.Font = new Font("Segoe UI", 11.25F);
-            buttonBajaCliente.Location = new Point(0, 40);
-            buttonBajaCliente.Name = "buttonBajaCliente";
-            buttonBajaCliente.Padding = new Padding(50, 0, 0, 0);
-            buttonBajaCliente.Size = new Size(227, 40);
-            buttonBajaCliente.TabIndex = 6;
-            buttonBajaCliente.Text = "Baja";
-            buttonBajaCliente.TextAlign = ContentAlignment.MiddleLeft;
-            buttonBajaCliente.UseVisualStyleBackColor = false;
+            buttonBajaModificacionCliente.BackColor = Color.Gray;
+            buttonBajaModificacionCliente.Dock = DockStyle.Top;
+            buttonBajaModificacionCliente.FlatAppearance.BorderSize = 0;
+            buttonBajaModificacionCliente.Font = new Font("Segoe UI", 11.25F);
+            buttonBajaModificacionCliente.Location = new Point(0, 40);
+            buttonBajaModificacionCliente.Name = "buttonBajaModificacionCliente";
+            buttonBajaModificacionCliente.Padding = new Padding(50, 0, 0, 0);
+            buttonBajaModificacionCliente.Size = new Size(227, 40);
+            buttonBajaModificacionCliente.TabIndex = 6;
+            buttonBajaModificacionCliente.Text = "Baja-Modificacion";
+            buttonBajaModificacionCliente.TextAlign = ContentAlignment.MiddleLeft;
+            buttonBajaModificacionCliente.UseVisualStyleBackColor = false;
+            buttonBajaModificacionCliente.Click += buttonBajaModificacionCliente_Click;
             // 
             // buttonAltaCliente
             // 
@@ -488,7 +405,7 @@
             // pcLogo
             // 
             pcLogo.Image = Properties.Resources.logoAvicola;
-            pcLogo.Location = new Point(0, -3);
+            pcLogo.Location = new Point(-34, -3);
             pcLogo.Name = "pcLogo";
             pcLogo.Size = new Size(261, 128);
             pcLogo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -509,6 +426,7 @@
             // 
             panelContenedor.BackColor = Color.Gainsboro;
             panelContenedor.BackgroundImage = Properties.Resources.Fondo;
+            panelContenedor.Controls.Add(labelUsuarioBienvenido);
             panelContenedor.Controls.Add(PLogoAvicola);
             panelContenedor.Controls.Add(LMBienvenido);
             panelContenedor.Dock = DockStyle.Fill;
@@ -517,13 +435,23 @@
             panelContenedor.Size = new Size(720, 561);
             panelContenedor.TabIndex = 2;
             // 
+            // labelUsuarioBienvenido
+            // 
+            labelUsuarioBienvenido.AutoSize = true;
+            labelUsuarioBienvenido.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelUsuarioBienvenido.Location = new Point(291, 144);
+            labelUsuarioBienvenido.Name = "labelUsuarioBienvenido";
+            labelUsuarioBienvenido.Size = new Size(64, 21);
+            labelUsuarioBienvenido.TabIndex = 5;
+            labelUsuarioBienvenido.Text = "Usuario";
+            // 
             // PLogoAvicola
             // 
             PLogoAvicola.AutoSize = true;
             PLogoAvicola.BackColor = Color.Transparent;
             PLogoAvicola.BackgroundImage = (Image)resources.GetObject("PLogoAvicola.BackgroundImage");
             PLogoAvicola.BorderStyle = BorderStyle.FixedSingle;
-            PLogoAvicola.Location = new Point(221, 181);
+            PLogoAvicola.Location = new Point(225, 201);
             PLogoAvicola.Name = "PLogoAvicola";
             PLogoAvicola.Size = new Size(202, 205);
             PLogoAvicola.TabIndex = 4;
@@ -534,11 +462,11 @@
             LMBienvenido.BackColor = Color.Transparent;
             LMBienvenido.Font = new Font("Constantia", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             LMBienvenido.ForeColor = SystemColors.ControlText;
-            LMBienvenido.Location = new Point(161, 99);
+            LMBienvenido.Location = new Point(134, 85);
             LMBienvenido.Name = "LMBienvenido";
-            LMBienvenido.Size = new Size(335, 59);
+            LMBienvenido.Size = new Size(386, 59);
             LMBienvenido.TabIndex = 3;
-            LMBienvenido.Text = "BIENVENIDO";
+            LMBienvenido.Text = "BIENVENIDO/A";
             LMBienvenido.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // FormMenu
@@ -581,28 +509,27 @@
         private Panel PLogoAvicola;
         private Label LMBienvenido;
         private Panel panelClientes;
-        private Button buttonModificacionCliente;
-        private Button buttonBajaCliente;
+        
+        private Button buttonBajaModificacionCliente;
         private Button buttonAltaCliente;
         private Button BProductos;
         private Panel panelProveedores;
-        private Button buttonModificacionProveedores;
-        private Button buttonBajaProveedores;
+        private Button buttonBajaModificacionProveedores;
         private Button buttonAltaProveedores;
         private Button BPorveedores;
         private Panel panelProductos;
-        private Button buttonModificacionProducto;
-        private Button buttonBajaProducto;
+        private Button buttonBajaModificacionProducto;
         private Button buttonAltaProducto;
         private Panel panelUsuario;
-        private Button buttonModificacionUsuariuo;
-        private Button buttonBajaUsuario;
+        
+        private Button buttonBajaModificacionUsuario;
         private Button buttonAltaUsuario;
         private Button BUsuario;
         private Panel panelVenta;
         private Button buttonMisVentas;
-        private Button buttonEliminarVenta;
+        
         private Button buttonNuevaVenta;
         private Button BVenta;
+        private Label labelUsuarioBienvenido;
     }
 }

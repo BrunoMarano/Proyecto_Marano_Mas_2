@@ -50,6 +50,7 @@
             PBImagenUsuario = new PictureBox();
             BAltaUsuario = new Button();
             BLimpiarAltaUsuario = new Button();
+            buttonSalir = new Button();
             PImaagenUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PBImagenUsuario).BeginInit();
             SuspendLayout();
@@ -100,6 +101,7 @@
             TBDniUsuario.Size = new Size(203, 23);
             TBDniUsuario.TabIndex = 9;
             TBDniUsuario.Text = "(Opcional)";
+            TBDniUsuario.TextChanged += TBDniUsuario_TextChanged;
             TBDniUsuario.KeyPress += TBDniUsuario_KeyPress;
             // 
             // LDniUsuario
@@ -265,12 +267,23 @@
             BLimpiarAltaUsuario.UseVisualStyleBackColor = false;
             BLimpiarAltaUsuario.Click += BLimpiarAltaUsuario_Click;
             // 
+            // buttonSalir
+            // 
+            buttonSalir.Location = new Point(34, 12);
+            buttonSalir.Name = "buttonSalir";
+            buttonSalir.Size = new Size(43, 23);
+            buttonSalir.TabIndex = 24;
+            buttonSalir.Text = "X";
+            buttonSalir.UseVisualStyleBackColor = true;
+            buttonSalir.Click += buttonSalir_Click;
+            // 
             // FAltaUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(704, 522);
+            Controls.Add(buttonSalir);
             Controls.Add(BLimpiarAltaUsuario);
             Controls.Add(BAltaUsuario);
             Controls.Add(PImaagenUsuario);
@@ -323,5 +336,6 @@
         private PictureBox PBImagenUsuario;
         private Button BAltaUsuario;
         private Button BLimpiarAltaUsuario;
+        private Button buttonSalir;
     }
 }

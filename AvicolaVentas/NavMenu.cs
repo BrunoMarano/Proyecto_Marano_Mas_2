@@ -115,95 +115,10 @@ namespace AvicolaVentas
 
         private void BUsuario_Click_1(object sender, EventArgs e)
         {
-            Show(panelUsuario);
+            showSubMenu(panelUsuario);
         }
 
-
-        private void buttonAltaCliente_Click(object sender, EventArgs e)
-        {
-            //codigo//
-            hideSubMenu();
-        }
-
-        private void buttonModificacionClientes_Click(object sender, EventArgs e)
-        {
-            //codigo//
-            hideSubMenu();
-        }
-
-        private void buttonAltaProveedores_Click(object sender, EventArgs e)
-        {
-            //codigo//
-            hideSubMenu();
-        }
-
-        private void buttonBajaProveedores_Click(object sender, EventArgs e)
-        {
-            //codigo//
-            hideSubMenu();
-        }
-
-        private void buttonMofidicacionProveedores_Click(object sender, EventArgs e)
-        {
-            //codigo//
-            hideSubMenu();
-        }
-
-        private void buttonAltaProductos_Click(object sender, EventArgs e)
-        {
-            //codigo//
-            hideSubMenu();
-        }
-
-        private void buttonBajaProductos_Click(object sender, EventArgs e)
-        {
-            //codigo//
-            hideSubMenu();
-        }
-
-        private void buttonModificacionProductos_Click(object sender, EventArgs e)
-        {
-            //codigo//
-            hideSubMenu();
-        }
-
-        private void buttonNuevaVenta_Click(object sender, EventArgs e)
-        {
-            //codigo//
-            hideSubMenu();
-        }
-
-        private void buttonEliminarVenta_Click(object sender, EventArgs e)
-        {
-            //codigo//
-            hideSubMenu();
-        }
-
-        private void buttonMisVentas_Click(object sender, EventArgs e)
-        {
-            //codigo//
-            hideSubMenu();
-        }
-
-        private void buttonAltaUsuario_Click(object sender, EventArgs e)
-        {
-            //codigo//
-            hideSubMenu();
-        }
-
-        private void buttonBajaUsuario_Click(object sender, EventArgs e)
-        {
-            //codigo//
-            hideSubMenu();
-        }
-
-        private void buttonModificacionUsuario_Click(object sender, EventArgs e)
-        {
-            //codigo//
-            hideSubMenu();
-        }
-
-        private Form activeForm = null;
+        private Form? activeForm = null;
         private void abrirPanelContenedor(Form formularioHijo)
         {
             if (activeForm != null)
@@ -233,6 +148,34 @@ namespace AvicolaVentas
         private void buttonAltaCliente_Click_1(object sender, EventArgs e)
         {
             abrirPanelContenedor(new FAltaUsuario());
+            hideSubMenu();
+        }
+
+        private void buttonBajaModificacionCliente_Click(object sender, EventArgs e)
+        {
+            abrirPanelContenedor(new FormClienteBajaModificacion());
+            hideSubMenu();
+        }
+
+        private void buttonBajaModificacionProducto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonBajaModificacionProveedores_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAltaProveedores_Click(object sender, EventArgs e)
+        {
+            abrirPanelContenedor(new FormAltaProveedores());
+            hideSubMenu();
+        }
+
+        private void buttonBajaModificacionProveedores_Click_1(object sender, EventArgs e)
+        {
+            abrirPanelContenedor(new FormBajaModificacionProveedor());
             hideSubMenu();
         }
     }
