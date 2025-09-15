@@ -190,6 +190,7 @@
             buttonNuevaVenta.Text = "Nueva Venta";
             buttonNuevaVenta.TextAlign = ContentAlignment.MiddleLeft;
             buttonNuevaVenta.UseVisualStyleBackColor = false;
+            buttonNuevaVenta.Click += buttonNuevaVenta_Click;
             // 
             // BVenta
             // 
@@ -451,7 +452,6 @@
             PLogoAvicola.AutoSize = true;
             PLogoAvicola.BackColor = Color.Transparent;
             PLogoAvicola.BackgroundImage = (Image)resources.GetObject("PLogoAvicola.BackgroundImage");
-            PLogoAvicola.BorderStyle = BorderStyle.FixedSingle;
             PLogoAvicola.Location = new Point(225, 201);
             PLogoAvicola.Name = "PLogoAvicola";
             PLogoAvicola.Size = new Size(202, 205);

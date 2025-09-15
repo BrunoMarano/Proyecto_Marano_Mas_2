@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace AvicolaVentas
 {
-    public partial class FormNuevaVenta : Form
+    public partial class AgregarArticuloVenta : Form
     {
-        public FormNuevaVenta()
+        public AgregarArticuloVenta()
         {
             InitializeComponent();
         }
-
-        private void buttonAgregarArticuloVenta_Click(object sender, EventArgs e)
-        {
-            AgregarArticuloVenta formularioHijo  = new AgregarArticuloVenta();
-            formularioHijo.Show();
-        } 
     }
 }

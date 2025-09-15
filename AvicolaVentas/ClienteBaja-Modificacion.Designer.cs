@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             dataGridViewClientes = new DataGridView();
-            buttonSalirUsuarioBaja = new Button();
             buttonBaja = new Button();
             buttonModificacionCliente = new Button();
+            buttonSalirUsuarioBaja = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClientes).BeginInit();
             SuspendLayout();
             // 
@@ -44,16 +44,6 @@
             dataGridViewClientes.Name = "dataGridViewClientes";
             dataGridViewClientes.Size = new Size(646, 338);
             dataGridViewClientes.TabIndex = 0;
-            // 
-            // buttonSalirUsuarioBaja
-            // 
-            buttonSalirUsuarioBaja.Location = new Point(34, 12);
-            buttonSalirUsuarioBaja.Name = "buttonSalirUsuarioBaja";
-            buttonSalirUsuarioBaja.Size = new Size(43, 23);
-            buttonSalirUsuarioBaja.TabIndex = 1;
-            buttonSalirUsuarioBaja.Text = "X";
-            buttonSalirUsuarioBaja.UseVisualStyleBackColor = true;
-            buttonSalirUsuarioBaja.Click += buttonSalirUsuarioBaja_Click;
             // 
             // buttonBaja
             // 
@@ -75,6 +65,16 @@
             buttonModificacionCliente.Text = "Modificacion";
             buttonModificacionCliente.UseVisualStyleBackColor = false;
             // 
+            // buttonSalirUsuarioBaja
+            // 
+            buttonSalirUsuarioBaja.Location = new Point(34, 12);
+            buttonSalirUsuarioBaja.Name = "buttonSalirUsuarioBaja";
+            buttonSalirUsuarioBaja.Size = new Size(43, 23);
+            buttonSalirUsuarioBaja.TabIndex = 1;
+            buttonSalirUsuarioBaja.Text = "X";
+            buttonSalirUsuarioBaja.UseVisualStyleBackColor = true;
+            buttonSalirUsuarioBaja.Click += buttonSalirUsuarioBaja_Click;
+            // 
             // FormClienteBajaModificacion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -95,8 +95,8 @@
         #endregion
 
         private DataGridView dataGridViewClientes;
-        private Button buttonSalirUsuarioBaja;
         private Button buttonBaja;
         private Button buttonModificacionCliente;
+        private Button buttonSalirUsuarioBaja;
     }
 }

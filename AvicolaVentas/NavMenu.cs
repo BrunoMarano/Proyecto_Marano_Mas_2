@@ -183,5 +183,11 @@ namespace AvicolaVentas
             abrirPanelContenedor(new FAltaUsuario());
             hideSubMenu();
         }
+
+        private void buttonNuevaVenta_Click(object sender, EventArgs e)
+        {
+            abrirPanelContenedor(new FormNuevaVenta());
+            hideSubMenu();
+        }
     }
 }

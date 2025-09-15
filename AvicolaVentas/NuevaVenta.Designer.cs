@@ -1,6 +1,6 @@
 ﻿namespace AvicolaVentas
 {
-    partial class NuevaVenta
+    partial class FormNuevaVenta
     {
         /// <summary>
         /// Required designer variable.
@@ -28,42 +28,76 @@
         /// </summary>
         private void InitializeComponent()
         {
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
+            dataGridViewArticulosAgregados = new DataGridView();
+            buttonAgregarArticuloVenta = new Button();
+            buttonEliminarArticuloVenta = new Button();
+            labelAgregarArticulo = new Label();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewArticulosAgregados).BeginInit();
             SuspendLayout();
             // 
-            // comboBox1
+            // dataGridViewArticulosAgregados
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(292, 82);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(188, 23);
-            comboBox1.TabIndex = 0;
+            dataGridViewArticulosAgregados.BackgroundColor = Color.Silver;
+            dataGridViewArticulosAgregados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewArticulosAgregados.Location = new Point(39, 179);
+            dataGridViewArticulosAgregados.Name = "dataGridViewArticulosAgregados";
+            dataGridViewArticulosAgregados.Size = new Size(614, 315);
+            dataGridViewArticulosAgregados.TabIndex = 0;
             // 
-            // comboBox2
+            // buttonAgregarArticuloVenta
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(292, 161);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(188, 23);
-            comboBox2.TabIndex = 1;
+            buttonAgregarArticuloVenta.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonAgregarArticuloVenta.Location = new Point(58, 137);
+            buttonAgregarArticuloVenta.Name = "buttonAgregarArticuloVenta";
+            buttonAgregarArticuloVenta.Size = new Size(35, 36);
+            buttonAgregarArticuloVenta.TabIndex = 1;
+            buttonAgregarArticuloVenta.Text = "+";
+            buttonAgregarArticuloVenta.UseVisualStyleBackColor = true;
+            buttonAgregarArticuloVenta.Click += this.buttonAgregarArticuloVenta_Click;
             // 
-            // NuevaVenta
+            // buttonEliminarArticuloVenta
+            // 
+            buttonEliminarArticuloVenta.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonEliminarArticuloVenta.Location = new Point(129, 137);
+            buttonEliminarArticuloVenta.Name = "buttonEliminarArticuloVenta";
+            buttonEliminarArticuloVenta.Size = new Size(35, 36);
+            buttonEliminarArticuloVenta.TabIndex = 2;
+            buttonEliminarArticuloVenta.Text = "-";
+            buttonEliminarArticuloVenta.UseVisualStyleBackColor = true;
+            // 
+            // labelAgregarArticulo
+            // 
+            labelAgregarArticulo.AutoSize = true;
+            labelAgregarArticulo.BackColor = Color.Transparent;
+            labelAgregarArticulo.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelAgregarArticulo.Location = new Point(225, 55);
+            labelAgregarArticulo.Name = "labelAgregarArticulo";
+            labelAgregarArticulo.Size = new Size(227, 40);
+            labelAgregarArticulo.TabIndex = 3;
+            labelAgregarArticulo.Text = "Agregar Articulo";
+            // 
+            // FormNuevaVenta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Fondo;
             ClientSize = new Size(704, 522);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
-            Name = "NuevaVenta";
+            Controls.Add(labelAgregarArticulo);
+            Controls.Add(buttonEliminarArticuloVenta);
+            Controls.Add(buttonAgregarArticuloVenta);
+            Controls.Add(dataGridViewArticulosAgregados);
+            Name = "FormNuevaVenta";
             Text = "NuevaVenta";
+            ((System.ComponentModel.ISupportInitialize)dataGridViewArticulosAgregados).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
+        private DataGridView dataGridViewArticulosAgregados;
+        private Button buttonAgregarArticuloVenta;
+        private Button buttonEliminarArticuloVenta;
+        private Label labelAgregarArticulo;
     }
 }
