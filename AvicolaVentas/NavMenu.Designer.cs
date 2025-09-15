@@ -132,6 +132,7 @@
             buttonAltaUsuario.Text = "Alta";
             buttonAltaUsuario.TextAlign = ContentAlignment.MiddleLeft;
             buttonAltaUsuario.UseVisualStyleBackColor = false;
+            buttonAltaUsuario.Click += buttonAltaUsuario_Click;
             // 
             // BUsuario
             // 

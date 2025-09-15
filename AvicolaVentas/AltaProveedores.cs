@@ -30,8 +30,8 @@ namespace AvicolaVentas
             textBoxTelefonoProveedor.Text = "";
             textBoxCuitProveedor.Text = ""; // CUIT
             textBoxDireccionProveedor.Text = "";
-            textBoxProvinciaProveedor.Text = ""; // Provincia
-            textBoxCiudadProveedor.Text = ""; // Ciudad
+            comboBoxProvinciaProveedor.SelectedIndex = -1; // Provincia
+            comboBoxCiudadProveedor.SelectedIndex = -1; // Ciudad
         }
 
         private void textBoxDireccionProveedor_TextChanged(object sender, EventArgs e)

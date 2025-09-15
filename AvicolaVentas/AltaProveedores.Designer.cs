@@ -36,13 +36,13 @@
             labelCuitPorveedor = new Label();
             textBoxDireccionProveedor = new TextBox();
             labelDireccionPorveedor = new Label();
-            textBoxCiudadProveedor = new TextBox();
             labelCiudad = new Label();
-            textBoxProvinciaProveedor = new TextBox();
             labelProvincia = new Label();
             buttonLimpiarProveedores = new Button();
             buttonCrearProveedor = new Button();
             buttonSalirAltaProveedor = new Button();
+            comboBoxProvinciaProveedor = new ComboBox();
+            comboBoxCiudadProveedor = new ComboBox();
             SuspendLayout();
             // 
             // textBoxNombreProveedor
@@ -122,13 +122,6 @@
             labelDireccionPorveedor.TabIndex = 12;
             labelDireccionPorveedor.Text = "Direccion";
             // 
-            // textBoxCiudadProveedor
-            // 
-            textBoxCiudadProveedor.Location = new Point(286, 437);
-            textBoxCiudadProveedor.Name = "textBoxCiudadProveedor";
-            textBoxCiudadProveedor.Size = new Size(203, 23);
-            textBoxCiudadProveedor.TabIndex = 15;
-            // 
             // labelCiudad
             // 
             labelCiudad.AutoSize = true;
@@ -139,13 +132,6 @@
             labelCiudad.Size = new Size(78, 30);
             labelCiudad.TabIndex = 14;
             labelCiudad.Text = "Ciudad";
-            // 
-            // textBoxProvinciaProveedor
-            // 
-            textBoxProvinciaProveedor.Location = new Point(286, 376);
-            textBoxProvinciaProveedor.Name = "textBoxProvinciaProveedor";
-            textBoxProvinciaProveedor.Size = new Size(203, 23);
-            textBoxProvinciaProveedor.TabIndex = 17;
             // 
             // labelProvincia
             // 
@@ -189,18 +175,34 @@
             buttonSalirAltaProveedor.UseVisualStyleBackColor = true;
             buttonSalirAltaProveedor.Click += buttonSalirAltaProveedor_Click;
             // 
+            // comboBoxProvinciaProveedor
+            // 
+            comboBoxProvinciaProveedor.FormattingEnabled = true;
+            comboBoxProvinciaProveedor.Location = new Point(286, 378);
+            comboBoxProvinciaProveedor.Name = "comboBoxProvinciaProveedor";
+            comboBoxProvinciaProveedor.Size = new Size(203, 23);
+            comboBoxProvinciaProveedor.TabIndex = 21;
+            // 
+            // comboBoxCiudadProveedor
+            // 
+            comboBoxCiudadProveedor.FormattingEnabled = true;
+            comboBoxCiudadProveedor.Location = new Point(286, 437);
+            comboBoxCiudadProveedor.Name = "comboBoxCiudadProveedor";
+            comboBoxCiudadProveedor.Size = new Size(203, 23);
+            comboBoxCiudadProveedor.TabIndex = 22;
+            // 
             // FormAltaProveedores
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Fondo;
             ClientSize = new Size(704, 522);
+            Controls.Add(comboBoxCiudadProveedor);
+            Controls.Add(comboBoxProvinciaProveedor);
             Controls.Add(buttonSalirAltaProveedor);
             Controls.Add(buttonCrearProveedor);
             Controls.Add(buttonLimpiarProveedores);
-            Controls.Add(textBoxProvinciaProveedor);
             Controls.Add(labelProvincia);
-            Controls.Add(textBoxCiudadProveedor);
             Controls.Add(labelCiudad);
             Controls.Add(textBoxDireccionProveedor);
             Controls.Add(labelDireccionPorveedor);
@@ -227,12 +229,12 @@
         private Label labelCuitPorveedor;
         private TextBox textBoxDireccionProveedor;
         private Label labelDireccionPorveedor;
-        private TextBox textBoxCiudadProveedor;
         private Label labelCiudad;
-        private TextBox textBoxProvinciaProveedor;
         private Label labelProvincia;
         private Button buttonLimpiarProveedores;
         private Button buttonCrearProveedor;
         private Button buttonSalirAltaProveedor;
+        private ComboBox comboBoxProvinciaProveedor;
+        private ComboBox comboBoxCiudadProveedor;
     }
 }

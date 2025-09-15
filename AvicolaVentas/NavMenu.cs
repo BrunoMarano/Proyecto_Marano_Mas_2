@@ -38,7 +38,7 @@ namespace AvicolaVentas
             {
                 panelProductos.Visible = false;
             }
-            if (!panelProveedores.Visible == true)
+            if (panelProveedores.Visible == true)
             {
                 panelProveedores.Visible = false;
             }
@@ -147,8 +147,7 @@ namespace AvicolaVentas
 
         private void buttonAltaCliente_Click_1(object sender, EventArgs e)
         {
-            abrirPanelContenedor(new FAltaUsuario());
-            hideSubMenu();
+
         }
 
         private void buttonBajaModificacionCliente_Click(object sender, EventArgs e)
@@ -176,6 +175,12 @@ namespace AvicolaVentas
         private void buttonBajaModificacionProveedores_Click_1(object sender, EventArgs e)
         {
             abrirPanelContenedor(new FormBajaModificacionProveedor());
+            hideSubMenu();
+        }
+
+        private void buttonAltaUsuario_Click(object sender, EventArgs e)
+        {
+            abrirPanelContenedor(new FAltaUsuario());
             hideSubMenu();
         }
     }

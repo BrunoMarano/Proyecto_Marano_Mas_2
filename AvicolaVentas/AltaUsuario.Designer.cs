@@ -222,9 +222,9 @@
             // DTPFechaNacimientoUsuario
             // 
             DTPFechaNacimientoUsuario.CalendarFont = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DTPFechaNacimientoUsuario.Location = new Point(428, 342);
+            DTPFechaNacimientoUsuario.Location = new Point(422, 348);
             DTPFechaNacimientoUsuario.Name = "DTPFechaNacimientoUsuario";
-            DTPFechaNacimientoUsuario.Size = new Size(200, 23);
+            DTPFechaNacimientoUsuario.Size = new Size(234, 23);
             DTPFechaNacimientoUsuario.TabIndex = 20;
             DTPFechaNacimientoUsuario.ValueChanged += DTPFechaNacimientoUsuario_ValueChanged;
             // 
@@ -259,7 +259,7 @@
             // BLimpiarAltaUsuario
             // 
             BLimpiarAltaUsuario.BackColor = Color.Silver;
-            BLimpiarAltaUsuario.Location = new Point(569, 398);
+            BLimpiarAltaUsuario.Location = new Point(569, 399);
             BLimpiarAltaUsuario.Name = "BLimpiarAltaUsuario";
             BLimpiarAltaUsuario.Size = new Size(107, 38);
             BLimpiarAltaUsuario.TabIndex = 23;
