@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FAltaUsuario));
-            PMenu = new TableLayoutPanel();
-            BVentas = new Button();
-            BProductos = new Button();
-            BProveedores = new Button();
-            BClientes = new Button();
-            BUsuario = new Button();
             LNombreUsuario = new Label();
             TBNombreUsuario = new TextBox();
             TBApellidoUsuario = new TextBox();
@@ -56,94 +50,16 @@
             PBImagenUsuario = new PictureBox();
             BAltaUsuario = new Button();
             BLimpiarAltaUsuario = new Button();
-            PMenu.SuspendLayout();
             PImaagenUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PBImagenUsuario).BeginInit();
             SuspendLayout();
-            // 
-            // PMenu
-            // 
-            PMenu.BackColor = Color.Beige;
-            PMenu.ColumnCount = 1;
-            PMenu.ColumnStyles.Add(new ColumnStyle());
-            PMenu.Controls.Add(BVentas, 0, 3);
-            PMenu.Controls.Add(BProductos, 0, 2);
-            PMenu.Controls.Add(BProveedores, 0, 1);
-            PMenu.Controls.Add(BClientes, 0, 0);
-            PMenu.Controls.Add(BUsuario, 0, 4);
-            PMenu.Dock = DockStyle.Left;
-            PMenu.Location = new Point(0, 0);
-            PMenu.Name = "PMenu";
-            PMenu.RowCount = 5;
-            PMenu.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            PMenu.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            PMenu.RowStyles.Add(new RowStyle(SizeType.Absolute, 84F));
-            PMenu.RowStyles.Add(new RowStyle(SizeType.Absolute, 84F));
-            PMenu.RowStyles.Add(new RowStyle(SizeType.Absolute, 96F));
-            PMenu.Size = new Size(124, 450);
-            PMenu.TabIndex = 3;
-            // 
-            // BVentas
-            // 
-            BVentas.BackColor = Color.Gold;
-            BVentas.Dock = DockStyle.Fill;
-            BVentas.Location = new Point(3, 273);
-            BVentas.Name = "BVentas";
-            BVentas.Size = new Size(118, 78);
-            BVentas.TabIndex = 4;
-            BVentas.Text = "Venta";
-            BVentas.UseVisualStyleBackColor = false;
-            // 
-            // BProductos
-            // 
-            BProductos.BackColor = Color.Gold;
-            BProductos.Dock = DockStyle.Fill;
-            BProductos.Location = new Point(3, 189);
-            BProductos.Name = "BProductos";
-            BProductos.Size = new Size(118, 78);
-            BProductos.TabIndex = 3;
-            BProductos.Text = "Productos";
-            BProductos.UseVisualStyleBackColor = false;
-            // 
-            // BProveedores
-            // 
-            BProveedores.BackColor = Color.Gold;
-            BProveedores.Dock = DockStyle.Fill;
-            BProveedores.Location = new Point(3, 96);
-            BProveedores.Name = "BProveedores";
-            BProveedores.Size = new Size(118, 87);
-            BProveedores.TabIndex = 2;
-            BProveedores.Text = "Proveedores";
-            BProveedores.UseVisualStyleBackColor = false;
-            // 
-            // BClientes
-            // 
-            BClientes.BackColor = Color.Gold;
-            BClientes.Dock = DockStyle.Fill;
-            BClientes.Location = new Point(3, 3);
-            BClientes.Name = "BClientes";
-            BClientes.Size = new Size(118, 87);
-            BClientes.TabIndex = 1;
-            BClientes.Text = "Clientes";
-            BClientes.UseVisualStyleBackColor = false;
-            // 
-            // BUsuario
-            // 
-            BUsuario.BackColor = Color.Gold;
-            BUsuario.Dock = DockStyle.Fill;
-            BUsuario.Location = new Point(3, 357);
-            BUsuario.Name = "BUsuario";
-            BUsuario.Size = new Size(118, 90);
-            BUsuario.TabIndex = 5;
-            BUsuario.Text = "Usuario";
-            BUsuario.UseVisualStyleBackColor = false;
             // 
             // LNombreUsuario
             // 
             LNombreUsuario.AutoSize = true;
             LNombreUsuario.BackColor = Color.Transparent;
             LNombreUsuario.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LNombreUsuario.Location = new Point(147, 60);
+            LNombreUsuario.Location = new Point(46, 77);
             LNombreUsuario.Name = "LNombreUsuario";
             LNombreUsuario.Size = new Size(89, 30);
             LNombreUsuario.TabIndex = 4;
@@ -152,7 +68,7 @@
             // 
             // TBNombreUsuario
             // 
-            TBNombreUsuario.Location = new Point(242, 69);
+            TBNombreUsuario.Location = new Point(141, 86);
             TBNombreUsuario.Name = "TBNombreUsuario";
             TBNombreUsuario.Size = new Size(203, 23);
             TBNombreUsuario.TabIndex = 5;
@@ -160,7 +76,7 @@
             // 
             // TBApellidoUsuario
             // 
-            TBApellidoUsuario.Location = new Point(242, 129);
+            TBApellidoUsuario.Location = new Point(141, 146);
             TBApellidoUsuario.Name = "TBApellidoUsuario";
             TBApellidoUsuario.Size = new Size(203, 23);
             TBApellidoUsuario.TabIndex = 7;
@@ -171,7 +87,7 @@
             LApellidoUsuarioo.AutoSize = true;
             LApellidoUsuarioo.BackColor = Color.Transparent;
             LApellidoUsuarioo.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LApellidoUsuarioo.Location = new Point(147, 122);
+            LApellidoUsuarioo.Location = new Point(46, 139);
             LApellidoUsuarioo.Name = "LApellidoUsuarioo";
             LApellidoUsuarioo.Size = new Size(89, 30);
             LApellidoUsuarioo.TabIndex = 6;
@@ -179,7 +95,7 @@
             // 
             // TBDniUsuario
             // 
-            TBDniUsuario.Location = new Point(242, 189);
+            TBDniUsuario.Location = new Point(141, 206);
             TBDniUsuario.Name = "TBDniUsuario";
             TBDniUsuario.Size = new Size(203, 23);
             TBDniUsuario.TabIndex = 9;
@@ -191,7 +107,7 @@
             LDniUsuario.AutoSize = true;
             LDniUsuario.BackColor = Color.Transparent;
             LDniUsuario.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LDniUsuario.Location = new Point(147, 187);
+            LDniUsuario.Location = new Point(46, 204);
             LDniUsuario.Name = "LDniUsuario";
             LDniUsuario.Size = new Size(50, 30);
             LDniUsuario.TabIndex = 8;
@@ -199,7 +115,7 @@
             // 
             // TBCorreoUsuario
             // 
-            TBCorreoUsuario.Location = new Point(242, 254);
+            TBCorreoUsuario.Location = new Point(141, 271);
             TBCorreoUsuario.Name = "TBCorreoUsuario";
             TBCorreoUsuario.Size = new Size(203, 23);
             TBCorreoUsuario.TabIndex = 11;
@@ -210,7 +126,7 @@
             LCorreoUsuario.AutoSize = true;
             LCorreoUsuario.BackColor = Color.Transparent;
             LCorreoUsuario.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LCorreoUsuario.Location = new Point(147, 247);
+            LCorreoUsuario.Location = new Point(46, 264);
             LCorreoUsuario.Name = "LCorreoUsuario";
             LCorreoUsuario.Size = new Size(63, 30);
             LCorreoUsuario.TabIndex = 10;
@@ -218,7 +134,7 @@
             // 
             // TBDirrecionUsuariuo
             // 
-            TBDirrecionUsuariuo.Location = new Point(242, 321);
+            TBDirrecionUsuariuo.Location = new Point(141, 338);
             TBDirrecionUsuariuo.Name = "TBDirrecionUsuariuo";
             TBDirrecionUsuariuo.Size = new Size(203, 23);
             TBDirrecionUsuariuo.TabIndex = 13;
@@ -228,7 +144,7 @@
             LDirrecionUsuario.AutoSize = true;
             LDirrecionUsuario.BackColor = Color.Transparent;
             LDirrecionUsuario.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LDirrecionUsuario.Location = new Point(147, 314);
+            LDirrecionUsuario.Location = new Point(46, 331);
             LDirrecionUsuario.Name = "LDirrecionUsuario";
             LDirrecionUsuario.Size = new Size(100, 30);
             LDirrecionUsuario.TabIndex = 12;
@@ -238,14 +154,14 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(477, 196);
+            label1.Location = new Point(376, 213);
             label1.Name = "label1";
             label1.Size = new Size(0, 30);
             label1.TabIndex = 14;
             // 
             // TBTelefonoUsuario
             // 
-            TBTelefonoUsuario.Location = new Point(242, 388);
+            TBTelefonoUsuario.Location = new Point(141, 405);
             TBTelefonoUsuario.Name = "TBTelefonoUsuario";
             TBTelefonoUsuario.Size = new Size(203, 23);
             TBTelefonoUsuario.TabIndex = 16;
@@ -256,7 +172,7 @@
             LTelefonoUsuario.AutoSize = true;
             LTelefonoUsuario.BackColor = Color.Transparent;
             LTelefonoUsuario.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LTelefonoUsuario.Location = new Point(147, 381);
+            LTelefonoUsuario.Location = new Point(46, 398);
             LTelefonoUsuario.Name = "LTelefonoUsuario";
             LTelefonoUsuario.Size = new Size(92, 30);
             LTelefonoUsuario.TabIndex = 15;
@@ -267,7 +183,7 @@
             RBHombreUsuario.AutoSize = true;
             RBHombreUsuario.BackColor = Color.Transparent;
             RBHombreUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            RBHombreUsuario.Location = new Point(523, 214);
+            RBHombreUsuario.Location = new Point(422, 231);
             RBHombreUsuario.Name = "RBHombreUsuario";
             RBHombreUsuario.Size = new Size(85, 25);
             RBHombreUsuario.TabIndex = 17;
@@ -281,7 +197,7 @@
             RBMujerUsuario.AutoSize = true;
             RBMujerUsuario.BackColor = Color.Transparent;
             RBMujerUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            RBMujerUsuario.Location = new Point(670, 214);
+            RBMujerUsuario.Location = new Point(569, 231);
             RBMujerUsuario.Name = "RBMujerUsuario";
             RBMujerUsuario.Size = new Size(69, 25);
             RBMujerUsuario.TabIndex = 18;
@@ -295,7 +211,7 @@
             LFechaNacimientoUusario.AutoSize = true;
             LFechaNacimientoUusario.BackColor = Color.Transparent;
             LFechaNacimientoUusario.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LFechaNacimientoUusario.Location = new Point(523, 263);
+            LFechaNacimientoUusario.Location = new Point(422, 280);
             LFechaNacimientoUusario.Name = "LFechaNacimientoUusario";
             LFechaNacimientoUusario.Size = new Size(209, 30);
             LFechaNacimientoUusario.TabIndex = 19;
@@ -304,7 +220,7 @@
             // DTPFechaNacimientoUsuario
             // 
             DTPFechaNacimientoUsuario.CalendarFont = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DTPFechaNacimientoUsuario.Location = new Point(529, 325);
+            DTPFechaNacimientoUsuario.Location = new Point(428, 342);
             DTPFechaNacimientoUsuario.Name = "DTPFechaNacimientoUsuario";
             DTPFechaNacimientoUsuario.Size = new Size(200, 23);
             DTPFechaNacimientoUsuario.TabIndex = 20;
@@ -313,7 +229,7 @@
             // PImaagenUsuario
             // 
             PImaagenUsuario.Controls.Add(PBImagenUsuario);
-            PImaagenUsuario.Location = new Point(560, 54);
+            PImaagenUsuario.Location = new Point(459, 71);
             PImaagenUsuario.Name = "PImaagenUsuario";
             PImaagenUsuario.Size = new Size(150, 133);
             PImaagenUsuario.TabIndex = 21;
@@ -331,7 +247,7 @@
             // BAltaUsuario
             // 
             BAltaUsuario.BackColor = Color.Silver;
-            BAltaUsuario.Location = new Point(501, 381);
+            BAltaUsuario.Location = new Point(400, 398);
             BAltaUsuario.Name = "BAltaUsuario";
             BAltaUsuario.Size = new Size(107, 38);
             BAltaUsuario.TabIndex = 22;
@@ -341,7 +257,7 @@
             // BLimpiarAltaUsuario
             // 
             BLimpiarAltaUsuario.BackColor = Color.Silver;
-            BLimpiarAltaUsuario.Location = new Point(670, 381);
+            BLimpiarAltaUsuario.Location = new Point(569, 398);
             BLimpiarAltaUsuario.Name = "BLimpiarAltaUsuario";
             BLimpiarAltaUsuario.Size = new Size(107, 38);
             BLimpiarAltaUsuario.TabIndex = 23;
@@ -354,7 +270,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(704, 522);
             Controls.Add(BLimpiarAltaUsuario);
             Controls.Add(BAltaUsuario);
             Controls.Add(PImaagenUsuario);
@@ -375,11 +291,10 @@
             Controls.Add(LApellidoUsuarioo);
             Controls.Add(TBNombreUsuario);
             Controls.Add(LNombreUsuario);
-            Controls.Add(PMenu);
+            MinimumSize = new Size(720, 561);
             Name = "FAltaUsuario";
             Text = "Alta Usuario";
             Load += FAltaUsuario_Load;
-            PMenu.ResumeLayout(false);
             PImaagenUsuario.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)PBImagenUsuario).EndInit();
             ResumeLayout(false);
@@ -387,13 +302,6 @@
         }
 
         #endregion
-
-        private TableLayoutPanel PMenu;
-        private Button BVentas;
-        private Button BProductos;
-        private Button BProveedores;
-        private Button BClientes;
-        private Button BUsuario;
         private Label LNombreUsuario;
         private TextBox TBNombreUsuario;
         private TextBox TBApellidoUsuario;
