@@ -53,11 +53,11 @@ namespace AvicolaVentas
 
         private string obtenerSexo()
         {
-            if (rbMasculino.Checked)
+            if (rbMasculinoCliente.Checked)
             {
                 return "Masculino";
             }
-            else if (rbFemenino.Checked)
+            else if (rbFemeninoCliente.Checked)
             {
                 return "Femenino";
             }

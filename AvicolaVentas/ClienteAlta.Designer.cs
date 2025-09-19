@@ -288,9 +288,9 @@
             gbDatosContCliente.Controls.Add(tCiudadCliente);
             gbDatosContCliente.Controls.Add(lCiudadCliente);
             gbDatosContCliente.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            gbDatosContCliente.Location = new Point(380, 20);
+            gbDatosContCliente.Location = new Point(354, 105);
             gbDatosContCliente.Name = "gbDatosContCliente";
-            gbDatosContCliente.Size = new Size(350, 263);
+            gbDatosContCliente.Size = new Size(338, 263);
             gbDatosContCliente.TabIndex = 24;
             gbDatosContCliente.TabStop = false;
             gbDatosContCliente.Text = "Datos de Contacto";
@@ -308,9 +308,9 @@
             gbDatosPersCliente.Controls.Add(lFechaNacCliente);
             gbDatosPersCliente.Controls.Add(dtpFechaNacCliente);
             gbDatosPersCliente.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            gbDatosPersCliente.Location = new Point(12, 20);
+            gbDatosPersCliente.Location = new Point(7, 105);
             gbDatosPersCliente.Name = "gbDatosPersCliente";
-            gbDatosPersCliente.Size = new Size(350, 263);
+            gbDatosPersCliente.Size = new Size(338, 263);
             gbDatosPersCliente.TabIndex = 25;
             gbDatosPersCliente.TabStop = false;
             gbDatosPersCliente.Text = "Datos Personales";
@@ -318,7 +318,7 @@
             // bGuardarCliente
             // 
             bGuardarCliente.Font = new Font("Segoe UI", 12F);
-            bGuardarCliente.Location = new Point(424, 310);
+            bGuardarCliente.Location = new Point(383, 412);
             bGuardarCliente.Name = "bGuardarCliente";
             bGuardarCliente.Size = new Size(130, 30);
             bGuardarCliente.TabIndex = 26;
@@ -328,7 +328,7 @@
             // bLimpiarCliente
             // 
             bLimpiarCliente.Font = new Font("Segoe UI", 12F);
-            bLimpiarCliente.Location = new Point(577, 310);
+            bLimpiarCliente.Location = new Point(534, 412);
             bLimpiarCliente.Name = "bLimpiarCliente";
             bLimpiarCliente.Size = new Size(130, 30);
             bLimpiarCliente.TabIndex = 27;
@@ -340,7 +340,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Fondo;
-            ClientSize = new Size(789, 378);
+            ClientSize = new Size(704, 522);
             Controls.Add(bLimpiarCliente);
             Controls.Add(bGuardarCliente);
             Controls.Add(gbDatosPersCliente);
