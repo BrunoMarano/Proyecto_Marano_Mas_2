@@ -164,6 +164,7 @@
             buttonCrearProveedor.TabIndex = 19;
             buttonCrearProveedor.Text = "Crear";
             buttonCrearProveedor.UseVisualStyleBackColor = false;
+            buttonCrearProveedor.Click += buttonCrearProveedor_Click;
             // 
             // buttonSalirAltaProveedor
             // 

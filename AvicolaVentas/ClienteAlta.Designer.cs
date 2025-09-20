@@ -40,16 +40,16 @@
             rbFemeninoCliente = new RadioButton();
             gbSexoCliente = new GroupBox();
             lTelefonoCliente = new Label();
-            textBox2 = new TextBox();
+            tTelCliente = new TextBox();
             lDirecciónCliente = new Label();
             tDirecciónCliente = new TextBox();
             lCiudadCliente = new Label();
-            tCiudadCliente = new TextBox();
             lProvinciaCliente = new Label();
-            tProvinciaCliente = new TextBox();
             lEmailCliente = new Label();
             tEmailCliente = new TextBox();
             gbDatosContCliente = new GroupBox();
+            cbProvinciaCliente = new ComboBox();
+            cbCiudadCliente = new ComboBox();
             gbDatosPersCliente = new GroupBox();
             bGuardarCliente = new Button();
             bLimpiarCliente = new Button();
@@ -60,6 +60,7 @@
             // 
             // tNombreCliente
             // 
+            tNombreCliente.Font = new Font("Segoe UI", 12F);
             tNombreCliente.Location = new Point(115, 33);
             tNombreCliente.Multiline = true;
             tNombreCliente.Name = "tNombreCliente";
@@ -92,6 +93,7 @@
             // 
             // tApellidoCliente
             // 
+            tApellidoCliente.Font = new Font("Segoe UI", 12F);
             tApellidoCliente.Location = new Point(115, 73);
             tApellidoCliente.Multiline = true;
             tApellidoCliente.Name = "tApellidoCliente";
@@ -135,6 +137,7 @@
             // tDni
             // 
             tDni.BackColor = SystemColors.Window;
+            tDni.Font = new Font("Segoe UI", 12F);
             tDni.Location = new Point(115, 113);
             tDni.Multiline = true;
             tDni.Name = "tDni";
@@ -190,13 +193,14 @@
             lTelefonoCliente.TabIndex = 14;
             lTelefonoCliente.Text = "Telefono:";
             // 
-            // textBox2
+            // tTelCliente
             // 
-            textBox2.Location = new Point(109, 75);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(201, 25);
-            textBox2.TabIndex = 15;
+            tTelCliente.Font = new Font("Segoe UI", 12F);
+            tTelCliente.Location = new Point(109, 75);
+            tTelCliente.Multiline = true;
+            tTelCliente.Name = "tTelCliente";
+            tTelCliente.Size = new Size(201, 25);
+            tTelCliente.TabIndex = 15;
             // 
             // lDirecciónCliente
             // 
@@ -211,6 +215,7 @@
             // 
             // tDirecciónCliente
             // 
+            tDirecciónCliente.Font = new Font("Segoe UI", 12F);
             tDirecciónCliente.Location = new Point(109, 115);
             tDirecciónCliente.Multiline = true;
             tDirecciónCliente.Name = "tDirecciónCliente";
@@ -222,38 +227,22 @@
             lCiudadCliente.AutoSize = true;
             lCiudadCliente.BackColor = Color.Transparent;
             lCiudadCliente.Font = new Font("Segoe UI", 12F);
-            lCiudadCliente.Location = new Point(29, 155);
+            lCiudadCliente.Location = new Point(29, 199);
             lCiudadCliente.Name = "lCiudadCliente";
             lCiudadCliente.Size = new Size(62, 21);
             lCiudadCliente.TabIndex = 18;
             lCiudadCliente.Text = "Ciudad:";
-            // 
-            // tCiudadCliente
-            // 
-            tCiudadCliente.Location = new Point(106, 150);
-            tCiudadCliente.Multiline = true;
-            tCiudadCliente.Name = "tCiudadCliente";
-            tCiudadCliente.Size = new Size(201, 25);
-            tCiudadCliente.TabIndex = 19;
             // 
             // lProvinciaCliente
             // 
             lProvinciaCliente.AutoSize = true;
             lProvinciaCliente.BackColor = Color.Transparent;
             lProvinciaCliente.Font = new Font("Segoe UI", 12F);
-            lProvinciaCliente.Location = new Point(29, 195);
+            lProvinciaCliente.Location = new Point(29, 157);
             lProvinciaCliente.Name = "lProvinciaCliente";
             lProvinciaCliente.Size = new Size(77, 21);
             lProvinciaCliente.TabIndex = 20;
             lProvinciaCliente.Text = "Provincia:";
-            // 
-            // tProvinciaCliente
-            // 
-            tProvinciaCliente.Location = new Point(106, 190);
-            tProvinciaCliente.Multiline = true;
-            tProvinciaCliente.Name = "tProvinciaCliente";
-            tProvinciaCliente.Size = new Size(201, 25);
-            tProvinciaCliente.TabIndex = 21;
             // 
             // lEmailCliente
             // 
@@ -268,25 +257,27 @@
             // 
             // tEmailCliente
             // 
+            tEmailCliente.Font = new Font("Segoe UI", 12F);
             tEmailCliente.Location = new Point(109, 35);
             tEmailCliente.Multiline = true;
             tEmailCliente.Name = "tEmailCliente";
             tEmailCliente.Size = new Size(201, 25);
             tEmailCliente.TabIndex = 23;
+            tEmailCliente.KeyPress += tEmailCliente_KeyPress;
             // 
             // gbDatosContCliente
             // 
             gbDatosContCliente.BackColor = Color.Transparent;
-            gbDatosContCliente.Controls.Add(tProvinciaCliente);
+            gbDatosContCliente.Controls.Add(cbProvinciaCliente);
+            gbDatosContCliente.Controls.Add(cbCiudadCliente);
             gbDatosContCliente.Controls.Add(tEmailCliente);
             gbDatosContCliente.Controls.Add(lTelefonoCliente);
+            gbDatosContCliente.Controls.Add(lCiudadCliente);
             gbDatosContCliente.Controls.Add(lEmailCliente);
-            gbDatosContCliente.Controls.Add(textBox2);
+            gbDatosContCliente.Controls.Add(tTelCliente);
             gbDatosContCliente.Controls.Add(lDirecciónCliente);
             gbDatosContCliente.Controls.Add(lProvinciaCliente);
             gbDatosContCliente.Controls.Add(tDirecciónCliente);
-            gbDatosContCliente.Controls.Add(tCiudadCliente);
-            gbDatosContCliente.Controls.Add(lCiudadCliente);
             gbDatosContCliente.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             gbDatosContCliente.Location = new Point(354, 105);
             gbDatosContCliente.Name = "gbDatosContCliente";
@@ -294,6 +285,24 @@
             gbDatosContCliente.TabIndex = 24;
             gbDatosContCliente.TabStop = false;
             gbDatosContCliente.Text = "Datos de Contacto";
+            // 
+            // cbProvinciaCliente
+            // 
+            cbProvinciaCliente.Font = new Font("Segoe UI", 12F);
+            cbProvinciaCliente.FormattingEnabled = true;
+            cbProvinciaCliente.Location = new Point(109, 148);
+            cbProvinciaCliente.Name = "cbProvinciaCliente";
+            cbProvinciaCliente.Size = new Size(201, 29);
+            cbProvinciaCliente.TabIndex = 25;
+            // 
+            // cbCiudadCliente
+            // 
+            cbCiudadCliente.Font = new Font("Segoe UI", 12F);
+            cbCiudadCliente.FormattingEnabled = true;
+            cbCiudadCliente.Location = new Point(109, 190);
+            cbCiudadCliente.Name = "cbCiudadCliente";
+            cbCiudadCliente.Size = new Size(201, 29);
+            cbCiudadCliente.TabIndex = 24;
             // 
             // gbDatosPersCliente
             // 
@@ -317,23 +326,26 @@
             // 
             // bGuardarCliente
             // 
+            bGuardarCliente.BackColor = SystemColors.ControlDark;
             bGuardarCliente.Font = new Font("Segoe UI", 12F);
             bGuardarCliente.Location = new Point(383, 412);
             bGuardarCliente.Name = "bGuardarCliente";
             bGuardarCliente.Size = new Size(130, 30);
             bGuardarCliente.TabIndex = 26;
             bGuardarCliente.Text = "Guardar";
-            bGuardarCliente.UseVisualStyleBackColor = true;
+            bGuardarCliente.UseVisualStyleBackColor = false;
             // 
             // bLimpiarCliente
             // 
+            bLimpiarCliente.BackColor = SystemColors.ControlDark;
             bLimpiarCliente.Font = new Font("Segoe UI", 12F);
             bLimpiarCliente.Location = new Point(534, 412);
             bLimpiarCliente.Name = "bLimpiarCliente";
             bLimpiarCliente.Size = new Size(130, 30);
             bLimpiarCliente.TabIndex = 27;
             bLimpiarCliente.Text = "Limpiar";
-            bLimpiarCliente.UseVisualStyleBackColor = true;
+            bLimpiarCliente.UseVisualStyleBackColor = false;
+            bLimpiarCliente.Click += bLimpiarCliente_Click;
             // 
             // fGestionClientes
             // 
@@ -371,18 +383,18 @@
         private RadioButton rbFemeninoCliente;
         private GroupBox gbSexoCliente;
         private Label lTelefonoCliente;
-        private TextBox textBox2;
+        private TextBox tTelCliente;
         private Label lDirecciónCliente;
         private TextBox tDirecciónCliente;
         private Label lCiudadCliente;
-        private TextBox tCiudadCliente;
         private Label lProvinciaCliente;
-        private TextBox tProvinciaCliente;
         private Label lEmailCliente;
         private TextBox tEmailCliente;
         private GroupBox gbDatosContCliente;
         private GroupBox gbDatosPersCliente;
         private Button bGuardarCliente;
         private Button bLimpiarCliente;
+        private ComboBox cbCiudadCliente;
+        private ComboBox cbProvinciaCliente;
     }
 }

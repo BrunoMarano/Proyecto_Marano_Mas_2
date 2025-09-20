@@ -77,5 +77,10 @@ namespace AvicolaVentas
 
             }
         }
+
+        private void buttonCrearProveedor_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
