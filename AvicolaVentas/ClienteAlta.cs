@@ -24,7 +24,7 @@ namespace AvicolaVentas
 
         private void fGestionClientes_Load(object sender, EventArgs e)
         {
-            cbProvinciaCliente.DataSource = ObtenerProvincia();
+            //cbProvinciaCliente.DataSource = ObtenerProvincia();
             cbProvinciaCliente.DisplayMember = "NombreProvincia";
             cbProvinciaCliente.ValueMember = "IdProvincia";
         }

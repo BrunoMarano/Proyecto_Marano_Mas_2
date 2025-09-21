@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace AvicolaVentas
 {
-    public partial class Form1 : Form
+    public partial class AltaProductos : Form
     {
-        public Form1()
+        public AltaProductos()
         {
             InitializeComponent();
         }
+
+        private void tDescripcionProd_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
     }
 }
+
