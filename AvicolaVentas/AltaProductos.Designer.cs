@@ -1,6 +1,6 @@
 ﻿namespace AvicolaVentas
 {
-    partial class AltaProductos
+    partial class FAltaProductos
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -37,146 +37,195 @@
             bLimpiarProd = new Button();
             ((System.ComponentModel.ISupportInitialize)pImagenProd).BeginInit();
             SuspendLayout();
-
-            // Labels
+            // 
+            // lDescripciónProd
+            // 
             lDescripciónProd.AutoSize = true;
-            lDescripciónProd.BackColor = System.Drawing.Color.Transparent;
-            lDescripciónProd.Font = new System.Drawing.Font("Segoe UI", 12F);
-            lDescripciónProd.Location = new System.Drawing.Point(74, 54);
+            lDescripciónProd.BackColor = Color.Transparent;
+            lDescripciónProd.Font = new Font("Segoe UI", 12F);
+            lDescripciónProd.Location = new Point(80, 122);
             lDescripciónProd.Name = "lDescripciónProd";
-            lDescripciónProd.Size = new System.Drawing.Size(76, 21);
+            lDescripciónProd.Size = new Size(76, 21);
+            lDescripciónProd.TabIndex = 18;
             lDescripciónProd.Text = "Producto:";
-
+            // 
+            // lPrecioProd
+            // 
             lPrecioProd.AutoSize = true;
-            lPrecioProd.BackColor = System.Drawing.Color.Transparent;
-            lPrecioProd.Font = new System.Drawing.Font("Segoe UI", 12F);
-            lPrecioProd.Location = new System.Drawing.Point(74, 148);
+            lPrecioProd.BackColor = Color.Transparent;
+            lPrecioProd.Font = new Font("Segoe UI", 12F);
+            lPrecioProd.Location = new Point(80, 216);
             lPrecioProd.Name = "lPrecioProd";
-            lPrecioProd.Size = new System.Drawing.Size(56, 21);
+            lPrecioProd.Size = new Size(56, 21);
+            lPrecioProd.TabIndex = 17;
             lPrecioProd.Text = "Precio:";
-
+            // 
+            // lStockProd
+            // 
             lStockProd.AutoSize = true;
-            lStockProd.BackColor = System.Drawing.Color.Transparent;
-            lStockProd.Font = new System.Drawing.Font("Segoe UI", 12F);
-            lStockProd.Location = new System.Drawing.Point(74, 178);
+            lStockProd.BackColor = Color.Transparent;
+            lStockProd.Font = new Font("Segoe UI", 12F);
+            lStockProd.Location = new Point(80, 246);
             lStockProd.Name = "lStockProd";
-            lStockProd.Size = new System.Drawing.Size(50, 21);
+            lStockProd.Size = new Size(50, 21);
+            lStockProd.TabIndex = 16;
             lStockProd.Text = "Stock:";
-
+            // 
+            // lCategoriaProd
+            // 
             lCategoriaProd.AutoSize = true;
-            lCategoriaProd.BackColor = System.Drawing.Color.Transparent;
-            lCategoriaProd.Font = new System.Drawing.Font("Segoe UI", 12F);
-            lCategoriaProd.Location = new System.Drawing.Point(74, 117);
+            lCategoriaProd.BackColor = Color.Transparent;
+            lCategoriaProd.Font = new Font("Segoe UI", 12F);
+            lCategoriaProd.Location = new Point(80, 185);
             lCategoriaProd.Name = "lCategoriaProd";
-            lCategoriaProd.Size = new System.Drawing.Size(80, 21);
+            lCategoriaProd.Size = new Size(80, 21);
+            lCategoriaProd.TabIndex = 15;
             lCategoriaProd.Text = "Categoria:";
-
+            // 
+            // lFechaAltaProd
+            // 
             lFechaAltaProd.AutoSize = true;
-            lFechaAltaProd.BackColor = System.Drawing.Color.Transparent;
-            lFechaAltaProd.Font = new System.Drawing.Font("Segoe UI", 12F);
-            lFechaAltaProd.Location = new System.Drawing.Point(74, 212);
+            lFechaAltaProd.BackColor = Color.Transparent;
+            lFechaAltaProd.Font = new Font("Segoe UI", 12F);
+            lFechaAltaProd.Location = new Point(80, 280);
             lFechaAltaProd.Name = "lFechaAltaProd";
-            lFechaAltaProd.Size = new System.Drawing.Size(103, 21);
+            lFechaAltaProd.Size = new Size(103, 21);
+            lFechaAltaProd.TabIndex = 14;
             lFechaAltaProd.Text = "Fecha de alta:";
-
+            // 
+            // lEstadoProd
+            // 
             lEstadoProd.AutoSize = true;
-            lEstadoProd.BackColor = System.Drawing.Color.Transparent;
-            lEstadoProd.Font = new System.Drawing.Font("Segoe UI", 12F);
-            lEstadoProd.Location = new System.Drawing.Point(74, 247);
+            lEstadoProd.BackColor = Color.Transparent;
+            lEstadoProd.Font = new Font("Segoe UI", 12F);
+            lEstadoProd.Location = new Point(80, 315);
             lEstadoProd.Name = "lEstadoProd";
-            lEstadoProd.Size = new System.Drawing.Size(59, 21);
+            lEstadoProd.Size = new Size(59, 21);
+            lEstadoProd.TabIndex = 13;
             lEstadoProd.Text = "Estado:";
-
+            // 
+            // label1
+            // 
             label1.AutoSize = true;
-            label1.BackColor = System.Drawing.Color.Transparent;
-            label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline);
-            label1.Location = new System.Drawing.Point(26, 9);
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold | FontStyle.Underline);
+            label1.Location = new Point(32, 77);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(181, 28);
+            label1.Size = new Size(181, 28);
+            label1.TabIndex = 12;
             label1.Text = "Alta de Productos";
-
-            // ComboBox Producto
+            // 
+            // cbProducto
+            // 
             cbProducto.FormattingEnabled = true;
-            cbProducto.Location = new System.Drawing.Point(174, 52);
+            cbProducto.Location = new Point(180, 120);
             cbProducto.Name = "cbProducto";
-            cbProducto.Size = new System.Drawing.Size(195, 23);
+            cbProducto.Size = new Size(195, 23);
             cbProducto.TabIndex = 7;
-
-            // Label Descripción
+            // 
+            // lDescripcionProd
+            // 
             lDescripcionProd.AutoSize = true;
-            lDescripcionProd.BackColor = System.Drawing.Color.Transparent;
-            lDescripcionProd.Font = new System.Drawing.Font("Segoe UI", 12F);
-            lDescripcionProd.Location = new System.Drawing.Point(74, 85);
+            lDescripcionProd.BackColor = Color.Transparent;
+            lDescripcionProd.Font = new Font("Segoe UI", 12F);
+            lDescripcionProd.Location = new Point(80, 153);
             lDescripcionProd.Name = "lDescripcionProd";
-            lDescripcionProd.Size = new System.Drawing.Size(94, 21);
+            lDescripcionProd.Size = new Size(94, 21);
+            lDescripcionProd.TabIndex = 11;
             lDescripcionProd.Text = "Descripción:";
-
-            // ComboBox Categoría
+            // 
+            // cbCategoriaProd
+            // 
             cbCategoriaProd.FormattingEnabled = true;
-            cbCategoriaProd.Location = new System.Drawing.Point(174, 115);
+            cbCategoriaProd.Location = new Point(180, 183);
             cbCategoriaProd.Name = "cbCategoriaProd";
-            cbCategoriaProd.Size = new System.Drawing.Size(195, 23);
+            cbCategoriaProd.Size = new Size(195, 23);
             cbCategoriaProd.TabIndex = 9;
-
-            // TextBox Descripción
-            tDescripcionProd.Location = new System.Drawing.Point(174, 84);
+            // 
+            // tDescripcionProd
+            // 
+            tDescripcionProd.Location = new Point(180, 152);
             tDescripcionProd.Name = "tDescripcionProd";
-            tDescripcionProd.Size = new System.Drawing.Size(195, 23);
+            tDescripcionProd.Size = new Size(195, 23);
             tDescripcionProd.TabIndex = 10;
             tDescripcionProd.TextChanged += tDescripcionProd_TextChanged;
-
-            // TextBoxes Precio y Stock
-            tPrecioProd.Location = new System.Drawing.Point(174, 146);
+            // 
+            // tPrecioProd
+            // 
+            tPrecioProd.Location = new Point(180, 214);
             tPrecioProd.Name = "tPrecioProd";
-            tPrecioProd.Size = new System.Drawing.Size(195, 23);
-
-            tStockProd.Location = new System.Drawing.Point(174, 177);
+            tPrecioProd.Size = new Size(195, 23);
+            tPrecioProd.TabIndex = 6;
+            // 
+            // tStockProd
+            // 
+            tStockProd.Location = new Point(180, 245);
             tStockProd.Name = "tStockProd";
-            tStockProd.Size = new System.Drawing.Size(195, 23);
-
-            // DateTimePicker
+            tStockProd.Size = new Size(195, 23);
+            tStockProd.TabIndex = 5;
+            // 
+            // dtpFechaAltaProd
+            // 
             dtpFechaAltaProd.Format = DateTimePickerFormat.Short;
-            dtpFechaAltaProd.Location = new System.Drawing.Point(183, 210);
-            dtpFechaAltaProd.Size = new System.Drawing.Size(186, 23);
+            dtpFechaAltaProd.Location = new Point(189, 278);
+            dtpFechaAltaProd.Name = "dtpFechaAltaProd";
+            dtpFechaAltaProd.Size = new Size(186, 23);
+            dtpFechaAltaProd.TabIndex = 4;
             dtpFechaAltaProd.Visible = false;
-
-            // CheckBox Estado
+            // 
+            // cActivoProd
+            // 
             cActivoProd.AutoSize = true;
-            cActivoProd.BackColor = System.Drawing.Color.Transparent;
-            cActivoProd.Location = new System.Drawing.Point(174, 249);
-            cActivoProd.Size = new System.Drawing.Size(124, 19);
+            cActivoProd.BackColor = Color.Transparent;
+            cActivoProd.Location = new Point(180, 317);
+            cActivoProd.Name = "cActivoProd";
+            cActivoProd.Size = new Size(124, 19);
+            cActivoProd.TabIndex = 3;
             cActivoProd.Text = "Activo/ Disponible";
             cActivoProd.UseVisualStyleBackColor = false;
-
-            // PictureBox Imagen
+            // 
+            // pImagenProd
+            // 
             pImagenProd.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pImagenProd.BackColor = Color.Transparent;
             pImagenProd.BackgroundImage = Properties.Resources.logoAvicola;
             pImagenProd.BorderStyle = BorderStyle.FixedSingle;
-            pImagenProd.Location = new System.Drawing.Point(469, 52);
+            pImagenProd.Location = new Point(466, 105);
             pImagenProd.Name = "pImagenProd";
-            pImagenProd.Size = new System.Drawing.Size(140, 148);
-            pImagenProd.SizeMode = PictureBoxSizeMode.Zoom; // Centrado y escalado
+            pImagenProd.Size = new Size(212, 209);
+            pImagenProd.SizeMode = PictureBoxSizeMode.Zoom;
+            pImagenProd.TabIndex = 2;
             pImagenProd.TabStop = false;
-
-            // Botones
+            // 
+            // bGuardarProd
+            // 
             bGuardarProd.BackColor = SystemColors.ControlDark;
-            bGuardarProd.Font = new System.Drawing.Font("Segoe UI", 12F);
-            bGuardarProd.Location = new System.Drawing.Point(166, 313);
-            bGuardarProd.Size = new System.Drawing.Size(130, 30);
+            bGuardarProd.Font = new Font("Segoe UI", 12F);
+            bGuardarProd.Location = new Point(172, 381);
+            bGuardarProd.Name = "bGuardarProd";
+            bGuardarProd.Size = new Size(130, 30);
+            bGuardarProd.TabIndex = 1;
             bGuardarProd.Text = "Guardar";
-
+            bGuardarProd.UseVisualStyleBackColor = false;
+            // 
+            // bLimpiarProd
+            // 
             bLimpiarProd.BackColor = SystemColors.ControlDark;
-            bLimpiarProd.Font = new System.Drawing.Font("Segoe UI", 12F);
-            bLimpiarProd.Location = new System.Drawing.Point(322, 313);
-            bLimpiarProd.Size = new System.Drawing.Size(130, 30);
+            bLimpiarProd.Font = new Font("Segoe UI", 12F);
+            bLimpiarProd.Location = new Point(328, 381);
+            bLimpiarProd.Name = "bLimpiarProd";
+            bLimpiarProd.Size = new Size(130, 30);
+            bLimpiarProd.TabIndex = 0;
             bLimpiarProd.Text = "Limpiar";
-
-            // Formulario
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            bLimpiarProd.UseVisualStyleBackColor = false;
+            // 
+            // FAltaProductos
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Fondo;
             BackgroundImageLayout = ImageLayout.Center;
-            ClientSize = new System.Drawing.Size(704, 522);
+            ClientSize = new Size(704, 522);
             Controls.Add(bLimpiarProd);
             Controls.Add(bGuardarProd);
             Controls.Add(pImagenProd);
@@ -197,10 +246,9 @@
             Controls.Add(lDescripciónProd);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "AltaProductos";
+            Name = "FAltaProductos";
             Text = "Alta de Producto";
             Load += AltaProductos_Load;
-
             ((System.ComponentModel.ISupportInitialize)pImagenProd).EndInit();
             ResumeLayout(false);
             PerformLayout();

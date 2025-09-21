@@ -6,16 +6,30 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
+
 
 namespace AvicolaVentas
 {
     public partial class FormMenu : Form
     {
-        public FormMenu()
+        private int? IDUsuario;
+        private string NombreUsuario;
+        private int? IdRol;
+
+
+        public FormMenu(int? id_usuario, string nombre, int? idRol)
         {
             InitializeComponent();
             customizeDesing();
+
+            IDUsuario = id_usuario;
+            NombreUsuario = nombre;
+            IdRol = idRol;
+
+            labelUsuarioBienvenido.Text = NombreUsuario;
+            ConfigurarPermisos(IdRol);
         }
 
         private void customizeDesing()
@@ -69,6 +83,35 @@ namespace AvicolaVentas
             }
         }
 
+        private void ConfigurarPermisos(int? rol)
+        {
+            // 1 = ADMIN, 2 = GERENTE, 3 = VENDEDOR
+            switch (rol)
+            {
+                case 1: // ADMIN
+                    // todo habilitado
+                    break;
+                case 2: // GERENTE
+                    buttonAltaUsuario.Enabled = false;
+                    buttonBajaModificacionUsuario.Enabled = false;
+
+                    buttonNuevaVenta.Enabled = false;
+                    buttonMisVentas.Enabled = false;
+
+                    break;
+                case 3: // VENDEDOR
+                    buttonAltaUsuario.Enabled = false;
+                    buttonBajaModificacionUsuario.Enabled = false;
+
+                    buttonAltaProveedores.Enabled = false;
+                    buttonBajaModificacionProveedores.Enabled = false;
+
+                    buttonAltaProducto.Enabled = false;
+                    break;
+            }
+        }
+
+
         private void pcLogo_Click(object sender, EventArgs e)
         {
 
@@ -83,14 +126,6 @@ namespace AvicolaVentas
         {
 
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //codigo//
-            hideSubMenu();
-        }
-
-
 
         private void BClientes_Click(object sender, EventArgs e)
         {
@@ -190,5 +225,18 @@ namespace AvicolaVentas
             abrirPanelContenedor(new FormNuevaVenta());
             hideSubMenu();
         }
+
+        private void buttonAltaProducto_Click(object sender, EventArgs e)
+        {
+            abrirPanelContenedor(new FAltaProductos());
+            hideSubMenu();
+        }
+
+        private void FormMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

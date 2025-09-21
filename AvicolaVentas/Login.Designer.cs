@@ -59,6 +59,7 @@
             BIniciar_sesion.TabIndex = 6;
             BIniciar_sesion.Text = "Iniciar Sesion";
             BIniciar_sesion.UseVisualStyleBackColor = true;
+            BIniciar_sesion.Click += BIniciar_sesion_Click;
             // 
             // TContraseña
             // 
@@ -68,6 +69,7 @@
             TContraseña.Size = new Size(132, 23);
             TContraseña.TabIndex = 5;
             TContraseña.Tag = "Contraseña";
+            TContraseña.Text = "123";
             TContraseña.TextChanged += TContraseña_TextChanged;
             // 
             // TBusuario
@@ -77,7 +79,7 @@
             TBusuario.Size = new Size(132, 23);
             TBusuario.TabIndex = 4;
             TBusuario.Tag = "Usuario";
-            TBusuario.Text = "Usuario";
+            TBusuario.Text = "Email";
             TBusuario.TextChanged += TBusuario_TextChanged;
             // 
             // LTitulo_login
@@ -100,6 +102,7 @@
             Controls.Add(PLogin);
             Name = "FLogin";
             Text = "Bienvenido";
+            Load += FLogin_Load;
             PLogin.ResumeLayout(false);
             PLogin.PerformLayout();
             ResumeLayout(false);

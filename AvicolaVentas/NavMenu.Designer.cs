@@ -248,6 +248,7 @@
             buttonAltaProducto.Text = "Alta";
             buttonAltaProducto.TextAlign = ContentAlignment.MiddleLeft;
             buttonAltaProducto.UseVisualStyleBackColor = false;
+            buttonAltaProducto.Click += buttonAltaProducto_Click;
             // 
             // BProductos
             // 
@@ -441,7 +442,7 @@
             // 
             labelUsuarioBienvenido.AutoSize = true;
             labelUsuarioBienvenido.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelUsuarioBienvenido.Location = new Point(291, 144);
+            labelUsuarioBienvenido.Location = new Point(288, 144);
             labelUsuarioBienvenido.Name = "labelUsuarioBienvenido";
             labelUsuarioBienvenido.Size = new Size(64, 21);
             labelUsuarioBienvenido.TabIndex = 5;
@@ -483,6 +484,7 @@
             Name = "FormMenu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu";
+            Load += FormMenu_Load;
             panelMenu.ResumeLayout(false);
             panelMenu.PerformLayout();
             panelUsuario.ResumeLayout(false);
