@@ -17,9 +17,10 @@ namespace AvicolaVentas
         private int? IDUsuario;
         private string NombreUsuario;
         private int? IdRol;
+        private int? DniUsuario;
 
 
-        public FormMenu(int? id_usuario, string nombre, int? idRol)
+        public FormMenu(int? id_usuario, string nombre, int? idRol, int? Dni)
         {
             InitializeComponent();
             customizeDesing();
@@ -27,6 +28,7 @@ namespace AvicolaVentas
             IDUsuario = id_usuario;
             NombreUsuario = nombre;
             IdRol = idRol;
+            DniUsuario = Dni; 
 
             labelUsuarioBienvenido.Text = NombreUsuario;
             ConfigurarPermisos(IdRol);

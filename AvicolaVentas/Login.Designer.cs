@@ -79,7 +79,7 @@
             TBusuario.Size = new Size(132, 23);
             TBusuario.TabIndex = 4;
             TBusuario.Tag = "Usuario";
-            TBusuario.Text = "Email";
+            TBusuario.Text = "DNI";
             TBusuario.TextChanged += TBusuario_TextChanged;
             // 
             // LTitulo_login

@@ -102,7 +102,7 @@
             TBDniUsuario.Name = "TBDniUsuario";
             TBDniUsuario.Size = new Size(203, 23);
             TBDniUsuario.TabIndex = 9;
-            TBDniUsuario.Text = "(Opcional)";
+            TBDniUsuario.Text = "(Sin puntos ni comas)";
             TBDniUsuario.TextChanged += TBDniUsuario_TextChanged;
             TBDniUsuario.KeyPress += TBDniUsuario_KeyPress;
             // 

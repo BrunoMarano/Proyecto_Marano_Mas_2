@@ -151,7 +151,7 @@ namespace AvicolaVentas
         {
             TBNombreUsuario.Text = "";
             TBApellidoUsuario.Text = "";
-            TBDniUsuario.Text = "(Opcional)";
+            TBDniUsuario.Text = "(Sin puntos ni comas)";
             TBCorreoUsuario.Text = "";
             TBTelefonoUsuario.Text = "";
 

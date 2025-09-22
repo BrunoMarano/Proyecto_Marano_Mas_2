@@ -40,5 +40,12 @@ namespace AvicolaVentas
         {
             // Lógica para modificar proveedor
         }
+
+        private void buttonModificar_Click_1(object sender, EventArgs e)
+        {
+            ModificarProveedor FModificarProveedor = new ModificarProveedor();
+
+            FModificarProveedor.Show();
+        }
     }
 }

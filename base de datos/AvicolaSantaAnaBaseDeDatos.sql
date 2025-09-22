@@ -2,9 +2,6 @@ CREATE DATABASE AvicolaSantaAna;
 
 USE AvicolaSantaAna;
 
-CREATE DATABASE AvicolaSantaAna;
-USE AvicolaSantaAna;
-
 -- Tabla Metodo_Pago
 CREATE TABLE Metodo_Pago
 (
@@ -163,3 +160,8 @@ VALUES
 ('GERENTE'),
 ('VENDEDOR');
 
+
+INSERT INTO Usuario
+(Dni, Nombre, Apellido, Correo, Telefono, Sexo, Fecha_Nacimiento, contraseña, baja, Id_rol)
+VALUES
+(42603123, 'Bruno', 'Marano', 'brunojoelmarano@gmail.com', '1123456789', 'Hombre', '2000-03-13', '12345', 0, 1);

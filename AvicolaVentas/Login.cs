@@ -57,15 +57,15 @@ namespace AvicolaVentas
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = @"SELECT id_usuario, Nombre, Apellido, id_rol 
+                string query = @"SELECT id_usuario, Nombre, Apellido, id_rol, Dni 
                  FROM Usuario 
-                 WHERE (Nombre + ' ' + Apellido = @Usuario)
+                 WHERE (Dni = @Usuario)
                    AND contraseña = @Contraseña 
                    AND baja = 0";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.Add("@Usuario", SqlDbType.VarChar, 200).Value = usuario;
+                    cmd.Parameters.Add("@Usuario", SqlDbType.Int).Value = int.Parse(usuario);
                     cmd.Parameters.Add("@Contraseña", SqlDbType.VarChar, 600).Value = contraseña;
 
                     try
@@ -77,6 +77,7 @@ namespace AvicolaVentas
                         {
                             int? idUsuario = reader["id_usuario"] != DBNull.Value ? Convert.ToInt32(reader["id_usuario"]) : 0;
                             int? idRol = reader["id_rol"] != DBNull.Value ? Convert.ToInt32(reader["id_rol"]) : 0;
+                            int? Dni = reader["Dni"] != DBNull.Value ? Convert.ToInt32(reader["Dni"]) : 0 ;
 
                             string? nombre = reader["Nombre"] != DBNull.Value ? reader["Nombre"].ToString() : "";
                             string? apellido = reader["Apellido"] != DBNull.Value ? reader["Apellido"].ToString() : "";
@@ -85,7 +86,7 @@ namespace AvicolaVentas
 
                             // Abrir formulario principal
                             this.Hide();
-                            FormMenu menu = new FormMenu(idUsuario, nombreCompleto, idRol);
+                            FormMenu menu = new FormMenu(idUsuario, nombreCompleto, idRol,Dni);
                             menu.Show();
                         }
                         else

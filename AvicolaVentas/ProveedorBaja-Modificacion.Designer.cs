@@ -43,7 +43,7 @@
             dataGridViewProveedores.Name = "dataGridViewProveedores";
             dataGridViewProveedores.Size = new Size(646, 338);
             dataGridViewProveedores.TabIndex = 0;
-            dataGridViewProveedores.CellContentClick += this.dataGridViewProveedores_CellContentClick;
+            dataGridViewProveedores.CellContentClick += dataGridViewProveedores_CellContentClick;
             // 
             // button1
             // 
@@ -53,7 +53,7 @@
             button1.TabIndex = 1;
             button1.Text = "X";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += this.button1_Click;
+            button1.Click += button1_Click;
             // 
             // buttonEliminarProveedor
             // 
@@ -64,7 +64,7 @@
             buttonEliminarProveedor.TabIndex = 2;
             buttonEliminarProveedor.Text = "Eliminar";
             buttonEliminarProveedor.UseVisualStyleBackColor = false;
-            buttonEliminarProveedor.Click += this.buttonEliminarProveedor_Click;
+            buttonEliminarProveedor.Click += buttonEliminarProveedor_Click;
             // 
             // buttonModificar
             // 
@@ -75,6 +75,7 @@
             buttonModificar.TabIndex = 3;
             buttonModificar.Text = "Modificar";
             buttonModificar.UseVisualStyleBackColor = false;
+            buttonModificar.Click += buttonModificar_Click_1;
             // 
             // FormBajaModificacionProveedor
             // 
