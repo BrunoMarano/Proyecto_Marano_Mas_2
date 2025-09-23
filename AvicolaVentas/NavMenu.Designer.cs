@@ -117,6 +117,7 @@
             buttonBajaModificacionUsuario.Text = "Baja-Modificacion";
             buttonBajaModificacionUsuario.TextAlign = ContentAlignment.MiddleLeft;
             buttonBajaModificacionUsuario.UseVisualStyleBackColor = false;
+            buttonBajaModificacionUsuario.Click += buttonBajaModificacionUsuario_Click;
             // 
             // buttonAltaUsuario
             // 
@@ -175,6 +176,7 @@
             buttonMisVentas.Text = "Mis Ventas";
             buttonMisVentas.TextAlign = ContentAlignment.MiddleLeft;
             buttonMisVentas.UseVisualStyleBackColor = false;
+            buttonMisVentas.Click += buttonMisVentas_Click;
             // 
             // buttonNuevaVenta
             // 
@@ -233,6 +235,7 @@
             buttonBajaModificacionProducto.Text = "Baja-Modificacion";
             buttonBajaModificacionProducto.TextAlign = ContentAlignment.MiddleLeft;
             buttonBajaModificacionProducto.UseVisualStyleBackColor = false;
+            buttonBajaModificacionProducto.Click += buttonBajaModificacionProducto_Click_1;
             // 
             // buttonAltaProducto
             // 

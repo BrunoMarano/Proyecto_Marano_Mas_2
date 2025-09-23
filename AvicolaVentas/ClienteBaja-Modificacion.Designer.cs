@@ -64,6 +64,7 @@
             buttonModificacionCliente.TabIndex = 3;
             buttonModificacionCliente.Text = "Modificacion";
             buttonModificacionCliente.UseVisualStyleBackColor = false;
+            buttonModificacionCliente.Click += buttonModificacionCliente_Click;
             // 
             // buttonSalirUsuarioBaja
             // 

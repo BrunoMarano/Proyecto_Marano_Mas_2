@@ -69,6 +69,7 @@
             BModificarProveedor.TabIndex = 34;
             BModificarProveedor.Text = "Modificar";
             BModificarProveedor.UseVisualStyleBackColor = false;
+            BModificarProveedor.Click += BModificarProveedor_Click;
             // 
             // BLimpiarModifProveedor
             // 

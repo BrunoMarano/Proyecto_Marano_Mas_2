@@ -10,16 +10,18 @@ using System.Windows.Forms;
 
 namespace AvicolaVentas
 {
-    public partial class ModificarProveedor : Form
+    public partial class Baja_ModificarUsuario : Form
     {
-        public ModificarProveedor()
+        public Baja_ModificarUsuario()
         {
             InitializeComponent();
         }
 
-        private void BModificarProveedor_Click(object sender, EventArgs e)
+        private void BModificarUsuario_Click(object sender, EventArgs e)
         {
+            ModificarUsuario FModificarUsuario = new ModificarUsuario();
 
+            FModificarUsuario.Show();
         }
     }
 }

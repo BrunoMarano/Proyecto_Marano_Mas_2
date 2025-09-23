@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace AvicolaVentas
 {
-    public partial class ModificarProveedor : Form
+    public partial class FMisVentas : Form
     {
-        public ModificarProveedor()
+        public FMisVentas()
         {
             InitializeComponent();
-        }
-
-        private void BModificarProveedor_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

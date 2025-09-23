@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModificaciónProductos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,13 @@ namespace AvicolaVentas
         private void buttonSalirUsuarioBaja_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void buttonModificacionCliente_Click(object sender, EventArgs e)
+        {
+            ModificarCliente FModificarCliente = new ModificarCliente();
+
+            FModificarCliente.Show();
         }
     }
 }

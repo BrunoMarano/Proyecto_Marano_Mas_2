@@ -28,7 +28,7 @@ namespace AvicolaVentas
             IDUsuario = id_usuario;
             NombreUsuario = nombre;
             IdRol = idRol;
-            DniUsuario = Dni; 
+            DniUsuario = Dni;
 
             labelUsuarioBienvenido.Text = NombreUsuario;
             ConfigurarPermisos(IdRol);
@@ -109,6 +109,7 @@ namespace AvicolaVentas
                     buttonBajaModificacionProveedores.Enabled = false;
 
                     buttonAltaProducto.Enabled = false;
+                    buttonBajaModificacionProducto.Enabled = false;
                     break;
             }
         }
@@ -239,6 +240,23 @@ namespace AvicolaVentas
 
         }
 
-       
+        private void buttonBajaModificacionUsuario_Click(object sender, EventArgs e)
+        {
+            abrirPanelContenedor(new Baja_ModificarUsuario());
+            hideSubMenu();
+        }
+
+        private void buttonBajaModificacionProducto_Click_1(object sender, EventArgs e)
+        {
+            abrirPanelContenedor(new FBajaModificacionProducto());
+            hideSubMenu();
+        }
+
+        private void buttonMisVentas_Click(object sender, EventArgs e)
+        {
+            abrirPanelContenedor(new FMisVentas());
+            hideSubMenu();
+
+        }
     }
 }
