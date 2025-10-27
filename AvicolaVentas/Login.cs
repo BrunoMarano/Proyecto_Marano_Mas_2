@@ -2,12 +2,7 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using Microsoft.Data.SqlClient;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using SqlConnection = Microsoft.Data.SqlClient.SqlConnection;
-using SqlCommand = Microsoft.Data.SqlClient.SqlCommand;
-using SqlDataAdapter = Microsoft.Data.SqlClient.SqlDataAdapter;
-using SqlDataReader = Microsoft.Data.SqlClient.SqlDataReader;
+using System.Windows.Forms;
 
 namespace AvicolaVentas
 {
@@ -15,10 +10,15 @@ namespace AvicolaVentas
 
     {
 
-        string connectionString = @"Server=localhost\SQLEXPRESS; Database=AvicolaSantaAna; Trusted_Connection=True; TrustServerCertificate=True;";
+        string connectionString = @"Data Source=FERNANDO\SQLEXPRESS02;Initial Catalog=AvicolaSantaAna1;Integrated Security=True;TrustServerCertificate=True;";
         public FLogin()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.WindowState = FormWindowState.Normal;
+            this.Visible = true;
+            this.ShowInTaskbar = true;
+            this.Opacity = 1;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -38,14 +38,17 @@ namespace AvicolaVentas
 
         private void FLogin_Load(object sender, EventArgs e)
         {
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.WindowState = FormWindowState.Normal;
+            this.Location = new Point(100, 100); // Fuerza una posición visible
+            this.ShowInTaskbar = true;
 
         }
 
-        private void BIniciar_sesion_Click(object sender, EventArgs e)
+        private void BIniciarSesion_Click(object sender, EventArgs e)
         {
-            
-            string usuario = TBusuario.Text.Trim();
-            string contraseña = TContraseña.Text.Trim();
+            string usuario = TBUsuario.Text.Trim();
+            string contraseña = TBContraseña.Text.Trim();
 
             if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contraseña))
             {
@@ -53,7 +56,7 @@ namespace AvicolaVentas
                 return;
             }
 
-            
+
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -77,7 +80,7 @@ namespace AvicolaVentas
                         {
                             int? idUsuario = reader["id_usuario"] != DBNull.Value ? Convert.ToInt32(reader["id_usuario"]) : 0;
                             int? idRol = reader["id_rol"] != DBNull.Value ? Convert.ToInt32(reader["id_rol"]) : 0;
-                            int? Dni = reader["Dni"] != DBNull.Value ? Convert.ToInt32(reader["Dni"]) : 0 ;
+                            int? Dni = reader["Dni"] != DBNull.Value ? Convert.ToInt32(reader["Dni"]) : 0;
 
                             string? nombre = reader["Nombre"] != DBNull.Value ? reader["Nombre"].ToString() : "";
                             string? apellido = reader["Apellido"] != DBNull.Value ? reader["Apellido"].ToString() : "";
@@ -86,7 +89,7 @@ namespace AvicolaVentas
 
                             // Abrir formulario principal
                             this.Hide();
-                            FormMenu menu = new FormMenu(idUsuario, nombreCompleto, idRol,Dni);
+                            FormMenu menu = new FormMenu(idUsuario, nombreCompleto, idRol, Dni);
                             menu.Show();
                         }
                         else
@@ -101,7 +104,6 @@ namespace AvicolaVentas
                 }
             }
         }
-
     }
 }
 

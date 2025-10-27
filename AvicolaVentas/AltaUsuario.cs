@@ -15,14 +15,14 @@ using SqlDataAdapter = Microsoft.Data.SqlClient.SqlDataAdapter;
 
 namespace AvicolaVentas
 {
-    public partial class FAltaUsuario : Form
+    public partial class fGestionUsuarios : Form
     {
 
         string connectionString = @"Server=localhost\SQLEXPRESS; Database=AvicolaSantaAna; Trusted_Connection=True; TrustServerCertificate=True;";
 
 
 
-        public FAltaUsuario()
+        public fGestionUsuarios()
         {
             InitializeComponent();
         }

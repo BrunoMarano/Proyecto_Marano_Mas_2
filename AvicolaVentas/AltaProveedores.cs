@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AvicolaVentas
 {
-    public partial class FormAltaProveedores : Form
+    public partial class fGestionProveedores : Form
     {
-        public FormAltaProveedores()
+        public fGestionProveedores()
         {
             InitializeComponent();
         }

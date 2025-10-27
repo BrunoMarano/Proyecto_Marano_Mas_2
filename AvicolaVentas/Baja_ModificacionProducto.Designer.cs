@@ -1,6 +1,6 @@
 ﻿namespace AvicolaVentas
 {
-    partial class FBajaModificacionProducto
+    partial class fBuscarProductos
     {
         /// <summary>
         /// Required designer variable.
@@ -64,7 +64,7 @@
             buttonModificacionProducto.UseVisualStyleBackColor = false;
             buttonModificacionProducto.Click += buttonModificacionProducto_Click;
             // 
-            // FBajaModificacionProducto
+            // fBuscarProductos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -73,7 +73,7 @@
             Controls.Add(buttonModificacionProducto);
             Controls.Add(buttonBajaProducto);
             Controls.Add(dataGridViewProducto);
-            Name = "FBajaModificacionProducto";
+            Name = "fBuscarProductos";
             Text = "Baja-Modificacion Producto";
             ((System.ComponentModel.ISupportInitialize)dataGridViewProducto).EndInit();
             ResumeLayout(false);

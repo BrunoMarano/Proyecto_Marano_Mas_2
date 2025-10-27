@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AvicolaVentas
 {
-    public partial class FBajaModificacionProducto : Form
+    public partial class fBuscarProductos : Form
     {
-        public FBajaModificacionProducto()
+        public fBuscarProductos()
         {
             InitializeComponent();
         }

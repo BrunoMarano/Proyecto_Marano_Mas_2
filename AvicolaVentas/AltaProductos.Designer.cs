@@ -1,6 +1,6 @@
 ﻿namespace AvicolaVentas
 {
-    partial class FAltaProductos
+    partial class fGestionProductos
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -219,7 +219,7 @@
             bLimpiarProd.Text = "Limpiar";
             bLimpiarProd.UseVisualStyleBackColor = false;
             // 
-            // FAltaProductos
+            // fGestionProductos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -246,7 +246,7 @@
             Controls.Add(lDescripciónProd);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "FAltaProductos";
+            Name = "fGestionProductos";
             Text = "Alta de Producto";
             Load += AltaProductos_Load;
             ((System.ComponentModel.ISupportInitialize)pImagenProd).EndInit();

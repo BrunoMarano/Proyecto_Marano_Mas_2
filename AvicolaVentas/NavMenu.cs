@@ -23,7 +23,6 @@ namespace AvicolaVentas
         public FormMenu(int? id_usuario, string nombre, int? idRol, int? Dni)
         {
             InitializeComponent();
-            customizeDesing();
 
             IDUsuario = id_usuario;
             NombreUsuario = nombre;
@@ -31,58 +30,24 @@ namespace AvicolaVentas
             DniUsuario = Dni;
 
             labelUsuarioBienvenido.Text = NombreUsuario;
+
+            switch (IdRol)
+            {
+                case 1: // ADMIN
+                    LModificarRol.Text = "Administrador";
+                    LModificarUsuario.Text = NombreUsuario;
+                    break;
+                case 2: // GERENTE
+                    LModificarRol.Text = "Gerente";
+                    LModificarUsuario.Text = NombreUsuario;
+
+                    break;
+                case 3: // VENDEDOR
+                    LModificarRol.Text = "Vendedor";
+                    LModificarUsuario.Text = NombreUsuario;
+                    break;
+            }
             ConfigurarPermisos(IdRol);
-        }
-
-        private void customizeDesing()
-        {
-            panelClientes.Visible = false;
-            panelProductos.Visible = false;
-            panelProveedores.Visible = false;
-            panelVenta.Visible = false;
-            panelUsuario.Visible = false;
-
-        }
-
-        private void hideSubMenu()
-        {
-            if (panelClientes.Visible == true)
-            {
-                panelClientes.Visible = false;
-            }
-            if (panelProductos.Visible == true)
-            {
-                panelProductos.Visible = false;
-            }
-            if (panelProveedores.Visible == true)
-            {
-                panelProveedores.Visible = false;
-            }
-            if (panelVenta.Visible == true)
-            {
-                panelVenta.Visible = false;
-            }
-            if (panelUsuario.Visible == true)
-            {
-                panelUsuario.Visible = false;
-            }
-            if (panelVenta.Visible == true)
-            {
-                panelVenta.Visible = false;
-            }
-        }
-
-        private void showSubMenu(Panel subMenu)
-        {
-            if (subMenu.Visible == false)
-            {
-                hideSubMenu();
-                subMenu.Visible = true;
-            }
-            else
-            {
-                subMenu.Visible = false;
-            }
         }
 
         private void ConfigurarPermisos(int? rol)
@@ -91,25 +56,28 @@ namespace AvicolaVentas
             switch (rol)
             {
                 case 1: // ADMIN
-                    // todo habilitado
+                    BUsuarios.Enabled = true;
+                    BProductos.Enabled = true;
+                    BProveedores.Enabled = true;
+                    BVentas.Visible = false;
+                    BClientes.Visible = false;
+                    BReportes.Visible = false;
                     break;
                 case 2: // GERENTE
-                    buttonAltaUsuario.Enabled = false;
-                    buttonBajaModificacionUsuario.Enabled = false;
-
-                    buttonNuevaVenta.Enabled = false;
-                    buttonMisVentas.Enabled = false;
-
+                    BReportes.Enabled = true;
+                    BUsuarios.Visible = false;
+                    BProductos.Visible = false;
+                    BProveedores.Visible = false;
+                    BVentas.Visible = false;
+                    BClientes.Visible = false;
                     break;
                 case 3: // VENDEDOR
-                    buttonAltaUsuario.Enabled = false;
-                    buttonBajaModificacionUsuario.Enabled = false;
-
-                    buttonAltaProveedores.Enabled = false;
-                    buttonBajaModificacionProveedores.Enabled = false;
-
-                    buttonAltaProducto.Enabled = false;
-                    buttonBajaModificacionProducto.Enabled = false;
+                    BVentas.Enabled = true;
+                    BClientes.Enabled = true;
+                    BProductos.Enabled = true;
+                    BUsuarios.Visible = false;
+                    BProveedores.Visible = false;
+                    BReportes.Visible = false;
                     break;
             }
         }
@@ -132,28 +100,68 @@ namespace AvicolaVentas
 
         private void BClientes_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelClientes);
-
+            panelContenedor.Controls.Clear(); // Limpiar panel
+            fGestionClientes clientesForm = new fGestionClientes();
+            clientesForm.TopLevel = false; // Para poder mostrarlo dentro del panel
+            clientesForm.Dock = DockStyle.Fill; // Que ocupe todo el panel
+            clientesForm.FormBorderStyle = FormBorderStyle.None;
+            panelContenedor.Controls.Add(clientesForm);
+            clientesForm.Show();
         }
 
         private void BProductos_Click_1(object sender, EventArgs e)
         {
-            showSubMenu(panelProductos);
+            switch (IdRol)
+            {
+                case 1: // ADMIN
+                    panelContenedor.Controls.Clear(); // Limpiar panel
+                    fGestionProductos productosForm = new fGestionProductos();
+                    productosForm.TopLevel = false; // Para poder mostrarlo dentro del panel
+                    productosForm.Dock = DockStyle.Fill; // Que ocupe todo el panel
+                    panelContenedor.Controls.Add(productosForm);
+                    productosForm.Show();
+                    break;
+                case 2: // GERENTE
+                    break;
+                case 3: // VENDEDOR
+                    panelContenedor.Controls.Clear(); // Limpiar panel
+                    fBuscarProductos buscarProductosForm = new fBuscarProductos();
+                    buscarProductosForm.TopLevel = false; // Para poder mostrarlo dentro del panel
+                    buscarProductosForm.Dock = DockStyle.Fill; // Que ocupe todo el panel
+                    panelContenedor.Controls.Add(buscarProductosForm);
+                    buscarProductosForm.Show();
+                    break;
+            }
         }
 
         private void BPorveedores_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelProveedores);
+            panelContenedor.Controls.Clear(); // Limpiar panel
+            fGestionProveedores proveedoresForm = new fGestionProveedores();
+            proveedoresForm.TopLevel = false; // Para poder mostrarlo dentro del panel
+            proveedoresForm.Dock = DockStyle.Fill; // Que ocupe todo el panel
+            panelContenedor.Controls.Add(proveedoresForm);
+            proveedoresForm.Show();
         }
 
-        private void BVenta_Click_1(object sender, EventArgs e)
+        private void BVentas_Click_1(object sender, EventArgs e)
         {
-            showSubMenu(panelVenta);
+            panelContenedor.Controls.Clear(); // Limpiar panel
+            fGestionVentas ventasForm = new fGestionVentas();
+            ventasForm.TopLevel = false; // Para poder mostrarlo dentro del panel
+            ventasForm.Dock = DockStyle.Fill; // Que ocupe todo el panel
+            panelContenedor.Controls.Add(ventasForm);
+            ventasForm.Show();
         }
 
         private void BUsuario_Click_1(object sender, EventArgs e)
         {
-            showSubMenu(panelUsuario);
+            panelContenedor.Controls.Clear(); // Limpiar panel
+            fGestionUsuarios clientesForm = new fGestionUsuarios();
+            clientesForm.TopLevel = false; // Para poder mostrarlo dentro del panel
+            clientesForm.Dock = DockStyle.Fill; // Que ocupe todo el panel
+            panelContenedor.Controls.Add(clientesForm);
+            clientesForm.Show();
         }
 
         private Form? activeForm = null;
@@ -173,90 +181,34 @@ namespace AvicolaVentas
             formularioHijo.Show();
         }
 
-        private void buttonModificacionCliente_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonModificacionUsuariuo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonAltaCliente_Click_1(object sender, EventArgs e)
-        {
-            abrirPanelContenedor(new fGestionClientes());
-            hideSubMenu();
-        }
-
-        private void buttonBajaModificacionCliente_Click(object sender, EventArgs e)
-        {
-            abrirPanelContenedor(new FormClienteBajaModificacion());
-            hideSubMenu();
-        }
-
-        private void buttonBajaModificacionProducto_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonBajaModificacionProveedores_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonAltaProveedores_Click(object sender, EventArgs e)
-        {
-            abrirPanelContenedor(new FormAltaProveedores());
-            hideSubMenu();
-        }
-
-        private void buttonBajaModificacionProveedores_Click_1(object sender, EventArgs e)
-        {
-            abrirPanelContenedor(new FormBajaModificacionProveedor());
-            hideSubMenu();
-        }
-
-        private void buttonAltaUsuario_Click(object sender, EventArgs e)
-        {
-            abrirPanelContenedor(new FAltaUsuario());
-            hideSubMenu();
-        }
-
-        private void buttonNuevaVenta_Click(object sender, EventArgs e)
-        {
-            abrirPanelContenedor(new FormNuevaVenta());
-            hideSubMenu();
-        }
-
-        private void buttonAltaProducto_Click(object sender, EventArgs e)
-        {
-            abrirPanelContenedor(new FAltaProductos());
-            hideSubMenu();
-        }
-
         private void FormMenu_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void buttonBajaModificacionUsuario_Click(object sender, EventArgs e)
+        private void PLogoAvicola_Paint(object sender, PaintEventArgs e)
         {
-            abrirPanelContenedor(new Baja_ModificarUsuario());
-            hideSubMenu();
+
         }
 
-        private void buttonBajaModificacionProducto_Click_1(object sender, EventArgs e)
+        private void LModificarRol_Click(object sender, EventArgs e)
         {
-            abrirPanelContenedor(new FBajaModificacionProducto());
-            hideSubMenu();
+
         }
 
-        private void buttonMisVentas_Click(object sender, EventArgs e)
+        private void BCerrarSesion_Click(object sender, EventArgs e)
         {
-            abrirPanelContenedor(new FMisVentas());
-            hideSubMenu();
+            DialogResult preguntarCierre = MessageBox.Show(
+                "¿Estas seguro que deseas cerrar sesión?", 
+                "Cerrar sesión",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
 
+            if(preguntarCierre == DialogResult.Yes) { 
+                FLogin loginForm = new FLogin();
+                loginForm.Show();
+                this.Close();
+            }
         }
     }
 }

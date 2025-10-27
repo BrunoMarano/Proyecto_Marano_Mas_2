@@ -1,6 +1,6 @@
 ﻿namespace AvicolaVentas
 {
-    partial class FAltaUsuario
+    partial class fGestionUsuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FAltaUsuario));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fGestionUsuarios));
             LNombreUsuario = new Label();
             TBNombreUsuario = new TextBox();
             TBApellidoUsuario = new TextBox();
@@ -302,7 +302,7 @@
             labelRolUsuario.TabIndex = 28;
             labelRolUsuario.Text = "Seleccione el Rol";
             // 
-            // FAltaUsuario
+            // fGestionUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -332,7 +332,7 @@
             Controls.Add(TBNombreUsuario);
             Controls.Add(LNombreUsuario);
             MinimumSize = new Size(720, 561);
-            Name = "FAltaUsuario";
+            Name = "fGestionUsuarios";
             Text = "Alta Usuario";
             Load += FAltaUsuario_Load;
             PImaagenUsuario.ResumeLayout(false);

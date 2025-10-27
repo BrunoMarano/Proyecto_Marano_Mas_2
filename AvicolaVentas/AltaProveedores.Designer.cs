@@ -1,6 +1,6 @@
 ﻿namespace AvicolaVentas
 {
-    partial class FormAltaProveedores
+    partial class fGestionProveedores
     {
         /// <summary>
         /// Required designer variable.
@@ -192,7 +192,7 @@
             comboBoxCiudadProveedor.Size = new Size(203, 23);
             comboBoxCiudadProveedor.TabIndex = 22;
             // 
-            // FormAltaProveedores
+            // fGestionProveedores
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -213,7 +213,7 @@
             Controls.Add(labelTelefonoProveedor);
             Controls.Add(textBoxNombreProveedor);
             Controls.Add(labelNombreProveedor);
-            Name = "FormAltaProveedores";
+            Name = "fGestionProveedores";
             Text = "AltaProveedor";
             Load += AltaProveedores_Load;
             ResumeLayout(false);
