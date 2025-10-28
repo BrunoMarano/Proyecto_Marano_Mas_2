@@ -119,6 +119,7 @@
             tApellidoCliente.Name = "tApellidoCliente";
             tApellidoCliente.Size = new Size(201, 25);
             tApellidoCliente.TabIndex = 4;
+            tApellidoCliente.TextChanged += tApellidoCliente_TextChanged;
             tApellidoCliente.KeyPress += tApellidoCliente_KeyPress;
             // 
             // lFechaNacCliente
@@ -221,6 +222,7 @@
             tTelCliente.Name = "tTelCliente";
             tTelCliente.Size = new Size(201, 25);
             tTelCliente.TabIndex = 15;
+            tTelCliente.KeyPress += tTelCliente_KeyPress;
             // 
             // lDirecciónCliente
             // 
@@ -489,6 +491,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Fondo;
+            BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(894, 526);
             Controls.Add(BBuscarCliente);
             Controls.Add(BLimpiarCampos);
@@ -519,7 +522,8 @@
             Controls.Add(lFechaNacCliente);
             Controls.Add(lDniCliente);
             Controls.Add(dtpFechaNacCliente);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "fGestionClientes";
             Text = "Gestión de Clientes";

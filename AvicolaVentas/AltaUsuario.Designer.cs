@@ -28,343 +28,497 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fGestionUsuarios));
-            LNombreUsuario = new Label();
-            TBNombreUsuario = new TextBox();
-            TBApellidoUsuario = new TextBox();
-            LApellidoUsuarioo = new Label();
-            TBDniUsuario = new TextBox();
-            LDniUsuario = new Label();
-            TBCorreoUsuario = new TextBox();
-            LCorreoUsuario = new Label();
-            label1 = new Label();
-            TBTelefonoUsuario = new TextBox();
-            LTelefonoUsuario = new Label();
-            RBHombreUsuario = new RadioButton();
-            RBMujerUsuario = new RadioButton();
-            LFechaNacimientoUusario = new Label();
-            DTPFechaNacimientoUsuario = new DateTimePicker();
-            PImaagenUsuario = new Panel();
-            PBImagenUsuario = new PictureBox();
-            BAltaUsuario = new Button();
-            BLimpiarAltaUsuario = new Button();
-            buttonSalir = new Button();
-            labelContraseña = new Label();
-            textBoxContraseñaUsuario = new TextBox();
-            comboBoxRolUsuario = new ComboBox();
-            labelRolUsuario = new Label();
-            PImaagenUsuario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)PBImagenUsuario).BeginInit();
+            LGestionUsuarios = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            PBLogo = new Guna.UI2.WinForms.Guna2PictureBox();
+            bVolverMenu = new Button();
+            lDni = new Label();
+            tDniUsuario = new TextBox();
+            lNombreUsuario = new Label();
+            tNombreUsuario = new TextBox();
+            lApellidoUsuario = new Label();
+            tApellidoUsuario = new TextBox();
+            lFechaNacUsuario = new Label();
+            dtpFechaNacUsuario = new DateTimePicker();
+            lDireccionUsuario = new Label();
+            tDireccionUsuario = new TextBox();
+            lTelefonoUsuario = new Label();
+            tCelularUsuario = new TextBox();
+            lEmailUsuario = new Label();
+            tEmailUsuario = new TextBox();
+            lSexoUsuario = new Label();
+            cbSexoUsuario = new ComboBox();
+            lContraseñaUsuario = new Label();
+            tContraseñaUsuario = new TextBox();
+            BLimpiarCampos = new Guna.UI2.WinForms.Guna2Button();
+            BEliminarUsuario = new Guna.UI2.WinForms.Guna2Button();
+            BModificarUsuario = new Guna.UI2.WinForms.Guna2Button();
+            BGrabarUsuario = new Guna.UI2.WinForms.Guna2Button();
+            lListadoUsuarios = new Label();
+            lRolUsuario = new Label();
+            cbRolUsuario = new ComboBox();
+            dgvListadoUsuarios = new DataGridView();
+            lEstadoContraseña = new Label();
+            ((System.ComponentModel.ISupportInitialize)PBLogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvListadoUsuarios).BeginInit();
             SuspendLayout();
             // 
-            // LNombreUsuario
+            // LGestionUsuarios
             // 
-            LNombreUsuario.AutoSize = true;
-            LNombreUsuario.BackColor = Color.Transparent;
-            LNombreUsuario.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LNombreUsuario.Location = new Point(54, 69);
-            LNombreUsuario.Name = "LNombreUsuario";
-            LNombreUsuario.Size = new Size(89, 30);
-            LNombreUsuario.TabIndex = 4;
-            LNombreUsuario.Text = "Nombre";
-            LNombreUsuario.Click += label1_Click;
+            LGestionUsuarios.AutoSize = false;
+            LGestionUsuarios.BackColor = Color.Gold;
+            LGestionUsuarios.BackgroundImageLayout = ImageLayout.Center;
+            LGestionUsuarios.Dock = DockStyle.Top;
+            LGestionUsuarios.Font = new Font("Sitka Banner", 20.2499981F, FontStyle.Bold);
+            LGestionUsuarios.Location = new Point(0, 0);
+            LGestionUsuarios.Name = "LGestionUsuarios";
+            LGestionUsuarios.Size = new Size(878, 50);
+            LGestionUsuarios.TabIndex = 30;
+            LGestionUsuarios.Text = "Gestión de Usuarios";
+            LGestionUsuarios.TextAlignment = ContentAlignment.MiddleCenter;
             // 
-            // TBNombreUsuario
+            // PBLogo
             // 
-            TBNombreUsuario.Location = new Point(149, 78);
-            TBNombreUsuario.Name = "TBNombreUsuario";
-            TBNombreUsuario.Size = new Size(203, 23);
-            TBNombreUsuario.TabIndex = 5;
-            TBNombreUsuario.KeyPress += TBNombreUsuario_KeyPress;
+            PBLogo.BackColor = Color.Gold;
+            PBLogo.BackgroundImageLayout = ImageLayout.Stretch;
+            PBLogo.CustomizableEdges = customizableEdges1;
+            PBLogo.Image = Properties.Resources.logoAvicola;
+            PBLogo.ImageRotate = 0F;
+            PBLogo.Location = new Point(0, 0);
+            PBLogo.Name = "PBLogo";
+            PBLogo.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            PBLogo.Size = new Size(73, 50);
+            PBLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+            PBLogo.TabIndex = 31;
+            PBLogo.TabStop = false;
             // 
-            // TBApellidoUsuario
+            // bVolverMenu
             // 
-            TBApellidoUsuario.Location = new Point(149, 138);
-            TBApellidoUsuario.Name = "TBApellidoUsuario";
-            TBApellidoUsuario.Size = new Size(203, 23);
-            TBApellidoUsuario.TabIndex = 7;
-            TBApellidoUsuario.KeyPress += TBApellidoUsuario_KeyPress;
+            bVolverMenu.BackColor = Color.Gold;
+            bVolverMenu.BackgroundImage = Properties.Resources.icons8_volver_67;
+            bVolverMenu.BackgroundImageLayout = ImageLayout.Stretch;
+            bVolverMenu.FlatAppearance.BorderColor = Color.Gold;
+            bVolverMenu.FlatStyle = FlatStyle.Flat;
+            bVolverMenu.Location = new Point(831, 12);
+            bVolverMenu.Name = "bVolverMenu";
+            bVolverMenu.Size = new Size(35, 28);
+            bVolverMenu.TabIndex = 32;
+            bVolverMenu.UseVisualStyleBackColor = false;
             // 
-            // LApellidoUsuarioo
+            // lDni
             // 
-            LApellidoUsuarioo.AutoSize = true;
-            LApellidoUsuarioo.BackColor = Color.Transparent;
-            LApellidoUsuarioo.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LApellidoUsuarioo.Location = new Point(54, 131);
-            LApellidoUsuarioo.Name = "LApellidoUsuarioo";
-            LApellidoUsuarioo.Size = new Size(89, 30);
-            LApellidoUsuarioo.TabIndex = 6;
-            LApellidoUsuarioo.Text = "Apellido";
+            lDni.AutoSize = true;
+            lDni.BackColor = Color.Transparent;
+            lDni.Font = new Font("Sitka Banner", 12F);
+            lDni.Location = new Point(42, 64);
+            lDni.Name = "lDni";
+            lDni.Size = new Size(38, 23);
+            lDni.TabIndex = 33;
+            lDni.Text = "DNI:";
             // 
-            // TBDniUsuario
+            // tDniUsuario
             // 
-            TBDniUsuario.Location = new Point(149, 198);
-            TBDniUsuario.Name = "TBDniUsuario";
-            TBDniUsuario.Size = new Size(203, 23);
-            TBDniUsuario.TabIndex = 9;
-            TBDniUsuario.Text = "(Sin puntos ni comas)";
-            TBDniUsuario.TextChanged += TBDniUsuario_TextChanged;
-            TBDniUsuario.KeyPress += TBDniUsuario_KeyPress;
+            tDniUsuario.Font = new Font("Sitka Banner", 12F);
+            tDniUsuario.Location = new Point(134, 59);
+            tDniUsuario.Name = "tDniUsuario";
+            tDniUsuario.Size = new Size(195, 28);
+            tDniUsuario.TabIndex = 34;
+            tDniUsuario.KeyPress += tDniUsuario_KeyPress;
             // 
-            // LDniUsuario
+            // lNombreUsuario
             // 
-            LDniUsuario.AutoSize = true;
-            LDniUsuario.BackColor = Color.Transparent;
-            LDniUsuario.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LDniUsuario.Location = new Point(54, 196);
-            LDniUsuario.Name = "LDniUsuario";
-            LDniUsuario.Size = new Size(50, 30);
-            LDniUsuario.TabIndex = 8;
-            LDniUsuario.Text = "DNI";
+            lNombreUsuario.AutoSize = true;
+            lNombreUsuario.BackColor = Color.Transparent;
+            lNombreUsuario.Font = new Font("Sitka Banner", 12F);
+            lNombreUsuario.Location = new Point(42, 96);
+            lNombreUsuario.Name = "lNombreUsuario";
+            lNombreUsuario.Size = new Size(64, 23);
+            lNombreUsuario.TabIndex = 35;
+            lNombreUsuario.Text = "Nombre:";
             // 
-            // TBCorreoUsuario
+            // tNombreUsuario
             // 
-            TBCorreoUsuario.Location = new Point(149, 263);
-            TBCorreoUsuario.Name = "TBCorreoUsuario";
-            TBCorreoUsuario.Size = new Size(203, 23);
-            TBCorreoUsuario.TabIndex = 11;
-            TBCorreoUsuario.TextChanged += textBox2_TextChanged;
+            tNombreUsuario.Font = new Font("Sitka Banner", 12F);
+            tNombreUsuario.Location = new Point(134, 90);
+            tNombreUsuario.Name = "tNombreUsuario";
+            tNombreUsuario.Size = new Size(195, 28);
+            tNombreUsuario.TabIndex = 36;
+            tNombreUsuario.KeyPress += tNombreUsuario_KeyPress;
             // 
-            // LCorreoUsuario
+            // lApellidoUsuario
             // 
-            LCorreoUsuario.AutoSize = true;
-            LCorreoUsuario.BackColor = Color.Transparent;
-            LCorreoUsuario.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LCorreoUsuario.Location = new Point(54, 256);
-            LCorreoUsuario.Name = "LCorreoUsuario";
-            LCorreoUsuario.Size = new Size(63, 30);
-            LCorreoUsuario.TabIndex = 10;
-            LCorreoUsuario.Text = "Email";
+            lApellidoUsuario.AutoSize = true;
+            lApellidoUsuario.BackColor = Color.Transparent;
+            lApellidoUsuario.Font = new Font("Sitka Banner", 12F);
+            lApellidoUsuario.Location = new Point(42, 128);
+            lApellidoUsuario.Name = "lApellidoUsuario";
+            lApellidoUsuario.Size = new Size(65, 23);
+            lApellidoUsuario.TabIndex = 37;
+            lApellidoUsuario.Text = "Apellido:";
             // 
-            // label1
+            // tApellidoUsuario
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(376, 213);
-            label1.Name = "label1";
-            label1.Size = new Size(0, 30);
-            label1.TabIndex = 14;
+            tApellidoUsuario.Font = new Font("Sitka Banner", 12F);
+            tApellidoUsuario.Location = new Point(134, 123);
+            tApellidoUsuario.Name = "tApellidoUsuario";
+            tApellidoUsuario.Size = new Size(195, 28);
+            tApellidoUsuario.TabIndex = 38;
+            tApellidoUsuario.KeyPress += tApellidoUsuario_KeyPress;
             // 
-            // TBTelefonoUsuario
+            // lFechaNacUsuario
             // 
-            TBTelefonoUsuario.Location = new Point(149, 386);
-            TBTelefonoUsuario.Name = "TBTelefonoUsuario";
-            TBTelefonoUsuario.Size = new Size(203, 23);
-            TBTelefonoUsuario.TabIndex = 16;
-            TBTelefonoUsuario.KeyPress += TBTelefonoUsuario_KeyPress;
+            lFechaNacUsuario.AutoSize = true;
+            lFechaNacUsuario.BackColor = Color.Transparent;
+            lFechaNacUsuario.Font = new Font("Sitka Banner", 12F);
+            lFechaNacUsuario.Location = new Point(42, 162);
+            lFechaNacUsuario.Name = "lFechaNacUsuario";
+            lFechaNacUsuario.Size = new Size(143, 23);
+            lFechaNacUsuario.TabIndex = 39;
+            lFechaNacUsuario.Text = "Fecha de Nacimiento:";
             // 
-            // LTelefonoUsuario
+            // dtpFechaNacUsuario
             // 
-            LTelefonoUsuario.AutoSize = true;
-            LTelefonoUsuario.BackColor = Color.Transparent;
-            LTelefonoUsuario.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LTelefonoUsuario.Location = new Point(36, 379);
-            LTelefonoUsuario.Name = "LTelefonoUsuario";
-            LTelefonoUsuario.Size = new Size(92, 30);
-            LTelefonoUsuario.TabIndex = 15;
-            LTelefonoUsuario.Text = "Telefono";
+            dtpFechaNacUsuario.CalendarFont = new Font("Sitka Banner", 12F);
+            dtpFechaNacUsuario.DropDownAlign = LeftRightAlignment.Right;
+            dtpFechaNacUsuario.Font = new Font("Sitka Banner", 12F);
+            dtpFechaNacUsuario.Format = DateTimePickerFormat.Short;
+            dtpFechaNacUsuario.Location = new Point(191, 157);
+            dtpFechaNacUsuario.Name = "dtpFechaNacUsuario";
+            dtpFechaNacUsuario.RightToLeft = RightToLeft.No;
+            dtpFechaNacUsuario.Size = new Size(138, 28);
+            dtpFechaNacUsuario.TabIndex = 40;
             // 
-            // RBHombreUsuario
+            // lDireccionUsuario
             // 
-            RBHombreUsuario.AutoSize = true;
-            RBHombreUsuario.BackColor = Color.Transparent;
-            RBHombreUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            RBHombreUsuario.Location = new Point(418, 209);
-            RBHombreUsuario.Name = "RBHombreUsuario";
-            RBHombreUsuario.Size = new Size(85, 25);
-            RBHombreUsuario.TabIndex = 17;
-            RBHombreUsuario.TabStop = true;
-            RBHombreUsuario.Text = "Hombre";
-            RBHombreUsuario.UseVisualStyleBackColor = false;
-            RBHombreUsuario.CheckedChanged += RBHombreUsuario_CheckedChanged;
+            lDireccionUsuario.AutoSize = true;
+            lDireccionUsuario.BackColor = Color.Transparent;
+            lDireccionUsuario.Font = new Font("Sitka Banner", 12F);
+            lDireccionUsuario.Location = new Point(428, 61);
+            lDireccionUsuario.Name = "lDireccionUsuario";
+            lDireccionUsuario.Size = new Size(72, 23);
+            lDireccionUsuario.TabIndex = 42;
+            lDireccionUsuario.Text = "Dirección:";
             // 
-            // RBMujerUsuario
+            // tDireccionUsuario
             // 
-            RBMujerUsuario.AutoSize = true;
-            RBMujerUsuario.BackColor = Color.Transparent;
-            RBMujerUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            RBMujerUsuario.Location = new Point(565, 209);
-            RBMujerUsuario.Name = "RBMujerUsuario";
-            RBMujerUsuario.Size = new Size(69, 25);
-            RBMujerUsuario.TabIndex = 18;
-            RBMujerUsuario.TabStop = true;
-            RBMujerUsuario.Text = "Mujer";
-            RBMujerUsuario.UseVisualStyleBackColor = false;
-            RBMujerUsuario.CheckedChanged += RBMujerUsuario_CheckedChanged;
+            tDireccionUsuario.Font = new Font("Sitka Banner", 12F);
+            tDireccionUsuario.Location = new Point(539, 56);
+            tDireccionUsuario.Name = "tDireccionUsuario";
+            tDireccionUsuario.Size = new Size(195, 28);
+            tDireccionUsuario.TabIndex = 43;
             // 
-            // LFechaNacimientoUusario
+            // lTelefonoUsuario
             // 
-            LFechaNacimientoUusario.AutoSize = true;
-            LFechaNacimientoUusario.BackColor = Color.Transparent;
-            LFechaNacimientoUusario.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LFechaNacimientoUusario.Location = new Point(425, 243);
-            LFechaNacimientoUusario.Name = "LFechaNacimientoUusario";
-            LFechaNacimientoUusario.Size = new Size(209, 30);
-            LFechaNacimientoUusario.TabIndex = 19;
-            LFechaNacimientoUusario.Text = "Fecha de Nacimiento";
+            lTelefonoUsuario.AutoSize = true;
+            lTelefonoUsuario.BackColor = Color.Transparent;
+            lTelefonoUsuario.Font = new Font("Sitka Banner", 12F);
+            lTelefonoUsuario.Location = new Point(428, 93);
+            lTelefonoUsuario.Name = "lTelefonoUsuario";
+            lTelefonoUsuario.Size = new Size(59, 23);
+            lTelefonoUsuario.TabIndex = 44;
+            lTelefonoUsuario.Text = "Celular:";
             // 
-            // DTPFechaNacimientoUsuario
+            // tCelularUsuario
             // 
-            DTPFechaNacimientoUsuario.CalendarFont = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DTPFechaNacimientoUsuario.Location = new Point(418, 286);
-            DTPFechaNacimientoUsuario.Name = "DTPFechaNacimientoUsuario";
-            DTPFechaNacimientoUsuario.Size = new Size(234, 23);
-            DTPFechaNacimientoUsuario.TabIndex = 20;
-            DTPFechaNacimientoUsuario.ValueChanged += DTPFechaNacimientoUsuario_ValueChanged;
+            tCelularUsuario.Font = new Font("Sitka Banner", 12F);
+            tCelularUsuario.Location = new Point(539, 87);
+            tCelularUsuario.Name = "tCelularUsuario";
+            tCelularUsuario.Size = new Size(195, 28);
+            tCelularUsuario.TabIndex = 45;
+            tCelularUsuario.KeyPress += tCelularUsuario_KeyPress;
             // 
-            // PImaagenUsuario
+            // lEmailUsuario
             // 
-            PImaagenUsuario.Controls.Add(PBImagenUsuario);
-            PImaagenUsuario.Location = new Point(455, 49);
-            PImaagenUsuario.Name = "PImaagenUsuario";
-            PImaagenUsuario.Size = new Size(150, 133);
-            PImaagenUsuario.TabIndex = 21;
+            lEmailUsuario.AutoSize = true;
+            lEmailUsuario.BackColor = Color.Transparent;
+            lEmailUsuario.Font = new Font("Sitka Banner", 12F);
+            lEmailUsuario.Location = new Point(428, 125);
+            lEmailUsuario.Name = "lEmailUsuario";
+            lEmailUsuario.Size = new Size(49, 23);
+            lEmailUsuario.TabIndex = 46;
+            lEmailUsuario.Text = "Email:";
             // 
-            // PBImagenUsuario
+            // tEmailUsuario
             // 
-            PBImagenUsuario.Image = (Image)resources.GetObject("PBImagenUsuario.Image");
-            PBImagenUsuario.Location = new Point(12, 6);
-            PBImagenUsuario.Name = "PBImagenUsuario";
-            PBImagenUsuario.Size = new Size(125, 120);
-            PBImagenUsuario.TabIndex = 0;
-            PBImagenUsuario.TabStop = false;
-            PBImagenUsuario.Click += PBImagenUsuario_Click;
+            tEmailUsuario.Font = new Font("Sitka Banner", 12F);
+            tEmailUsuario.Location = new Point(539, 120);
+            tEmailUsuario.Name = "tEmailUsuario";
+            tEmailUsuario.Size = new Size(195, 28);
+            tEmailUsuario.TabIndex = 47;
+            tEmailUsuario.KeyPress += tEmailUsuario_KeyPress;
             // 
-            // BAltaUsuario
+            // lSexoUsuario
             // 
-            BAltaUsuario.BackColor = Color.Silver;
-            BAltaUsuario.Location = new Point(396, 420);
-            BAltaUsuario.Name = "BAltaUsuario";
-            BAltaUsuario.Size = new Size(107, 38);
-            BAltaUsuario.TabIndex = 22;
-            BAltaUsuario.Text = "Crear";
-            BAltaUsuario.UseVisualStyleBackColor = false;
-            BAltaUsuario.Click += BAltaUsuario_Click;
+            lSexoUsuario.AutoSize = true;
+            lSexoUsuario.BackColor = Color.Transparent;
+            lSexoUsuario.Font = new Font("Sitka Banner", 12F);
+            lSexoUsuario.Location = new Point(42, 195);
+            lSexoUsuario.Name = "lSexoUsuario";
+            lSexoUsuario.Size = new Size(43, 23);
+            lSexoUsuario.TabIndex = 48;
+            lSexoUsuario.Text = "Sexo:";
             // 
-            // BLimpiarAltaUsuario
+            // cbSexoUsuario
             // 
-            BLimpiarAltaUsuario.BackColor = Color.Silver;
-            BLimpiarAltaUsuario.Location = new Point(565, 421);
-            BLimpiarAltaUsuario.Name = "BLimpiarAltaUsuario";
-            BLimpiarAltaUsuario.Size = new Size(107, 38);
-            BLimpiarAltaUsuario.TabIndex = 23;
-            BLimpiarAltaUsuario.Text = "Limpiar";
-            BLimpiarAltaUsuario.UseVisualStyleBackColor = false;
-            BLimpiarAltaUsuario.Click += BLimpiarAltaUsuario_Click;
+            cbSexoUsuario.Font = new Font("Sitka Banner", 12F);
+            cbSexoUsuario.FormattingEnabled = true;
+            cbSexoUsuario.Items.AddRange(new object[] { "Masculino", "Femenino" });
+            cbSexoUsuario.Location = new Point(134, 188);
+            cbSexoUsuario.Name = "cbSexoUsuario";
+            cbSexoUsuario.Size = new Size(195, 31);
+            cbSexoUsuario.TabIndex = 49;
             // 
-            // buttonSalir
+            // lContraseñaUsuario
             // 
-            buttonSalir.Location = new Point(34, 12);
-            buttonSalir.Name = "buttonSalir";
-            buttonSalir.Size = new Size(43, 23);
-            buttonSalir.TabIndex = 24;
-            buttonSalir.Text = "X";
-            buttonSalir.UseVisualStyleBackColor = true;
-            buttonSalir.Click += buttonSalir_Click;
+            lContraseñaUsuario.AutoSize = true;
+            lContraseñaUsuario.BackColor = Color.Transparent;
+            lContraseñaUsuario.Font = new Font("Sitka Banner", 12F);
+            lContraseñaUsuario.Location = new Point(428, 191);
+            lContraseñaUsuario.Name = "lContraseñaUsuario";
+            lContraseñaUsuario.Size = new Size(84, 23);
+            lContraseñaUsuario.TabIndex = 50;
+            lContraseñaUsuario.Text = "Contraseña:";
             // 
-            // labelContraseña
+            // tContraseñaUsuario
             // 
-            labelContraseña.AutoSize = true;
-            labelContraseña.BackColor = Color.Transparent;
-            labelContraseña.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelContraseña.Location = new Point(25, 321);
-            labelContraseña.Name = "labelContraseña";
-            labelContraseña.Size = new Size(118, 30);
-            labelContraseña.TabIndex = 25;
-            labelContraseña.Text = "Contraseña";
+            tContraseñaUsuario.Font = new Font("Sitka Banner", 12F);
+            tContraseñaUsuario.Location = new Point(539, 188);
+            tContraseñaUsuario.Name = "tContraseñaUsuario";
+            tContraseñaUsuario.Size = new Size(195, 28);
+            tContraseñaUsuario.TabIndex = 51;
+            tContraseñaUsuario.UseSystemPasswordChar = true;
+            tContraseñaUsuario.TextChanged += tContraseñaUsuario_TextChanged;
             // 
-            // textBoxContraseñaUsuario
+            // BLimpiarCampos
             // 
-            textBoxContraseñaUsuario.Location = new Point(149, 330);
-            textBoxContraseñaUsuario.Name = "textBoxContraseñaUsuario";
-            textBoxContraseñaUsuario.Size = new Size(203, 23);
-            textBoxContraseñaUsuario.TabIndex = 26;
-            textBoxContraseñaUsuario.UseSystemPasswordChar = true;
+            BLimpiarCampos.BackColor = Color.Transparent;
+            BLimpiarCampos.BorderColor = Color.WhiteSmoke;
+            BLimpiarCampos.BorderRadius = 20;
+            BLimpiarCampos.BorderThickness = 3;
+            BLimpiarCampos.CustomizableEdges = customizableEdges3;
+            BLimpiarCampos.DisabledState.BorderColor = Color.DarkGray;
+            BLimpiarCampos.DisabledState.CustomBorderColor = Color.DarkGray;
+            BLimpiarCampos.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            BLimpiarCampos.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            BLimpiarCampos.FillColor = SystemColors.ControlDark;
+            BLimpiarCampos.Font = new Font("Segoe UI", 9F);
+            BLimpiarCampos.ForeColor = Color.White;
+            BLimpiarCampos.HoverState.FillColor = SystemColors.ControlDarkDark;
+            BLimpiarCampos.Image = Properties.Resources.icons8_limpiar_30;
+            BLimpiarCampos.Location = new Point(307, 258);
+            BLimpiarCampos.Name = "BLimpiarCampos";
+            BLimpiarCampos.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            BLimpiarCampos.Size = new Size(78, 45);
+            BLimpiarCampos.TabIndex = 55;
+            BLimpiarCampos.Click += BLimpiarCampos_Click;
             // 
-            // comboBoxRolUsuario
+            // BEliminarUsuario
             // 
-            comboBoxRolUsuario.FormattingEnabled = true;
-            comboBoxRolUsuario.Location = new Point(425, 359);
-            comboBoxRolUsuario.Name = "comboBoxRolUsuario";
-            comboBoxRolUsuario.Size = new Size(227, 23);
-            comboBoxRolUsuario.TabIndex = 27;
-            comboBoxRolUsuario.SelectedIndexChanged += comboBoxRolUsuario_SelectedIndexChanged;
-            comboBoxRolUsuario.SelectedValueChanged += comboBoxRolUsuario_Load;
+            BEliminarUsuario.BackColor = Color.Transparent;
+            BEliminarUsuario.BorderColor = Color.WhiteSmoke;
+            BEliminarUsuario.BorderRadius = 20;
+            BEliminarUsuario.BorderThickness = 3;
+            BEliminarUsuario.CustomizableEdges = customizableEdges5;
+            BEliminarUsuario.DisabledState.BorderColor = Color.DarkGray;
+            BEliminarUsuario.DisabledState.CustomBorderColor = Color.DarkGray;
+            BEliminarUsuario.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            BEliminarUsuario.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            BEliminarUsuario.FillColor = SystemColors.ControlDark;
+            BEliminarUsuario.Font = new Font("Segoe UI", 9F);
+            BEliminarUsuario.ForeColor = Color.White;
+            BEliminarUsuario.HoverState.FillColor = SystemColors.ControlDarkDark;
+            BEliminarUsuario.Image = Properties.Resources.icons8_eliminar_30;
+            BEliminarUsuario.Location = new Point(583, 258);
+            BEliminarUsuario.Name = "BEliminarUsuario";
+            BEliminarUsuario.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            BEliminarUsuario.Size = new Size(78, 45);
+            BEliminarUsuario.TabIndex = 54;
             // 
-            // labelRolUsuario
+            // BModificarUsuario
             // 
-            labelRolUsuario.AutoSize = true;
-            labelRolUsuario.BackColor = Color.Transparent;
-            labelRolUsuario.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelRolUsuario.Location = new Point(452, 320);
-            labelRolUsuario.Name = "labelRolUsuario";
-            labelRolUsuario.Size = new Size(168, 30);
-            labelRolUsuario.TabIndex = 28;
-            labelRolUsuario.Text = "Seleccione el Rol";
+            BModificarUsuario.BackColor = Color.Transparent;
+            BModificarUsuario.BorderColor = Color.WhiteSmoke;
+            BModificarUsuario.BorderRadius = 20;
+            BModificarUsuario.BorderThickness = 3;
+            BModificarUsuario.CustomizableEdges = customizableEdges7;
+            BModificarUsuario.DisabledState.BorderColor = Color.DarkGray;
+            BModificarUsuario.DisabledState.CustomBorderColor = Color.DarkGray;
+            BModificarUsuario.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            BModificarUsuario.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            BModificarUsuario.FillColor = SystemColors.ControlDark;
+            BModificarUsuario.Font = new Font("Segoe UI", 9F);
+            BModificarUsuario.ForeColor = Color.White;
+            BModificarUsuario.HoverState.FillColor = SystemColors.ControlDarkDark;
+            BModificarUsuario.Image = Properties.Resources.edicion__1_;
+            BModificarUsuario.Location = new Point(449, 258);
+            BModificarUsuario.Name = "BModificarUsuario";
+            BModificarUsuario.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            BModificarUsuario.Size = new Size(78, 45);
+            BModificarUsuario.TabIndex = 53;
+            // 
+            // BGrabarUsuario
+            // 
+            BGrabarUsuario.BackColor = Color.Transparent;
+            BGrabarUsuario.BorderColor = Color.WhiteSmoke;
+            BGrabarUsuario.BorderRadius = 20;
+            BGrabarUsuario.BorderThickness = 3;
+            BGrabarUsuario.CustomizableEdges = customizableEdges9;
+            BGrabarUsuario.DisabledState.BorderColor = Color.DarkGray;
+            BGrabarUsuario.DisabledState.CustomBorderColor = Color.DarkGray;
+            BGrabarUsuario.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            BGrabarUsuario.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            BGrabarUsuario.FillColor = SystemColors.ControlDark;
+            BGrabarUsuario.Font = new Font("Segoe UI", 9F);
+            BGrabarUsuario.ForeColor = Color.White;
+            BGrabarUsuario.HoverState.FillColor = SystemColors.ControlDarkDark;
+            BGrabarUsuario.Image = Properties.Resources.guardar_el_archivo;
+            BGrabarUsuario.Location = new Point(174, 258);
+            BGrabarUsuario.Name = "BGrabarUsuario";
+            BGrabarUsuario.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            BGrabarUsuario.Size = new Size(78, 45);
+            BGrabarUsuario.TabIndex = 52;
+            // 
+            // lListadoUsuarios
+            // 
+            lListadoUsuarios.BackColor = Color.Gold;
+            lListadoUsuarios.FlatStyle = FlatStyle.Flat;
+            lListadoUsuarios.Font = new Font("Sitka Banner", 15F, FontStyle.Bold);
+            lListadoUsuarios.Location = new Point(0, 306);
+            lListadoUsuarios.Name = "lListadoUsuarios";
+            lListadoUsuarios.Size = new Size(878, 34);
+            lListadoUsuarios.TabIndex = 56;
+            lListadoUsuarios.Text = "Listado de Usuarios";
+            lListadoUsuarios.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lRolUsuario
+            // 
+            lRolUsuario.AutoSize = true;
+            lRolUsuario.BackColor = Color.Transparent;
+            lRolUsuario.Font = new Font("Sitka Banner", 12F);
+            lRolUsuario.Location = new Point(428, 161);
+            lRolUsuario.Name = "lRolUsuario";
+            lRolUsuario.Size = new Size(34, 23);
+            lRolUsuario.TabIndex = 57;
+            lRolUsuario.Text = "Rol:";
+            // 
+            // cbRolUsuario
+            // 
+            cbRolUsuario.Font = new Font("Sitka Banner", 12F);
+            cbRolUsuario.FormattingEnabled = true;
+            cbRolUsuario.Location = new Point(539, 153);
+            cbRolUsuario.Name = "cbRolUsuario";
+            cbRolUsuario.Size = new Size(195, 31);
+            cbRolUsuario.TabIndex = 58;
+            // 
+            // dgvListadoUsuarios
+            // 
+            dgvListadoUsuarios.AllowUserToAddRows = false;
+            dgvListadoUsuarios.BackgroundColor = Color.Gold;
+            dgvListadoUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvListadoUsuarios.GridColor = Color.DimGray;
+            dgvListadoUsuarios.Location = new Point(27, 343);
+            dgvListadoUsuarios.Name = "dgvListadoUsuarios";
+            dgvListadoUsuarios.Size = new Size(818, 217);
+            dgvListadoUsuarios.TabIndex = 59;
+            // 
+            // lEstadoContraseña
+            // 
+            lEstadoContraseña.AutoSize = true;
+            lEstadoContraseña.BackColor = Color.Transparent;
+            lEstadoContraseña.Font = new Font("Sitka Banner", 12F);
+            lEstadoContraseña.Location = new Point(539, 219);
+            lEstadoContraseña.Name = "lEstadoContraseña";
+            lEstadoContraseña.Size = new Size(0, 23);
+            lEstadoContraseña.TabIndex = 60;
             // 
             // fGestionUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(704, 522);
-            Controls.Add(labelRolUsuario);
-            Controls.Add(comboBoxRolUsuario);
-            Controls.Add(textBoxContraseñaUsuario);
-            Controls.Add(labelContraseña);
-            Controls.Add(buttonSalir);
-            Controls.Add(BLimpiarAltaUsuario);
-            Controls.Add(BAltaUsuario);
-            Controls.Add(PImaagenUsuario);
-            Controls.Add(DTPFechaNacimientoUsuario);
-            Controls.Add(LFechaNacimientoUusario);
-            Controls.Add(RBMujerUsuario);
-            Controls.Add(RBHombreUsuario);
-            Controls.Add(TBTelefonoUsuario);
-            Controls.Add(LTelefonoUsuario);
-            Controls.Add(label1);
-            Controls.Add(TBCorreoUsuario);
-            Controls.Add(LCorreoUsuario);
-            Controls.Add(TBDniUsuario);
-            Controls.Add(LDniUsuario);
-            Controls.Add(TBApellidoUsuario);
-            Controls.Add(LApellidoUsuarioo);
-            Controls.Add(TBNombreUsuario);
-            Controls.Add(LNombreUsuario);
+            ClientSize = new Size(878, 561);
+            Controls.Add(lEstadoContraseña);
+            Controls.Add(dgvListadoUsuarios);
+            Controls.Add(cbRolUsuario);
+            Controls.Add(lRolUsuario);
+            Controls.Add(lListadoUsuarios);
+            Controls.Add(BLimpiarCampos);
+            Controls.Add(BEliminarUsuario);
+            Controls.Add(BModificarUsuario);
+            Controls.Add(BGrabarUsuario);
+            Controls.Add(tContraseñaUsuario);
+            Controls.Add(lContraseñaUsuario);
+            Controls.Add(cbSexoUsuario);
+            Controls.Add(lSexoUsuario);
+            Controls.Add(tEmailUsuario);
+            Controls.Add(lEmailUsuario);
+            Controls.Add(tCelularUsuario);
+            Controls.Add(lTelefonoUsuario);
+            Controls.Add(tDireccionUsuario);
+            Controls.Add(lDireccionUsuario);
+            Controls.Add(dtpFechaNacUsuario);
+            Controls.Add(lFechaNacUsuario);
+            Controls.Add(tApellidoUsuario);
+            Controls.Add(lApellidoUsuario);
+            Controls.Add(tNombreUsuario);
+            Controls.Add(lNombreUsuario);
+            Controls.Add(tDniUsuario);
+            Controls.Add(lDni);
+            Controls.Add(bVolverMenu);
+            Controls.Add(PBLogo);
+            Controls.Add(LGestionUsuarios);
+            FormBorderStyle = FormBorderStyle.None;
             MinimumSize = new Size(720, 561);
             Name = "fGestionUsuarios";
             Text = "Alta Usuario";
-            Load += FAltaUsuario_Load;
-            PImaagenUsuario.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)PBImagenUsuario).EndInit();
+            Load += fGestionUsuarios_Load;
+            ((System.ComponentModel.ISupportInitialize)PBLogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvListadoUsuarios).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Label LNombreUsuario;
-        private TextBox TBNombreUsuario;
-        private TextBox TBApellidoUsuario;
-        private Label LApellidoUsuarioo;
-        private TextBox TBDniUsuario;
-        private Label LDniUsuario;
-        private TextBox TBCorreoUsuario;
-        private Label LCorreoUsuario;
-        private Label label1;
-        private TextBox TBTelefonoUsuario;
-        private Label LTelefonoUsuario;
-        private RadioButton RBHombreUsuario;
-        private RadioButton RBMujerUsuario;
-        private Label LFechaNacimientoUusario;
-        private DateTimePicker DTPFechaNacimientoUsuario;
-        private Panel PImaagenUsuario;
-        private PictureBox PBImagenUsuario;
-        private Button BAltaUsuario;
-        private Button BLimpiarAltaUsuario;
-        private Button buttonSalir;
-        private Label labelContraseña;
-        private TextBox textBoxContraseñaUsuario;
-        private ComboBox comboBoxRolUsuario;
-        private Label labelRolUsuario;
+
+        private Guna.UI2.WinForms.Guna2HtmlLabel LGestionUsuarios;
+        private Guna.UI2.WinForms.Guna2PictureBox PBLogo;
+        private Button bVolverMenu;
+        private Label lDni;
+        private TextBox tDniUsuario;
+        private Label lNombreUsuario;
+        private TextBox tNombreUsuario;
+        private Label lApellidoUsuario;
+        private TextBox tApellidoUsuario;
+        private Label lFechaNacUsuario;
+        private DateTimePicker dtpFechaNacUsuario;
+        private Label lDireccionUsuario;
+        private TextBox tDireccionUsuario;
+        private Label lTelefonoUsuario;
+        private TextBox tCelularUsuario;
+        private Label lEmailUsuario;
+        private TextBox tEmailUsuario;
+        private Label lSexoUsuario;
+        private ComboBox cbSexoUsuario;
+        private Label lContraseñaUsuario;
+        private TextBox tContraseñaUsuario;
+        private Guna.UI2.WinForms.Guna2Button BLimpiarCampos;
+        private Guna.UI2.WinForms.Guna2Button BEliminarUsuario;
+        private Guna.UI2.WinForms.Guna2Button BModificarUsuario;
+        private Guna.UI2.WinForms.Guna2Button BGrabarUsuario;
+        private Label lListadoUsuarios;
+        private Label lRolUsuario;
+        private ComboBox cbRolUsuario;
+        private DataGridView dgvListadoUsuarios;
+        private Label lEstadoContraseña;
     }
 }

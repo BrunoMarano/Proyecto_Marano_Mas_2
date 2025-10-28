@@ -19,9 +19,13 @@ namespace AvicolaVentas
 
         private void tDescripcionProd_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
+        private void dtpFechaAltaProd_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

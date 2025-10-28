@@ -69,8 +69,6 @@ CREATE TABLE Producto
   CONSTRAINT FK_Producto_Categoria FOREIGN KEY (id_categoria) REFERENCES Categoria(id_categoria)
 );
 
-DROP TABLE Producto;
-
 -- Tabla Ciudad
 CREATE TABLE Ciudad
 (
@@ -294,3 +292,6 @@ SELECT * FROM Cliente;
 truncate table Cliente;
 
 SELECT * FROM Cliente ORDER BY Id_cliente DESC;
+
+ALTER TABLE Usuario
+ADD direccion VARCHAR(200);

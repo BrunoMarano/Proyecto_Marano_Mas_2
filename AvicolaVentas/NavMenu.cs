@@ -57,27 +57,36 @@ namespace AvicolaVentas
             {
                 case 1: // ADMIN
                     BUsuarios.Enabled = true;
-                    BProductos.Enabled = true;
-                    BProveedores.Enabled = true;
-                    BVentas.Visible = false;
-                    BClientes.Visible = false;
-                    BReportes.Visible = false;
-                    break;
-                case 2: // GERENTE
-                    BReportes.Enabled = true;
-                    BUsuarios.Visible = false;
+                    BBackUp.Enabled = true;
+
                     BProductos.Visible = false;
                     BProveedores.Visible = false;
                     BVentas.Visible = false;
                     BClientes.Visible = false;
+                    BReportes.Visible = false;
+                    BMisVentas.Visible = false;
+                    break;
+                case 2: // GERENTE
+                    BReportes.Enabled = true;
+                    BProductos.Enabled = true;
+                    BProveedores.Enabled = true;
+
+                    BUsuarios.Visible = false;
+                    BVentas.Visible = false;
+                    BClientes.Visible = false;
+                    BMisVentas.Visible = false;
+                    BBackUp.Visible = false;
                     break;
                 case 3: // VENDEDOR
                     BVentas.Enabled = true;
                     BClientes.Enabled = true;
                     BProductos.Enabled = true;
+                    BMisVentas.Enabled = true;
+
                     BUsuarios.Visible = false;
                     BProveedores.Visible = false;
                     BReportes.Visible = false;
+                    BBackUp.Visible = false;
                     break;
             }
         }
@@ -114,14 +123,14 @@ namespace AvicolaVentas
             switch (IdRol)
             {
                 case 1: // ADMIN
+                    break;
+                case 2: // GERENTE
                     panelContenedor.Controls.Clear(); // Limpiar panel
                     fGestionProductos productosForm = new fGestionProductos();
                     productosForm.TopLevel = false; // Para poder mostrarlo dentro del panel
                     productosForm.Dock = DockStyle.Fill; // Que ocupe todo el panel
                     panelContenedor.Controls.Add(productosForm);
                     productosForm.Show();
-                    break;
-                case 2: // GERENTE
                     break;
                 case 3: // VENDEDOR
                     panelContenedor.Controls.Clear(); // Limpiar panel

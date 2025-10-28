@@ -34,10 +34,16 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             panelMenu = new Panel();
+            BBackUp = new Button();
+            BMisVentas = new Button();
             BCerrarSesion = new Guna.UI2.WinForms.Guna2Button();
             PBLogoUsuario = new Guna.UI2.WinForms.Guna2PictureBox();
             LModificarUsuario = new Label();
@@ -56,6 +62,8 @@
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             labelUsuarioBienvenido = new Label();
             LMBienvenido = new Label();
+            dtpFechaMenu = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            dtpHoraMenu = new Guna.UI2.WinForms.Guna2DateTimePicker();
             panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PBLogoUsuario).BeginInit();
             panelLogo.SuspendLayout();
@@ -69,6 +77,8 @@
             // 
             panelMenu.AutoScroll = true;
             panelMenu.BackColor = Color.Gold;
+            panelMenu.Controls.Add(BBackUp);
+            panelMenu.Controls.Add(BMisVentas);
             panelMenu.Controls.Add(BCerrarSesion);
             panelMenu.Controls.Add(PBLogoUsuario);
             panelMenu.Controls.Add(LModificarUsuario);
@@ -87,6 +97,42 @@
             panelMenu.Size = new Size(214, 541);
             panelMenu.TabIndex = 0;
             panelMenu.Paint += panelMenu_Paint;
+            // 
+            // BBackUp
+            // 
+            BBackUp.BackColor = Color.Gold;
+            BBackUp.Dock = DockStyle.Top;
+            BBackUp.FlatAppearance.BorderSize = 0;
+            BBackUp.FlatStyle = FlatStyle.Flat;
+            BBackUp.Font = new Font("Sitka Banner", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            BBackUp.Image = Properties.Resources.icons8_copias_de_seguridad_30;
+            BBackUp.ImageAlign = ContentAlignment.MiddleLeft;
+            BBackUp.Location = new Point(0, 373);
+            BBackUp.Name = "BBackUp";
+            BBackUp.Padding = new Padding(20, 0, 0, 0);
+            BBackUp.Size = new Size(214, 35);
+            BBackUp.TabIndex = 18;
+            BBackUp.Text = "BackUps";
+            BBackUp.TextAlign = ContentAlignment.BottomCenter;
+            BBackUp.UseVisualStyleBackColor = false;
+            // 
+            // BMisVentas
+            // 
+            BMisVentas.BackColor = Color.Gold;
+            BMisVentas.Dock = DockStyle.Top;
+            BMisVentas.FlatAppearance.BorderSize = 0;
+            BMisVentas.FlatStyle = FlatStyle.Flat;
+            BMisVentas.Font = new Font("Sitka Banner", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            BMisVentas.Image = Properties.Resources.icons8_ventas_30;
+            BMisVentas.ImageAlign = ContentAlignment.MiddleLeft;
+            BMisVentas.Location = new Point(0, 338);
+            BMisVentas.Name = "BMisVentas";
+            BMisVentas.Padding = new Padding(20, 0, 0, 0);
+            BMisVentas.Size = new Size(214, 35);
+            BMisVentas.TabIndex = 17;
+            BMisVentas.Text = "Mis Ventas";
+            BMisVentas.TextAlign = ContentAlignment.TopCenter;
+            BMisVentas.UseVisualStyleBackColor = false;
             // 
             // BCerrarSesion
             // 
@@ -301,6 +347,8 @@
             panelContenedor.BackColor = Color.Gainsboro;
             panelContenedor.BackgroundImage = Properties.Resources.Fondo;
             panelContenedor.BorderStyle = BorderStyle.FixedSingle;
+            panelContenedor.Controls.Add(dtpHoraMenu);
+            panelContenedor.Controls.Add(dtpFechaMenu);
             panelContenedor.Controls.Add(guna2PictureBox1);
             panelContenedor.Controls.Add(labelUsuarioBienvenido);
             panelContenedor.Controls.Add(LMBienvenido);
@@ -314,12 +362,12 @@
             // 
             guna2PictureBox1.BackColor = Color.Transparent;
             guna2PictureBox1.BackgroundImageLayout = ImageLayout.Center;
-            guna2PictureBox1.CustomizableEdges = customizableEdges7;
+            guna2PictureBox1.CustomizableEdges = customizableEdges11;
             guna2PictureBox1.Image = Properties.Resources.logoAvicola;
             guna2PictureBox1.ImageRotate = 0F;
             guna2PictureBox1.Location = new Point(333, 204);
             guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2PictureBox1.Size = new Size(239, 200);
             guna2PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             guna2PictureBox1.TabIndex = 6;
@@ -348,6 +396,46 @@
             LMBienvenido.TabIndex = 3;
             LMBienvenido.Text = "BIENVENIDO/A";
             LMBienvenido.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // dtpFechaMenu
+            // 
+            dtpFechaMenu.BackColor = Color.Transparent;
+            dtpFechaMenu.Checked = true;
+            dtpFechaMenu.CustomizableEdges = customizableEdges9;
+            dtpFechaMenu.Enabled = false;
+            dtpFechaMenu.FillColor = Color.Transparent;
+            dtpFechaMenu.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpFechaMenu.Format = DateTimePickerFormat.Long;
+            dtpFechaMenu.Location = new Point(-1, 504);
+            dtpFechaMenu.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            dtpFechaMenu.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            dtpFechaMenu.Name = "dtpFechaMenu";
+            dtpFechaMenu.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            dtpFechaMenu.Size = new Size(250, 36);
+            dtpFechaMenu.TabIndex = 9;
+            dtpFechaMenu.TextAlign = HorizontalAlignment.Center;
+            dtpFechaMenu.UseTransparentBackground = true;
+            dtpFechaMenu.Value = new DateTime(2025, 10, 27, 23, 30, 45, 541);
+            // 
+            // dtpHoraMenu
+            // 
+            dtpHoraMenu.BackColor = Color.Transparent;
+            dtpHoraMenu.Checked = true;
+            dtpHoraMenu.CustomizableEdges = customizableEdges7;
+            dtpHoraMenu.Enabled = false;
+            dtpHoraMenu.FillColor = Color.Transparent;
+            dtpHoraMenu.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpHoraMenu.Format = DateTimePickerFormat.Time;
+            dtpHoraMenu.Location = new Point(255, 504);
+            dtpHoraMenu.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            dtpHoraMenu.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            dtpHoraMenu.Name = "dtpHoraMenu";
+            dtpHoraMenu.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            dtpHoraMenu.Size = new Size(149, 36);
+            dtpHoraMenu.TabIndex = 10;
+            dtpHoraMenu.TextAlign = HorizontalAlignment.Center;
+            dtpHoraMenu.UseTransparentBackground = true;
+            dtpHoraMenu.Value = new DateTime(2025, 10, 27, 23, 30, 45, 541);
             // 
             // FormMenu
             // 
@@ -400,5 +488,9 @@
         private Label LUsuario;
         private Label LModificarRol;
         private Guna.UI2.WinForms.Guna2Button BCerrarSesion;
+        private Button BBackUp;
+        private Button BMisVentas;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpHoraMenu;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpFechaMenu;
     }
 }

@@ -1,122 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
+﻿using System.Data;
+using System.Data.Sql;
 using System.Windows.Forms;
-using Microsoft.Data.SqlClient;
-using SqlConnection = Microsoft.Data.SqlClient.SqlConnection;
-using SqlCommand = Microsoft.Data.SqlClient.SqlCommand;
-using SqlDataAdapter = Microsoft.Data.SqlClient.SqlDataAdapter;
+using System.Text.RegularExpressions;
+using System.Data.SqlClient;
+using System.Drawing;
 
 namespace AvicolaVentas
 {
     public partial class fGestionUsuarios : Form
     {
-
-        string connectionString = @"Server=localhost\SQLEXPRESS; Database=AvicolaSantaAna; Trusted_Connection=True; TrustServerCertificate=True;";
-
-
+        private readonly string cadenaConexion = @"Data Source=FERNANDO\SQLEXPRESS02;Initial Catalog=AvicolaSantaAna1;Integrated Security=True;TrustServerCertificate=True;";
 
         public fGestionUsuarios()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void fGestionUsuarios_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FAltaUsuario_Load(object sender, EventArgs e)
-        {
-            CargarRoles();
-        }
-
-        private void TBDniUsuario_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                MessageBox.Show("NO SE PERMITEN LETRAS", "CUIDADO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                e.Handled = true; // Cancela la tecla presionada
-
-            }
-
-        }
-
-        private void TBNombreUsuario_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
-            {
-                MessageBox.Show("NO SE PERMITEN NUMEROS", "CUIDADO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                e.Handled = true;
-            }
-
-        }
-
-        private void TBApellidoUsuario_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
-            {
-                MessageBox.Show("NO SE PERMITEN NUMEROS", "CUIDADO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                e.Handled = true;
-
-            }
-
-        }
-
-        private void TBTelefonoUsuario_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                MessageBox.Show("NO SE PERMITEN LETRAS", "CUIDADO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                e.Handled = true; // Cancela la tecla presionada
-
-            }
-
-        }
-
-        private void DTPFechaNacimientoUsuario_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BLimpiarAltaUsuario_Click(object sender, EventArgs e)
-        {
-            LimpiarCampos();
-
-        }
-
-        private void PBImagenUsuario_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RBHombreUsuario_CheckedChanged(object sender, EventArgs e)
-        {
-            if (RBHombreUsuario.Checked)
-            {
-                PBImagenUsuario.Image = Properties.Resources.Huevo_Hombre;
-
-            }
-        }
-
-        private void RBMujerUsuario_CheckedChanged(object sender, EventArgs e)
-        {
-            if (RBMujerUsuario.Checked)
-            {
-                PBImagenUsuario.Image = Properties.Resources.Huevo_Mujer;
-
-            }
+            ObtenerRol();
         }
 
         private void buttonSalir_Click(object sender, EventArgs e)
@@ -124,67 +26,71 @@ namespace AvicolaVentas
             this.Close();
         }
 
-        private void TBDniUsuario_TextChanged(object sender, EventArgs e)
+        //METODOS
+        //OBTENER ROL DEL USUARIO DESDE LA BASE DE DATOS
+        private void ObtenerRol()
         {
-
-        }
-
-        private String BotonSexo()
-        {
-
-            if (RBHombreUsuario.Checked)
+            // Implementación para obtener roles de usuarios desde la base de datos
+            string consulta = "SELECT Id_rol, rol FROM Rol";
+            try
             {
-                return "Hombre";
-            }
-            else if (RBMujerUsuario.Checked)
-            {
-                return "Mujer";
-            }
-            else
-            {
-                return "";
-            }
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+                    using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                    {
+                        using (SqlDataReader lector = comando.ExecuteReader())
+                        {
+                            DataTable tablaUsuario = new DataTable();
+                            tablaUsuario.Load(lector);
+                            cbRolUsuario.DataSource = tablaUsuario;
+                            cbRolUsuario.DisplayMember = "rol";
+                            cbRolUsuario.ValueMember = "Id_rol";
+                        }
+                    }
+                }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener roles: " + ex.Message);
+            }
         }
 
         private void LimpiarCampos()
         {
-            TBNombreUsuario.Text = "";
-            TBApellidoUsuario.Text = "";
-            TBDniUsuario.Text = "(Sin puntos ni comas)";
-            TBCorreoUsuario.Text = "";
-            TBTelefonoUsuario.Text = "";
-
-            RBHombreUsuario.Checked = false;
-            RBMujerUsuario.Checked = false;
-
-            DTPFechaNacimientoUsuario.Value = DateTime.Today;
-            DTPFechaNacimientoUsuario.Checked = false;
-
-            comboBoxRolUsuario.SelectedIndex = -1;
-
-            PBImagenUsuario.Image = Properties.Resources.Huevo_Neutro;
+            tDniUsuario.Text = "";
+            tNombreUsuario.Text = "";
+            tApellidoUsuario.Text = "";
+            dtpFechaNacUsuario.Value = DateTime.Today;
+            cbSexoUsuario.SelectedIndex = -1;
+            tDireccionUsuario.Text = "";
+            tEmailUsuario.Text = "";
+            tCelularUsuario.Text = "";
+            tContraseñaUsuario.Text = "";
+            cbRolUsuario.SelectedIndex = -1;
         }
 
         private void AgregarUsuario()
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(cadenaConexion))
             {
-                string query = "INSERT INTO Usuario (Dni, Nombre, Apellido, Correo, Telefono, Sexo, Fecha_Nacimiento, contraseña,baja, id_rol) " +
-                    "VALUES (@Dni, @Nombre, @Apellido, @Correo, @Telefono, @Sexo, @Fecha_Nacimiento, @Contraseña, @baja, @Rol)";
-                SqlCommand cmd = new Microsoft.Data.SqlClient.SqlCommand(query, conn);
-                if (DTPFechaNacimientoUsuario.Value.Date < DateTime.Today)
+                string query = "INSERT INTO Usuario (Dni, Nombre, Apellido, Correo, Telefono, Sexo, Fecha_Nacimiento, contraseña,baja, id_rol, direccion) " +
+                    "VALUES (@Dni, @Nombre, @Apellido, @Correo, @Telefono, @Sexo, @Fecha_Nacimiento, @Contraseña, @baja, @Rol, @direccion)";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                if (dtpFechaNacUsuario.Value.Date < DateTime.Today)
                 {
-                    cmd.Parameters.AddWithValue("@Nombre", TBNombreUsuario.Text);
-                    cmd.Parameters.AddWithValue("@Apellido", TBApellidoUsuario.Text);
-                    cmd.Parameters.AddWithValue("@Correo", TBCorreoUsuario.Text);
-                    cmd.Parameters.AddWithValue("@Dni", int.Parse(TBDniUsuario.Text));
-                    cmd.Parameters.AddWithValue("@Telefono", TBTelefonoUsuario.Text);
-                    cmd.Parameters.AddWithValue("@Sexo", BotonSexo());
-                    cmd.Parameters.Add("@Fecha_Nacimiento", SqlDbType.Date).Value = DTPFechaNacimientoUsuario.Value.Date;
-                    cmd.Parameters.AddWithValue("@Contraseña", textBoxContraseñaUsuario.Text);
+                    cmd.Parameters.AddWithValue("@Nombre", tNombreUsuario.Text);
+                    cmd.Parameters.AddWithValue("@Apellido", tApellidoUsuario.Text);
+                    cmd.Parameters.AddWithValue("@Correo", tEmailUsuario.Text);
+                    cmd.Parameters.AddWithValue("@Dni", int.Parse(tDniUsuario.Text));
+                    cmd.Parameters.AddWithValue("@Telefono", tCelularUsuario.Text);
+                    cmd.Parameters.AddWithValue("@direccion", tDireccionUsuario.Text);
+                    //cmd.Parameters.AddWithValue("@Sexo", cbSexoUsuario().Text);
+                    cmd.Parameters.Add("@Fecha_Nacimiento", SqlDbType.Date).Value = dtpFechaNacUsuario.Value.Date;
+                    cmd.Parameters.AddWithValue("@Contraseña", tContraseñaUsuario.Text);
                     cmd.Parameters.AddWithValue("@baja", 0); // por defecto activo
-                    cmd.Parameters.Add("@Rol", SqlDbType.Int).Value = comboBoxRolUsuario.SelectedValue;
+                    cmd.Parameters.Add("@Rol", SqlDbType.Int).Value = cbRolUsuario.SelectedValue;
 
                     conn.Open();
                     cmd.ExecuteNonQuery();
@@ -199,45 +105,72 @@ namespace AvicolaVentas
             LimpiarCampos();
         }
 
-        private void comboBoxRolUsuario_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
 
-        private void CargarRoles()
+        //RESTRICCIONES DE LOS CAMPOS
+
+        private void tDniUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
-                try
-                {
-                    conn.Open();
-                    string query = "SELECT Id_rol, Rol FROM Rol";
-                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    comboBoxRolUsuario.DataSource = dt;
-                    comboBoxRolUsuario.DisplayMember = "Rol";     // Lo que ve el usuario
-                    comboBoxRolUsuario.ValueMember = "Id_rol";    // Lo que se guarda
-                    comboBoxRolUsuario.SelectedIndex = -1;        // Que no haya seleccionado al inicio
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al cargar roles: " + ex.Message);
-                }
+                e.Handled = true;
             }
         }
 
-        private void comboBoxRolUsuario_Load(object sender, EventArgs e)
+        private void tNombreUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void tApellidoUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tCelularUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tEmailUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != '@' && e.KeyChar != '.' && e.KeyChar != '-' && e.KeyChar != '_' && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Cancela el carácter
+            }
+        }
+
+        private void tContraseñaUsuario_TextChanged(object sender, EventArgs e)
+        {
+            string patron = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$";
+            if (Regex.IsMatch(tContraseñaUsuario.Text, patron))
+            {
+                lEstadoContraseña.Text = "✔ Contraseña segura";
+                lEstadoContraseña.ForeColor = Color.Green;
+            }
+            else
+            {
+                lEstadoContraseña.Text = "❌ Debe tener mayúscula, minúscula, número y símbolo";
+                lEstadoContraseña.ForeColor = Color.Red;
+            }
 
 
         }
 
-        private void BAltaUsuario_Click(object sender, EventArgs e)
+
+        //BOTONES
+        private void BLimpiarCampos_Click(object sender, EventArgs e)
         {
-            AgregarUsuario();
+            LimpiarCampos();
         }
     }
 }

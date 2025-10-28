@@ -386,5 +386,10 @@ namespace AvicolaVentas
             }
             MessageBox.Show("Cliente modificado exitosamente.");
         }
+
+        private void tApellidoCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
