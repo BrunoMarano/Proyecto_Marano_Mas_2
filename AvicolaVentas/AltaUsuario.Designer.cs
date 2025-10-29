@@ -69,6 +69,10 @@
             cbRolUsuario = new ComboBox();
             dgvListadoUsuarios = new DataGridView();
             lEstadoContraseña = new Label();
+            lProvinciaUsuario = new Label();
+            lCiudadUsuario = new Label();
+            cbProvinciaUsuario = new ComboBox();
+            cbCiudadUsuario = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)PBLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvListadoUsuarios).BeginInit();
             SuspendLayout();
@@ -131,7 +135,7 @@
             tDniUsuario.Font = new Font("Sitka Banner", 12F);
             tDniUsuario.Location = new Point(134, 59);
             tDniUsuario.Name = "tDniUsuario";
-            tDniUsuario.Size = new Size(195, 28);
+            tDniUsuario.Size = new Size(152, 28);
             tDniUsuario.TabIndex = 34;
             tDniUsuario.KeyPress += tDniUsuario_KeyPress;
             // 
@@ -151,7 +155,7 @@
             tNombreUsuario.Font = new Font("Sitka Banner", 12F);
             tNombreUsuario.Location = new Point(134, 90);
             tNombreUsuario.Name = "tNombreUsuario";
-            tNombreUsuario.Size = new Size(195, 28);
+            tNombreUsuario.Size = new Size(152, 28);
             tNombreUsuario.TabIndex = 36;
             tNombreUsuario.KeyPress += tNombreUsuario_KeyPress;
             // 
@@ -171,7 +175,7 @@
             tApellidoUsuario.Font = new Font("Sitka Banner", 12F);
             tApellidoUsuario.Location = new Point(134, 123);
             tApellidoUsuario.Name = "tApellidoUsuario";
-            tApellidoUsuario.Size = new Size(195, 28);
+            tApellidoUsuario.Size = new Size(152, 28);
             tApellidoUsuario.TabIndex = 38;
             tApellidoUsuario.KeyPress += tApellidoUsuario_KeyPress;
             // 
@@ -188,14 +192,14 @@
             // 
             // dtpFechaNacUsuario
             // 
-            dtpFechaNacUsuario.CalendarFont = new Font("Sitka Banner", 12F);
+            dtpFechaNacUsuario.CalendarFont = new Font("Sitka Banner", 9F);
             dtpFechaNacUsuario.DropDownAlign = LeftRightAlignment.Right;
-            dtpFechaNacUsuario.Font = new Font("Sitka Banner", 12F);
+            dtpFechaNacUsuario.Font = new Font("Sitka Banner", 11F);
             dtpFechaNacUsuario.Format = DateTimePickerFormat.Short;
             dtpFechaNacUsuario.Location = new Point(191, 157);
             dtpFechaNacUsuario.Name = "dtpFechaNacUsuario";
             dtpFechaNacUsuario.RightToLeft = RightToLeft.No;
-            dtpFechaNacUsuario.Size = new Size(138, 28);
+            dtpFechaNacUsuario.Size = new Size(95, 26);
             dtpFechaNacUsuario.TabIndex = 40;
             // 
             // lDireccionUsuario
@@ -203,7 +207,7 @@
             lDireccionUsuario.AutoSize = true;
             lDireccionUsuario.BackColor = Color.Transparent;
             lDireccionUsuario.Font = new Font("Sitka Banner", 12F);
-            lDireccionUsuario.Location = new Point(428, 61);
+            lDireccionUsuario.Location = new Point(313, 64);
             lDireccionUsuario.Name = "lDireccionUsuario";
             lDireccionUsuario.Size = new Size(72, 23);
             lDireccionUsuario.TabIndex = 42;
@@ -212,9 +216,9 @@
             // tDireccionUsuario
             // 
             tDireccionUsuario.Font = new Font("Sitka Banner", 12F);
-            tDireccionUsuario.Location = new Point(539, 56);
+            tDireccionUsuario.Location = new Point(402, 61);
             tDireccionUsuario.Name = "tDireccionUsuario";
-            tDireccionUsuario.Size = new Size(195, 28);
+            tDireccionUsuario.Size = new Size(154, 28);
             tDireccionUsuario.TabIndex = 43;
             // 
             // lTelefonoUsuario
@@ -222,7 +226,7 @@
             lTelefonoUsuario.AutoSize = true;
             lTelefonoUsuario.BackColor = Color.Transparent;
             lTelefonoUsuario.Font = new Font("Sitka Banner", 12F);
-            lTelefonoUsuario.Location = new Point(428, 93);
+            lTelefonoUsuario.Location = new Point(313, 96);
             lTelefonoUsuario.Name = "lTelefonoUsuario";
             lTelefonoUsuario.Size = new Size(59, 23);
             lTelefonoUsuario.TabIndex = 44;
@@ -231,9 +235,9 @@
             // tCelularUsuario
             // 
             tCelularUsuario.Font = new Font("Sitka Banner", 12F);
-            tCelularUsuario.Location = new Point(539, 87);
+            tCelularUsuario.Location = new Point(402, 92);
             tCelularUsuario.Name = "tCelularUsuario";
-            tCelularUsuario.Size = new Size(195, 28);
+            tCelularUsuario.Size = new Size(154, 28);
             tCelularUsuario.TabIndex = 45;
             tCelularUsuario.KeyPress += tCelularUsuario_KeyPress;
             // 
@@ -242,7 +246,7 @@
             lEmailUsuario.AutoSize = true;
             lEmailUsuario.BackColor = Color.Transparent;
             lEmailUsuario.Font = new Font("Sitka Banner", 12F);
-            lEmailUsuario.Location = new Point(428, 125);
+            lEmailUsuario.Location = new Point(313, 128);
             lEmailUsuario.Name = "lEmailUsuario";
             lEmailUsuario.Size = new Size(49, 23);
             lEmailUsuario.TabIndex = 46;
@@ -251,9 +255,9 @@
             // tEmailUsuario
             // 
             tEmailUsuario.Font = new Font("Sitka Banner", 12F);
-            tEmailUsuario.Location = new Point(539, 120);
+            tEmailUsuario.Location = new Point(402, 125);
             tEmailUsuario.Name = "tEmailUsuario";
-            tEmailUsuario.Size = new Size(195, 28);
+            tEmailUsuario.Size = new Size(154, 28);
             tEmailUsuario.TabIndex = 47;
             tEmailUsuario.KeyPress += tEmailUsuario_KeyPress;
             // 
@@ -270,12 +274,12 @@
             // 
             // cbSexoUsuario
             // 
-            cbSexoUsuario.Font = new Font("Sitka Banner", 12F);
+            cbSexoUsuario.Font = new Font("Sitka Banner", 9F);
             cbSexoUsuario.FormattingEnabled = true;
             cbSexoUsuario.Items.AddRange(new object[] { "Masculino", "Femenino" });
-            cbSexoUsuario.Location = new Point(134, 188);
+            cbSexoUsuario.Location = new Point(134, 191);
             cbSexoUsuario.Name = "cbSexoUsuario";
-            cbSexoUsuario.Size = new Size(195, 31);
+            cbSexoUsuario.Size = new Size(152, 26);
             cbSexoUsuario.TabIndex = 49;
             // 
             // lContraseñaUsuario
@@ -283,7 +287,7 @@
             lContraseñaUsuario.AutoSize = true;
             lContraseñaUsuario.BackColor = Color.Transparent;
             lContraseñaUsuario.Font = new Font("Sitka Banner", 12F);
-            lContraseñaUsuario.Location = new Point(428, 191);
+            lContraseñaUsuario.Location = new Point(313, 194);
             lContraseñaUsuario.Name = "lContraseñaUsuario";
             lContraseñaUsuario.Size = new Size(84, 23);
             lContraseñaUsuario.TabIndex = 50;
@@ -291,10 +295,10 @@
             // 
             // tContraseñaUsuario
             // 
-            tContraseñaUsuario.Font = new Font("Sitka Banner", 12F);
-            tContraseñaUsuario.Location = new Point(539, 188);
+            tContraseñaUsuario.Font = new Font("Sitka Banner", 9F);
+            tContraseñaUsuario.Location = new Point(402, 195);
             tContraseñaUsuario.Name = "tContraseñaUsuario";
-            tContraseñaUsuario.Size = new Size(195, 28);
+            tContraseñaUsuario.Size = new Size(154, 23);
             tContraseñaUsuario.TabIndex = 51;
             tContraseñaUsuario.UseSystemPasswordChar = true;
             tContraseñaUsuario.TextChanged += tContraseñaUsuario_TextChanged;
@@ -387,6 +391,7 @@
             BGrabarUsuario.ShadowDecoration.CustomizableEdges = customizableEdges10;
             BGrabarUsuario.Size = new Size(78, 45);
             BGrabarUsuario.TabIndex = 52;
+            BGrabarUsuario.Click += BGrabarUsuario_Click;
             // 
             // lListadoUsuarios
             // 
@@ -405,7 +410,7 @@
             lRolUsuario.AutoSize = true;
             lRolUsuario.BackColor = Color.Transparent;
             lRolUsuario.Font = new Font("Sitka Banner", 12F);
-            lRolUsuario.Location = new Point(428, 161);
+            lRolUsuario.Location = new Point(313, 164);
             lRolUsuario.Name = "lRolUsuario";
             lRolUsuario.Size = new Size(34, 23);
             lRolUsuario.TabIndex = 57;
@@ -413,11 +418,11 @@
             // 
             // cbRolUsuario
             // 
-            cbRolUsuario.Font = new Font("Sitka Banner", 12F);
+            cbRolUsuario.Font = new Font("Sitka Banner", 9F);
             cbRolUsuario.FormattingEnabled = true;
-            cbRolUsuario.Location = new Point(539, 153);
+            cbRolUsuario.Location = new Point(402, 161);
             cbRolUsuario.Name = "cbRolUsuario";
-            cbRolUsuario.Size = new Size(195, 31);
+            cbRolUsuario.Size = new Size(154, 26);
             cbRolUsuario.TabIndex = 58;
             // 
             // dgvListadoUsuarios
@@ -435,11 +440,52 @@
             // 
             lEstadoContraseña.AutoSize = true;
             lEstadoContraseña.BackColor = Color.Transparent;
-            lEstadoContraseña.Font = new Font("Sitka Banner", 12F);
-            lEstadoContraseña.Location = new Point(539, 219);
+            lEstadoContraseña.Font = new Font("Sitka Banner", 9F);
+            lEstadoContraseña.Location = new Point(446, 223);
             lEstadoContraseña.Name = "lEstadoContraseña";
-            lEstadoContraseña.Size = new Size(0, 23);
+            lEstadoContraseña.Size = new Size(0, 18);
             lEstadoContraseña.TabIndex = 60;
+            // 
+            // lProvinciaUsuario
+            // 
+            lProvinciaUsuario.AutoSize = true;
+            lProvinciaUsuario.BackColor = Color.Transparent;
+            lProvinciaUsuario.Font = new Font("Sitka Banner", 12F);
+            lProvinciaUsuario.Location = new Point(571, 66);
+            lProvinciaUsuario.Name = "lProvinciaUsuario";
+            lProvinciaUsuario.Size = new Size(71, 23);
+            lProvinciaUsuario.TabIndex = 61;
+            lProvinciaUsuario.Text = "Provincia:";
+            // 
+            // lCiudadUsuario
+            // 
+            lCiudadUsuario.AutoSize = true;
+            lCiudadUsuario.BackColor = Color.Transparent;
+            lCiudadUsuario.Font = new Font("Sitka Banner", 12F);
+            lCiudadUsuario.Location = new Point(571, 96);
+            lCiudadUsuario.Name = "lCiudadUsuario";
+            lCiudadUsuario.Size = new Size(58, 23);
+            lCiudadUsuario.TabIndex = 62;
+            lCiudadUsuario.Text = "Ciudad:";
+            // 
+            // cbProvinciaUsuario
+            // 
+            cbProvinciaUsuario.Font = new Font("Sitka Banner", 9F);
+            cbProvinciaUsuario.FormattingEnabled = true;
+            cbProvinciaUsuario.Location = new Point(648, 61);
+            cbProvinciaUsuario.Name = "cbProvinciaUsuario";
+            cbProvinciaUsuario.Size = new Size(154, 26);
+            cbProvinciaUsuario.TabIndex = 63;
+            cbProvinciaUsuario.SelectedIndexChanged += cbProvinciaUsuario_SelectedIndexChanged;
+            // 
+            // cbCiudadUsuario
+            // 
+            cbCiudadUsuario.Font = new Font("Sitka Banner", 9F);
+            cbCiudadUsuario.FormattingEnabled = true;
+            cbCiudadUsuario.Location = new Point(648, 93);
+            cbCiudadUsuario.Name = "cbCiudadUsuario";
+            cbCiudadUsuario.Size = new Size(154, 26);
+            cbCiudadUsuario.TabIndex = 64;
             // 
             // fGestionUsuarios
             // 
@@ -447,6 +493,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(878, 561);
+            Controls.Add(cbCiudadUsuario);
+            Controls.Add(cbProvinciaUsuario);
+            Controls.Add(lCiudadUsuario);
+            Controls.Add(lProvinciaUsuario);
             Controls.Add(lEstadoContraseña);
             Controls.Add(dgvListadoUsuarios);
             Controls.Add(cbRolUsuario);
@@ -520,5 +570,9 @@
         private ComboBox cbRolUsuario;
         private DataGridView dgvListadoUsuarios;
         private Label lEstadoContraseña;
+        private Label lProvinciaUsuario;
+        private Label lCiudadUsuario;
+        private ComboBox cbProvinciaUsuario;
+        private ComboBox cbCiudadUsuario;
     }
 }
