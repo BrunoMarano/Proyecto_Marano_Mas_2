@@ -203,6 +203,16 @@ namespace AvicolaVentas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap icons8_clientes_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-clientes-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap icons8_clientes_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-clientes-30", resourceCulture);
@@ -223,9 +233,39 @@ namespace AvicolaVentas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap icons8_comportamiento_de_las_ventas_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-comportamiento-de-las-ventas-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap icons8_copias_de_seguridad_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-copias-de-seguridad-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_dinero_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-dinero-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_dinero_1001 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-dinero-1001", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -256,6 +296,26 @@ namespace AvicolaVentas.Properties {
         public static System.Drawing.Bitmap icons8_limpiar_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-limpiar-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_pago_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pago-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_primer_lugar_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-primer-lugar-100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -306,6 +366,16 @@ namespace AvicolaVentas.Properties {
         public static System.Drawing.Bitmap icons8_usuarios_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-usuarios-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_ventas_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ventas-100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

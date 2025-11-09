@@ -27,6 +27,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fGestionProductos));
             lPrecioProd = new Label();
             lStockProd = new Label();
@@ -34,14 +36,13 @@
             lFechaAltaProd = new Label();
             lDescripcionProd = new Label();
             cbCategoriaProd = new ComboBox();
-            tDescripcionProd = new TextBox();
             tPrecioProd = new TextBox();
             tStockProd = new TextBox();
             dtpFechaAltaProd = new DateTimePicker();
             LGestionClientes = new Guna.UI2.WinForms.Guna2HtmlLabel();
             PBLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             bVolverMenu = new Button();
-            label1 = new Label();
+            lStockMinimo = new Label();
             tStockMinimo = new TextBox();
             BLimpiarCampos = new Guna.UI2.WinForms.Guna2Button();
             BEliminarProducto = new Guna.UI2.WinForms.Guna2Button();
@@ -49,6 +50,12 @@
             BGrabarProducto = new Guna.UI2.WinForms.Guna2Button();
             LListadoClientes = new Label();
             dgvListadoProductos = new DataGridView();
+            lCostoProducto = new Label();
+            tCostoProducto = new TextBox();
+            lProveedorProd = new Label();
+            cbVer = new Guna.UI2.WinForms.Guna2ComboBox();
+            cbTipoProducto = new ComboBox();
+            cbProveedorProd = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)PBLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvListadoProductos).BeginInit();
             SuspendLayout();
@@ -58,7 +65,7 @@
             lPrecioProd.AutoSize = true;
             lPrecioProd.BackColor = Color.Transparent;
             lPrecioProd.Font = new Font("Sitka Banner", 12F);
-            lPrecioProd.Location = new Point(72, 147);
+            lPrecioProd.Location = new Point(72, 122);
             lPrecioProd.Name = "lPrecioProd";
             lPrecioProd.Size = new Size(52, 23);
             lPrecioProd.TabIndex = 17;
@@ -69,7 +76,7 @@
             lStockProd.AutoSize = true;
             lStockProd.BackColor = Color.Transparent;
             lStockProd.Font = new Font("Sitka Banner", 12F);
-            lStockProd.Location = new Point(412, 107);
+            lStockProd.Location = new Point(390, 57);
             lStockProd.Name = "lStockProd";
             lStockProd.Size = new Size(47, 23);
             lStockProd.TabIndex = 16;
@@ -80,7 +87,7 @@
             lCategoriaProd.AutoSize = true;
             lCategoriaProd.BackColor = Color.Transparent;
             lCategoriaProd.Font = new Font("Sitka Banner", 12F);
-            lCategoriaProd.Location = new Point(72, 111);
+            lCategoriaProd.Location = new Point(72, 57);
             lCategoriaProd.Name = "lCategoriaProd";
             lCategoriaProd.Size = new Size(73, 23);
             lCategoriaProd.TabIndex = 15;
@@ -91,7 +98,7 @@
             lFechaAltaProd.AutoSize = true;
             lFechaAltaProd.BackColor = Color.Transparent;
             lFechaAltaProd.Font = new Font("Sitka Banner", 12F);
-            lFechaAltaProd.Location = new Point(412, 70);
+            lFechaAltaProd.Location = new Point(72, 153);
             lFechaAltaProd.Name = "lFechaAltaProd";
             lFechaAltaProd.Size = new Size(96, 23);
             lFechaAltaProd.TabIndex = 14;
@@ -102,7 +109,7 @@
             lDescripcionProd.AutoSize = true;
             lDescripcionProd.BackColor = Color.Transparent;
             lDescripcionProd.Font = new Font("Sitka Banner", 12F);
-            lDescripcionProd.Location = new Point(72, 70);
+            lDescripcionProd.Location = new Point(72, 89);
             lDescripcionProd.Name = "lDescripcionProd";
             lDescripcionProd.Size = new Size(86, 23);
             lDescripcionProd.TabIndex = 11;
@@ -112,35 +119,29 @@
             // 
             cbCategoriaProd.Font = new Font("Sitka Banner", 12F);
             cbCategoriaProd.FormattingEnabled = true;
-            cbCategoriaProd.Location = new Point(172, 101);
+            cbCategoriaProd.Location = new Point(172, 52);
             cbCategoriaProd.Name = "cbCategoriaProd";
-            cbCategoriaProd.Size = new Size(195, 31);
+            cbCategoriaProd.Size = new Size(166, 31);
             cbCategoriaProd.TabIndex = 9;
-            // 
-            // tDescripcionProd
-            // 
-            tDescripcionProd.Font = new Font("Sitka Banner", 12F);
-            tDescripcionProd.Location = new Point(172, 67);
-            tDescripcionProd.Name = "tDescripcionProd";
-            tDescripcionProd.Size = new Size(195, 28);
-            tDescripcionProd.TabIndex = 10;
-            tDescripcionProd.TextChanged += tDescripcionProd_TextChanged;
+            cbCategoriaProd.SelectedIndexChanged += cbCategoriaProd_SelectedIndexChanged;
             // 
             // tPrecioProd
             // 
             tPrecioProd.Font = new Font("Sitka Banner", 12F);
-            tPrecioProd.Location = new Point(172, 142);
+            tPrecioProd.Location = new Point(172, 119);
             tPrecioProd.Name = "tPrecioProd";
-            tPrecioProd.Size = new Size(195, 28);
+            tPrecioProd.Size = new Size(166, 28);
             tPrecioProd.TabIndex = 6;
+            tPrecioProd.TextChanged += tPrecioProd_TextChanged;
             // 
             // tStockProd
             // 
             tStockProd.Font = new Font("Sitka Banner", 12F);
-            tStockProd.Location = new Point(521, 104);
+            tStockProd.Location = new Point(499, 54);
             tStockProd.Name = "tStockProd";
-            tStockProd.Size = new Size(195, 28);
+            tStockProd.Size = new Size(166, 28);
             tStockProd.TabIndex = 5;
+            tStockProd.TextChanged += tStockProd_TextChanged;
             // 
             // dtpFechaAltaProd
             // 
@@ -148,11 +149,10 @@
             dtpFechaAltaProd.DropDownAlign = LeftRightAlignment.Right;
             dtpFechaAltaProd.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtpFechaAltaProd.Format = DateTimePickerFormat.Short;
-            dtpFechaAltaProd.Location = new Point(521, 64);
+            dtpFechaAltaProd.Location = new Point(172, 150);
             dtpFechaAltaProd.Name = "dtpFechaAltaProd";
-            dtpFechaAltaProd.Size = new Size(195, 28);
+            dtpFechaAltaProd.Size = new Size(166, 28);
             dtpFechaAltaProd.TabIndex = 4;
-            dtpFechaAltaProd.ValueChanged += dtpFechaAltaProd_ValueChanged;
             // 
             // LGestionClientes
             // 
@@ -196,23 +196,23 @@
             bVolverMenu.TabIndex = 31;
             bVolverMenu.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // lStockMinimo
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Sitka Banner", 12F);
-            label1.Location = new Point(412, 147);
-            label1.Name = "label1";
-            label1.Size = new Size(98, 23);
-            label1.TabIndex = 32;
-            label1.Text = "Stock minimo:";
+            lStockMinimo.AutoSize = true;
+            lStockMinimo.BackColor = Color.Transparent;
+            lStockMinimo.Font = new Font("Sitka Banner", 12F);
+            lStockMinimo.Location = new Point(390, 91);
+            lStockMinimo.Name = "lStockMinimo";
+            lStockMinimo.Size = new Size(98, 23);
+            lStockMinimo.TabIndex = 32;
+            lStockMinimo.Text = "Stock minimo:";
             // 
             // tStockMinimo
             // 
             tStockMinimo.Font = new Font("Sitka Banner", 12F);
-            tStockMinimo.Location = new Point(521, 142);
+            tStockMinimo.Location = new Point(499, 86);
             tStockMinimo.Name = "tStockMinimo";
-            tStockMinimo.Size = new Size(195, 28);
+            tStockMinimo.Size = new Size(166, 28);
             tStockMinimo.TabIndex = 33;
             // 
             // BLimpiarCampos
@@ -302,6 +302,7 @@
             BGrabarProducto.ShadowDecoration.CustomizableEdges = customizableEdges10;
             BGrabarProducto.Size = new Size(78, 45);
             BGrabarProducto.TabIndex = 37;
+            BGrabarProducto.Click += BGrabarProducto_Click;
             // 
             // LListadoClientes
             // 
@@ -326,6 +327,77 @@
             dgvListadoProductos.Size = new Size(818, 243);
             dgvListadoProductos.TabIndex = 42;
             // 
+            // lCostoProducto
+            // 
+            lCostoProducto.AutoSize = true;
+            lCostoProducto.BackColor = Color.Transparent;
+            lCostoProducto.Font = new Font("Sitka Banner", 12F);
+            lCostoProducto.Location = new Point(390, 121);
+            lCostoProducto.Name = "lCostoProducto";
+            lCostoProducto.Size = new Size(48, 23);
+            lCostoProducto.TabIndex = 43;
+            lCostoProducto.Text = "Costo:";
+            // 
+            // tCostoProducto
+            // 
+            tCostoProducto.Font = new Font("Sitka Banner", 12F);
+            tCostoProducto.Location = new Point(499, 116);
+            tCostoProducto.Name = "tCostoProducto";
+            tCostoProducto.Size = new Size(166, 28);
+            tCostoProducto.TabIndex = 44;
+            tCostoProducto.TextChanged += tCostoProducto_TextChanged;
+            // 
+            // lProveedorProd
+            // 
+            lProveedorProd.AutoSize = true;
+            lProveedorProd.BackColor = Color.Transparent;
+            lProveedorProd.Font = new Font("Sitka Banner", 12F);
+            lProveedorProd.Location = new Point(390, 152);
+            lProveedorProd.Name = "lProveedorProd";
+            lProveedorProd.Size = new Size(77, 23);
+            lProveedorProd.TabIndex = 45;
+            lProveedorProd.Text = "Proveedor:";
+            // 
+            // cbVer
+            // 
+            cbVer.AutoRoundedCorners = true;
+            cbVer.BackColor = Color.Gold;
+            cbVer.BorderColor = Color.Yellow;
+            cbVer.BorderRadius = 12;
+            cbVer.BorderThickness = 2;
+            cbVer.CustomizableEdges = customizableEdges11;
+            cbVer.DrawMode = DrawMode.OwnerDrawFixed;
+            cbVer.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbVer.FillColor = Color.Gold;
+            cbVer.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbVer.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbVer.Font = new Font("Sitka Banner", 8F);
+            cbVer.ForeColor = Color.Black;
+            cbVer.ItemHeight = 20;
+            cbVer.Location = new Point(728, 251);
+            cbVer.Name = "cbVer";
+            cbVer.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            cbVer.Size = new Size(112, 26);
+            cbVer.TabIndex = 48;
+            // 
+            // cbTipoProducto
+            // 
+            cbTipoProducto.Font = new Font("Sitka Banner", 12F);
+            cbTipoProducto.FormattingEnabled = true;
+            cbTipoProducto.Location = new Point(173, 84);
+            cbTipoProducto.Name = "cbTipoProducto";
+            cbTipoProducto.Size = new Size(166, 31);
+            cbTipoProducto.TabIndex = 49;
+            // 
+            // cbProveedorProd
+            // 
+            cbProveedorProd.Font = new Font("Segoe UI", 10F);
+            cbProveedorProd.FormattingEnabled = true;
+            cbProveedorProd.Location = new Point(499, 150);
+            cbProveedorProd.Name = "cbProveedorProd";
+            cbProveedorProd.Size = new Size(166, 25);
+            cbProveedorProd.TabIndex = 46;
+            // 
             // fGestionProductos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -333,6 +405,12 @@
             BackgroundImage = Properties.Resources.Fondo;
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(894, 526);
+            Controls.Add(cbTipoProducto);
+            Controls.Add(cbVer);
+            Controls.Add(cbProveedorProd);
+            Controls.Add(lProveedorProd);
+            Controls.Add(tCostoProducto);
+            Controls.Add(lCostoProducto);
             Controls.Add(dgvListadoProductos);
             Controls.Add(LListadoClientes);
             Controls.Add(BLimpiarCampos);
@@ -340,14 +418,13 @@
             Controls.Add(BModificarProducto);
             Controls.Add(BGrabarProducto);
             Controls.Add(tStockMinimo);
-            Controls.Add(label1);
+            Controls.Add(lStockMinimo);
             Controls.Add(bVolverMenu);
             Controls.Add(PBLogo);
             Controls.Add(LGestionClientes);
             Controls.Add(dtpFechaAltaProd);
             Controls.Add(tStockProd);
             Controls.Add(tPrecioProd);
-            Controls.Add(tDescripcionProd);
             Controls.Add(cbCategoriaProd);
             Controls.Add(lDescripcionProd);
             Controls.Add(lFechaAltaProd);
@@ -366,12 +443,6 @@
             PerformLayout();
         }
 
-
-        private void AltaProductos_Load(object sender, EventArgs e)
-        {
-            // Inicializaciones al cargar el formulario
-        }
-
         #endregion
         private Label lPrecioProd;
         private Label lStockProd;
@@ -379,14 +450,13 @@
         private Label lFechaAltaProd;
         private Label lDescripcionProd;
         private ComboBox cbCategoriaProd;
-        private TextBox tDescripcionProd;
         private TextBox tPrecioProd;
         private TextBox tStockProd;
         private DateTimePicker dtpFechaAltaProd;
         private Guna.UI2.WinForms.Guna2HtmlLabel LGestionClientes;
         private Guna.UI2.WinForms.Guna2PictureBox PBLogo;
         private Button bVolverMenu;
-        private Label label1;
+        private Label lStockMinimo;
         private TextBox tStockMinimo;
         private Guna.UI2.WinForms.Guna2Button BLimpiarCampos;
         private Guna.UI2.WinForms.Guna2Button BEliminarProducto;
@@ -394,5 +464,11 @@
         private Guna.UI2.WinForms.Guna2Button BGrabarProducto;
         private Label LListadoClientes;
         private DataGridView dgvListadoProductos;
+        private Label lCostoProducto;
+        private TextBox tCostoProducto;
+        private Label lProveedorProd;
+        private Guna.UI2.WinForms.Guna2ComboBox cbVer;
+        private ComboBox cbTipoProducto;
+        private ComboBox cbProveedorProd;
     }
 }

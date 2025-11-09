@@ -46,8 +46,6 @@
             TBUsuario = new Guna.UI2.WinForms.Guna2TextBox();
             LTitulo_login = new Label();
             PBInicioSesion = new Guna.UI2.WinForms.Guna2PictureBox();
-            linkLabel1 = new LinkLabel();
-            linkLabel2 = new LinkLabel();
             PanelSaludo = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -160,32 +158,6 @@
             PBInicioSesion.TabIndex = 4;
             PBInicioSesion.TabStop = false;
             // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.BackColor = Color.Gold;
-            linkLabel1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            linkLabel1.LinkColor = Color.FromArgb(64, 64, 64);
-            linkLabel1.Location = new Point(193, 422);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(76, 17);
-            linkLabel1.TabIndex = 10;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Registrarse";
-            // 
-            // linkLabel2
-            // 
-            linkLabel2.AutoSize = true;
-            linkLabel2.BackColor = Color.Gold;
-            linkLabel2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            linkLabel2.LinkColor = Color.FromArgb(64, 64, 64);
-            linkLabel2.Location = new Point(149, 392);
-            linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(154, 17);
-            linkLabel2.TabIndex = 11;
-            linkLabel2.TabStop = true;
-            linkLabel2.Text = "Olvidaste tu contraseña";
-            // 
             // PanelSaludo
             // 
             PanelSaludo.BackColor = Color.Transparent;
@@ -245,8 +217,6 @@
             BackColor = Color.FromArgb(255, 255, 128);
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(461, 473);
-            Controls.Add(linkLabel2);
-            Controls.Add(linkLabel1);
             Controls.Add(BIniciarSesion);
             Controls.Add(TBContraseña);
             Controls.Add(TBUsuario);
@@ -274,8 +244,6 @@
         private Guna.UI2.WinForms.Guna2TextBox TBContraseña;
         private Guna.UI2.WinForms.Guna2Button BIniciarSesion;
         private Guna.UI2.WinForms.Guna2PictureBox PBInicioSesion;
-        private LinkLabel linkLabel1;
-        private LinkLabel linkLabel2;
         private Guna.UI2.WinForms.Guna2PictureBox PanelSaludo;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;

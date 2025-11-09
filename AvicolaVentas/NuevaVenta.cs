@@ -22,11 +22,7 @@ namespace AvicolaVentas
             await CargarProductosAsync();
         }
 
-        private void buttonAgregarArticuloVenta_Click(object sender, EventArgs e)
-        {
-            AgregarArticuloVenta formularioHijo = new AgregarArticuloVenta();
-            formularioHijo.Show();
-        }
+   
 
         private void bVolverMenu_Click(object sender, EventArgs e)
         {
@@ -46,10 +42,10 @@ namespace AvicolaVentas
             var tablaClientes = new DataTable();
             tablaClientes.Load(lector);
 
-            cClienteVenta.DataSource = tablaClientes;
-            cClienteVenta.DisplayMember = "Nombre";
-            cClienteVenta.ValueMember = "Id_cliente";
-            cClienteVenta.SelectedIndex = -1;
+            //cClienteVenta.DataSource = tablaClientes;
+            //cClienteVenta.DisplayMember = "Nombre";
+            //cClienteVenta.ValueMember = "Id_cliente";
+            //cClienteVenta.SelectedIndex = -1;
         }
 
         // Cargar productos de forma asincrónica
@@ -96,7 +92,7 @@ namespace AvicolaVentas
 
         private void tTotalVenta_TextChanged(object sender, EventArgs e)
         {
-            tTotalVenta.ReadOnly = true;
+            //tTotalVenta.ReadOnly = true;
         }
 
         private void ActualizarTotal()
@@ -105,11 +101,11 @@ namespace AvicolaVentas
             decimal.TryParse(tCantidadVenta.Text, out decimal cantidad))
             {
                 decimal total = precio * cantidad;
-                tTotalVenta.Text = total.ToString("F2");
+              //  tTotalVenta.Text = total.ToString("F2");
             }
             else
             {
-                tTotalVenta.Text = "0.00";
+                //tTotalVenta.Text = "0.00";
             }
         }
 
@@ -118,10 +114,10 @@ namespace AvicolaVentas
             try
             {
                 // 1️⃣ Recuperar datos del formulario
-                int id_cliente = Convert.ToInt32(cClienteVenta.SelectedValue);
+                //int id_cliente = Convert.ToInt32(cClienteVenta.SelectedValue);
                 string id_usuario = "admin"; // o el usuario logueado
                 DateTime fecha_venta = DateTime.Now;
-                decimal totalVenta = Convert.ToDecimal(tTotalVenta.Text);
+                //decimal totalVenta = Convert.ToDecimal(tTotalVenta.Text);
 
                 int id_venta;
 
@@ -136,10 +132,10 @@ namespace AvicolaVentas
 
                     using (SqlCommand cmd = new SqlCommand(sqlInsertVenta, conn))
                     {
-                        cmd.Parameters.AddWithValue("@Id_cliente", id_cliente);
+                      //  cmd.Parameters.AddWithValue("@Id_cliente", id_cliente);
                         cmd.Parameters.AddWithValue("@fecha_venta", fecha_venta);
                         cmd.Parameters.AddWithValue("@id_usuario", id_usuario);
-                        cmd.Parameters.AddWithValue("@total_venta", totalVenta);
+                       // cmd.Parameters.AddWithValue("@total_venta", totalVenta);
 
                         id_venta = Convert.ToInt32(cmd.ExecuteScalar());
                     }
@@ -173,8 +169,8 @@ namespace AvicolaVentas
                 CargarDetalleVenta(id_venta);
 
                 // 5️⃣ Limpiar controles del formulario
-                cClienteVenta.SelectedIndex = -1;
-                tTotalVenta.Clear();
+                //cClienteVenta.SelectedIndex = -1;
+                //tTotalVenta.Clear();
                 // Si tienes otro control para agregar productos, limpiarlos también
 
                 MessageBox.Show("Venta registrada correctamente.");

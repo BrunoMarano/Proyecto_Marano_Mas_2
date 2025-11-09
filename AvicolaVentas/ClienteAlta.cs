@@ -187,13 +187,14 @@ namespace AvicolaVentas
                     c.fecha_nacimiento, 
                     c.telefono, 
                     c.direccion,
-                    c.id_ciudad,
+                    ci.id_ciudad,
                     ci.ciudad AS ciudad,
                     ci.id_provincia,
                     p.provincia AS provincia
-                FROM Cliente c
+                FROM Cliente c 
                 INNER JOIN Ciudad ci ON c.id_ciudad = ci.id_ciudad
                 INNER JOIN Provincia p ON ci.id_provincia = p.id_provincia
+                WHERE estado = 1
                 ORDER BY c.Id_cliente DESC";
 
                     using (SqlCommand comando = new SqlCommand(consulta, conexion))
@@ -256,31 +257,6 @@ namespace AvicolaVentas
 
         }
 
-        // LIMPIAR CAMPOS
-        private void BLimpiarCampos_Click(object sender, EventArgs e)
-        {
-            tDni.Clear();
-            tNombreCliente.Clear();
-            tApellidoCliente.Clear();
-            rbMasculinoCliente.Checked = false;
-            rbFemeninoCliente.Checked = false;
-            tEmailCliente.Clear();
-            tTelCliente.Clear();
-            tDirecciónCliente.Clear();
-            cbProvinciaCliente.SelectedIndex = -1;
-            cbCiudadCliente.SelectedIndex = -1;
-            dtpFechaNacCliente.Value = DateTime.Now;
-        }
-
-        private void tNombreCliente_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tEmailCliente_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void cbProvinciaCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -352,7 +328,7 @@ namespace AvicolaVentas
 
                 cbProvinciaCliente.SelectedValue = idProvincia; // Selecciona la provincia
 
-                // Cargar las ciudades de esa provincia antes de seleccionar la ciudad
+                //Cargar las ciudades de esa provincia antes de seleccionar la ciudad
                 CargarCiudades(idProvincia);
                 cbCiudadCliente.SelectedValue = idCiudad;
             }
@@ -385,11 +361,69 @@ namespace AvicolaVentas
                 }
             }
             MessageBox.Show("Cliente modificado exitosamente.");
+
+            CargarClientes();
+            BLimpiarCampos_Click(sender, e);
         }
 
-        private void tApellidoCliente_TextChanged(object sender, EventArgs e)
+        // LIMPIAR CAMPOS
+        private void BLimpiarCampos_Click(object sender, EventArgs e)
         {
+            tDni.Clear();
+            tNombreCliente.Clear();
+            tApellidoCliente.Clear();
+            rbMasculinoCliente.Checked = false;
+            rbFemeninoCliente.Checked = false;
+            tEmailCliente.Clear();
+            tTelCliente.Clear();
+            tDirecciónCliente.Clear();
+            cbProvinciaCliente.SelectedIndex = -1;
+            cbCiudadCliente.SelectedIndex = -1;
+            dtpFechaNacCliente.Value = DateTime.Now;
+        }
 
+        private void BEliminarCliente_Click(object sender, EventArgs e)
+        {
+            //Si presionas el botón eliminar cliente sin seleccionar un cliente, te avisa
+            if (dgvListadoClientes.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Por favor, seleccione un cliente para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            //Si seleccionas al cliente, te pide confirmación
+            int id_Cliente = Convert.ToInt32(dgvListadoClientes.SelectedRows[0].Cells["Id_cliente"].Value);
+            string nombreCliente = dgvListadoClientes.SelectedRows[0].Cells["nombre"].Value?.ToString() ?? "";
+
+            DialogResult confirmar = MessageBox.Show(
+                $"¿Está seguro de que desea eliminar al cliente '{nombreCliente}'?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question
+            );
+
+            //Eliminar cliente
+            try
+            {
+                if (confirmar == DialogResult.Yes)
+                {
+                    using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                    {
+                        conexion.Open();
+                        string consulta = "UPDATE Cliente SET estado = 0 WHERE Id_cliente = @Id_cliente";
+                        using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                        {
+                            comando.Parameters.AddWithValue("@Id_cliente", id_Cliente);
+                            comando.ExecuteNonQuery();
+                        }
+                    }
+                    MessageBox.Show("Cliente eliminado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarClientes();
+                    BLimpiarCampos_Click(sender, e);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar el cliente: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -85,7 +85,6 @@
             tNombreCliente.Name = "tNombreCliente";
             tNombreCliente.Size = new Size(201, 25);
             tNombreCliente.TabIndex = 0;
-            tNombreCliente.TextChanged += tNombreCliente_TextChanged;
             tNombreCliente.KeyPress += tNombreCliente_KeyPress;
             // 
             // lNombreCliente
@@ -119,7 +118,6 @@
             tApellidoCliente.Name = "tApellidoCliente";
             tApellidoCliente.Size = new Size(201, 25);
             tApellidoCliente.TabIndex = 4;
-            tApellidoCliente.TextChanged += tApellidoCliente_TextChanged;
             tApellidoCliente.KeyPress += tApellidoCliente_KeyPress;
             // 
             // lFechaNacCliente
@@ -285,7 +283,6 @@
             tEmailCliente.Name = "tEmailCliente";
             tEmailCliente.Size = new Size(201, 25);
             tEmailCliente.TabIndex = 23;
-            tEmailCliente.TextChanged += tEmailCliente_TextChanged;
             tEmailCliente.KeyPress += tEmailCliente_KeyPress;
             // 
             // cbProvinciaCliente
@@ -440,6 +437,7 @@
             BEliminarCliente.ShadowDecoration.CustomizableEdges = customizableEdges8;
             BEliminarCliente.Size = new Size(78, 45);
             BEliminarCliente.TabIndex = 35;
+            BEliminarCliente.Click += BEliminarCliente_Click;
             // 
             // BLimpiarCampos
             // 
@@ -462,6 +460,7 @@
             BLimpiarCampos.ShadowDecoration.CustomizableEdges = customizableEdges10;
             BLimpiarCampos.Size = new Size(78, 45);
             BLimpiarCampos.TabIndex = 36;
+            BLimpiarCampos.Click += BLimpiarCampos_Click;
             // 
             // BBuscarCliente
             // 

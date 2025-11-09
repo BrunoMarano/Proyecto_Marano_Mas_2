@@ -289,9 +289,70 @@ ORDER BY p.provincia, c.ciudad;
 
 SELECT * FROM Cliente;
 
-truncate table Cliente;
-
 SELECT * FROM Cliente ORDER BY Id_cliente DESC;
 
 ALTER TABLE Usuario
 ADD direccion VARCHAR(200);
+
+ALTER TABLE Usuario
+ADD id_ciudad INT NOT NULL;
+
+ALTER TABLE Venta
+ADD CONSTRAINT FK_Venta_Usuario
+FOREIGN KEY (Id_usuario)
+REFERENCES Usuario(Id_usuario);
+
+ALTER TABLE Venta
+ADD numero_factura INT NOT NULL;
+
+ALTER TABLE Venta_detalle
+ADD subtotal FLOAT NOT NULL;
+
+SELECT * FROM Cliente;
+
+INSERT INTO Categoria (descripcion, activo) VALUES
+('Huevos', 1),
+('Aves frescas', 1),
+('Procesados avicolas', 1),
+('Lacteos y fiambres', 1);
+
+SELECT * FROM Categoria;
+
+SELECT * FROM Producto;
+
+CREATE TABLE TipoProducto (
+id_tipo INT PRIMARY KEY IDENTITY(1,1),
+nombre VARCHAR(100) NOT NULL,
+id_categoria INT NOT NULL,
+FOREIGN KEY (id_categoria) REFERENCES Categoria(id_categoria));
+
+CREATE TABLE Categoria (
+    id_categoria INT PRIMARY KEY IDENTITY(1,1),
+    nombre NVARCHAR(100) NOT NULL
+);
+
+CREATE TABLE TipoProducto (
+    id_tipo INT PRIMARY KEY IDENTITY(1,1),
+    nombre NVARCHAR(100) NOT NULL,
+    id_categoria INT NOT NULL,
+    FOREIGN KEY (id_categoria) REFERENCES Categoria(id_categoria)
+);
+
+-- CATEGORÍAS
+INSERT INTO Categoria (nombre) VALUES
+('Aves'),
+('Huevos'),
+('Fiambres'),
+('Lácteos');
+
+-- PRODUCTOS SEGÚN CATEGORÍA
+INSERT INTO TipoProducto (nombre, id_categoria) VALUES
+('Pollo entero fresco', 1),
+('Pechuga de pollo', 1),
+('Muslo de pollo', 1),
+('Huevo blanco docena', 2),
+('Huevo colorado docena', 2),
+('Queso cremoso', 4),
+('Queso rallado', 4),
+('Salame milán', 3),
+('Jamón cocido', 3);

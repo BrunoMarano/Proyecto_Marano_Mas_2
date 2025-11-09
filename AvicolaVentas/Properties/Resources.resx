@@ -121,11 +121,17 @@
   <data name="icons8-proveedor-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\icons8-proveedor-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-ventas-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\icons8-ventas-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-clientes-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\icons8-clientes-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-limpiar-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\icons8-limpiar-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-buscar-301" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\icons8-buscar-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logoAvicola" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\logoAvicola.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-usuario-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\icons8-usuario-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,17 +154,23 @@
   <data name="icons8-carrito-de-compras" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\icons8-carrito-de-compras.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-clientes-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\icons8-clientes-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Huevo_Hombre" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Huevo_Hombre.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Huevo_Neutro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\huevo_Neutro.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-usuarios-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\icons8-usuarios-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logoAvicola" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\logoAvicola.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-buscar-301" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\icons8-buscar-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-clientes-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\icons8-clientes-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-pago-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\icons8-pago-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-carrito-de-compras-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\icons8-carrito-de-compras-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,14 +178,23 @@
   <data name="icons8-buscar-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\icons8-buscar-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-dinero-1001" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\icons8-dinero-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-copias-de-seguridad-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\icons8-copias-de-seguridad-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-eliminar-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\icons8-eliminar-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="edicion (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\edicion (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Huevo_Hombre" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\Huevo_Hombre.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-comportamiento-de-las-ventas-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\icons8-comportamiento-de-las-ventas-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-dinero-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\icons8-dinero-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="guardar-el-archivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\guardar-el-archivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,7 +223,7 @@
   <data name="Huevo_Mujer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Huevo_Mujer.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-copias-de-seguridad-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\icons8-copias-de-seguridad-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-primer-lugar-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\icons8-primer-lugar-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -481,7 +481,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Panel panelLogo;
         private Guna.UI2.WinForms.Guna2PictureBox PBLogoUsuario;
-        private Button button1;
         private Guna.UI2.WinForms.Guna2PictureBox PBLogo;
         private Button BReportes;
         private Label LModificarUsuario;

@@ -28,34 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fGestionVentas));
             dgListadoVentas = new DataGridView();
-            id_venta = new DataGridViewTextBoxColumn();
-            id_cliente = new DataGridViewTextBoxColumn();
-            id_producto = new DataGridViewTextBoxColumn();
-            Cantidad = new DataGridViewTextBoxColumn();
-            precio = new DataGridViewTextBoxColumn();
-            total_venta = new DataGridViewTextBoxColumn();
-            id_usuario = new DataGridViewTextBoxColumn();
             LGestionVentas = new Label();
-            LClienteVenta = new Label();
+            LClienteDniVenta = new Label();
             LProductoVenta = new Label();
             LCantidadVenta = new Label();
             LPrecioUnitarioVenta = new Label();
-            BCargarVenta = new Button();
-            BLimpiarCampos = new Button();
             cProductoVenta = new ComboBox();
             tCantidadVenta = new TextBox();
             tPrecioVenta = new TextBox();
-            bEditarVenta = new Button();
-            bEliminarVenta = new Button();
             LListadoVentas = new Label();
-            cClienteVenta = new ComboBox();
             bVolverMenu = new Button();
             PBLogo = new Button();
-            lTotalVenta = new Label();
-            tTotalVenta = new TextBox();
+            lFechaVenta = new Label();
+            textBox1 = new TextBox();
+            LNombreClienteVenta = new Label();
+            tNombreClienteVenta = new TextBox();
+            BLimpiarCampos = new Guna.UI2.WinForms.Guna2Button();
+            BEliminarVenta = new Guna.UI2.WinForms.Guna2Button();
+            BModificarVenta = new Guna.UI2.WinForms.Guna2Button();
+            BConfirmarVenta = new Guna.UI2.WinForms.Guna2Button();
+            BBuscarCliente = new Guna.UI2.WinForms.Guna2Button();
+            bCargarProdVenta = new Guna.UI2.WinForms.Guna2Button();
+            dgvRegistroVenta = new DataGridView();
+            bCancelarVenta = new Guna.UI2.WinForms.Guna2Button();
+            dgvFacturaVenta = new DataGridView();
+            dtpFechaNacCliente = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)dgListadoVentas).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvRegistroVenta).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvFacturaVenta).BeginInit();
             SuspendLayout();
             // 
             // dgListadoVentas
@@ -64,7 +80,6 @@
             dgListadoVentas.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
             dgListadoVentas.BackgroundColor = Color.Gold;
             dgListadoVentas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgListadoVentas.Columns.AddRange(new DataGridViewColumn[] { id_venta, id_cliente, id_producto, Cantidad, precio, total_venta, id_usuario });
             dgListadoVentas.GridColor = Color.FromArgb(255, 255, 192);
             dgListadoVentas.Location = new Point(30, 262);
             dgListadoVentas.Margin = new Padding(4, 3, 4, 3);
@@ -72,46 +87,6 @@
             dgListadoVentas.Size = new Size(805, 248);
             dgListadoVentas.TabIndex = 0;
             dgListadoVentas.CellContentClick += dgListadoVentas_CellContentClick;
-            // 
-            // id_venta
-            // 
-            id_venta.HeaderText = "Nro de Venta";
-            id_venta.Name = "id_venta";
-            // 
-            // id_cliente
-            // 
-            id_cliente.HeaderText = "Cliente";
-            id_cliente.Name = "id_cliente";
-            id_cliente.ReadOnly = true;
-            // 
-            // id_producto
-            // 
-            id_producto.HeaderText = "Producto";
-            id_producto.Name = "id_producto";
-            id_producto.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            Cantidad.HeaderText = "Cantidad";
-            Cantidad.Name = "Cantidad";
-            Cantidad.ReadOnly = true;
-            // 
-            // precio
-            // 
-            precio.HeaderText = "Precio Unitario";
-            precio.Name = "precio";
-            precio.ReadOnly = true;
-            // 
-            // total_venta
-            // 
-            total_venta.HeaderText = "Total";
-            total_venta.Name = "total_venta";
-            total_venta.ReadOnly = true;
-            // 
-            // id_usuario
-            // 
-            id_usuario.HeaderText = "Vendedor";
-            id_usuario.Name = "id_usuario";
             // 
             // LGestionVentas
             // 
@@ -125,17 +100,17 @@
             LGestionVentas.Text = "Gestión de Ventas";
             LGestionVentas.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // LClienteVenta
+            // LClienteDniVenta
             // 
-            LClienteVenta.AutoSize = true;
-            LClienteVenta.BackColor = Color.Transparent;
-            LClienteVenta.Font = new Font("Sitka Banner", 12F);
-            LClienteVenta.Location = new Point(41, 84);
-            LClienteVenta.Margin = new Padding(4, 0, 4, 0);
-            LClienteVenta.Name = "LClienteVenta";
-            LClienteVenta.Size = new Size(58, 23);
-            LClienteVenta.TabIndex = 6;
-            LClienteVenta.Text = "Cliente:";
+            LClienteDniVenta.AutoSize = true;
+            LClienteDniVenta.BackColor = Color.Transparent;
+            LClienteDniVenta.Font = new Font("Sitka Banner", 12F);
+            LClienteDniVenta.Location = new Point(41, 57);
+            LClienteDniVenta.Margin = new Padding(4, 0, 4, 0);
+            LClienteDniVenta.Name = "LClienteDniVenta";
+            LClienteDniVenta.Size = new Size(84, 23);
+            LClienteDniVenta.TabIndex = 6;
+            LClienteDniVenta.Text = "Dni Cliente:";
             // 
             // LProductoVenta
             // 
@@ -154,7 +129,7 @@
             LCantidadVenta.AutoSize = true;
             LCantidadVenta.BackColor = Color.Transparent;
             LCantidadVenta.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LCantidadVenta.Location = new Point(437, 80);
+            LCantidadVenta.Location = new Point(437, 59);
             LCantidadVenta.Margin = new Padding(4, 0, 4, 0);
             LCantidadVenta.Name = "LCantidadVenta";
             LCantidadVenta.Size = new Size(70, 23);
@@ -166,41 +141,16 @@
             LPrecioUnitarioVenta.AutoSize = true;
             LPrecioUnitarioVenta.BackColor = Color.Transparent;
             LPrecioUnitarioVenta.Font = new Font("Sitka Banner", 12F);
-            LPrecioUnitarioVenta.Location = new Point(437, 115);
+            LPrecioUnitarioVenta.Location = new Point(437, 86);
             LPrecioUnitarioVenta.Margin = new Padding(4, 0, 4, 0);
             LPrecioUnitarioVenta.Name = "LPrecioUnitarioVenta";
             LPrecioUnitarioVenta.Size = new Size(52, 23);
             LPrecioUnitarioVenta.TabIndex = 9;
             LPrecioUnitarioVenta.Text = "Precio:";
             // 
-            // BCargarVenta
-            // 
-            BCargarVenta.BackColor = Color.Silver;
-            BCargarVenta.BackgroundImageLayout = ImageLayout.None;
-            BCargarVenta.ForeColor = Color.Black;
-            BCargarVenta.Location = new Point(135, 182);
-            BCargarVenta.Margin = new Padding(4, 3, 4, 3);
-            BCargarVenta.Name = "BCargarVenta";
-            BCargarVenta.Size = new Size(110, 34);
-            BCargarVenta.TabIndex = 11;
-            BCargarVenta.Text = "Cargar venta";
-            BCargarVenta.UseVisualStyleBackColor = false;
-            BCargarVenta.Click += BCargarVenta_Click;
-            // 
-            // BLimpiarCampos
-            // 
-            BLimpiarCampos.BackColor = Color.Silver;
-            BLimpiarCampos.Location = new Point(285, 182);
-            BLimpiarCampos.Margin = new Padding(4, 3, 4, 3);
-            BLimpiarCampos.Name = "BLimpiarCampos";
-            BLimpiarCampos.Size = new Size(111, 34);
-            BLimpiarCampos.TabIndex = 12;
-            BLimpiarCampos.Text = "Limpiar campos";
-            BLimpiarCampos.UseVisualStyleBackColor = false;
-            // 
             // cProductoVenta
             // 
-            cProductoVenta.BackColor = Color.FromArgb(255, 255, 192);
+            cProductoVenta.BackColor = Color.White;
             cProductoVenta.FormattingEnabled = true;
             cProductoVenta.Location = new Point(135, 115);
             cProductoVenta.Margin = new Padding(4, 3, 4, 3);
@@ -211,8 +161,8 @@
             // 
             // tCantidadVenta
             // 
-            tCantidadVenta.BackColor = Color.FromArgb(255, 255, 192);
-            tCantidadVenta.Location = new Point(512, 81);
+            tCantidadVenta.BackColor = Color.White;
+            tCantidadVenta.Location = new Point(512, 60);
             tCantidadVenta.Margin = new Padding(4, 3, 4, 3);
             tCantidadVenta.Name = "tCantidadVenta";
             tCantidadVenta.Size = new Size(208, 23);
@@ -220,36 +170,12 @@
             // 
             // tPrecioVenta
             // 
-            tPrecioVenta.BackColor = Color.FromArgb(255, 255, 192);
-            tPrecioVenta.Location = new Point(512, 115);
+            tPrecioVenta.BackColor = Color.White;
+            tPrecioVenta.Location = new Point(512, 86);
             tPrecioVenta.Margin = new Padding(4, 3, 4, 3);
             tPrecioVenta.Name = "tPrecioVenta";
             tPrecioVenta.Size = new Size(208, 23);
             tPrecioVenta.TabIndex = 17;
-            // 
-            // bEditarVenta
-            // 
-            bEditarVenta.BackColor = Color.Silver;
-            bEditarVenta.Location = new Point(437, 179);
-            bEditarVenta.Margin = new Padding(4, 3, 4, 3);
-            bEditarVenta.Name = "bEditarVenta";
-            bEditarVenta.Size = new Size(111, 37);
-            bEditarVenta.TabIndex = 19;
-            bEditarVenta.Text = "Editar";
-            bEditarVenta.UseVisualStyleBackColor = false;
-            // 
-            // bEliminarVenta
-            // 
-            bEliminarVenta.BackColor = Color.Silver;
-            bEliminarVenta.FlatAppearance.BorderColor = Color.Silver;
-            bEliminarVenta.FlatAppearance.BorderSize = 0;
-            bEliminarVenta.Location = new Point(578, 179);
-            bEliminarVenta.Margin = new Padding(4, 3, 4, 3);
-            bEliminarVenta.Name = "bEliminarVenta";
-            bEliminarVenta.Size = new Size(114, 37);
-            bEliminarVenta.TabIndex = 20;
-            bEliminarVenta.Text = "Eliminar";
-            bEliminarVenta.UseVisualStyleBackColor = false;
             // 
             // LListadoVentas
             // 
@@ -262,16 +188,6 @@
             LListadoVentas.TabIndex = 5;
             LListadoVentas.Text = "Listado de ventas";
             LListadoVentas.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // cClienteVenta
-            // 
-            cClienteVenta.BackColor = Color.Gold;
-            cClienteVenta.FormattingEnabled = true;
-            cClienteVenta.Location = new Point(135, 81);
-            cClienteVenta.Margin = new Padding(4, 3, 4, 3);
-            cClienteVenta.Name = "cClienteVenta";
-            cClienteVenta.Size = new Size(208, 23);
-            cClienteVenta.TabIndex = 21;
             // 
             // bVolverMenu
             // 
@@ -300,27 +216,240 @@
             PBLogo.TabIndex = 24;
             PBLogo.UseVisualStyleBackColor = false;
             // 
-            // lTotalVenta
+            // lFechaVenta
             // 
-            lTotalVenta.AutoSize = true;
-            lTotalVenta.BackColor = Color.Transparent;
-            lTotalVenta.Font = new Font("Sitka Banner", 12F);
-            lTotalVenta.Location = new Point(437, 144);
-            lTotalVenta.Margin = new Padding(4, 0, 4, 0);
-            lTotalVenta.Name = "lTotalVenta";
-            lTotalVenta.Size = new Size(45, 23);
-            lTotalVenta.TabIndex = 25;
-            lTotalVenta.Text = "Total:";
+            lFechaVenta.AutoSize = true;
+            lFechaVenta.BackColor = Color.Transparent;
+            lFechaVenta.Font = new Font("Sitka Banner", 12F);
+            lFechaVenta.Location = new Point(437, 113);
+            lFechaVenta.Margin = new Padding(4, 0, 4, 0);
+            lFechaVenta.Name = "lFechaVenta";
+            lFechaVenta.Size = new Size(50, 23);
+            lFechaVenta.TabIndex = 25;
+            lFechaVenta.Text = "Fecha:";
             // 
-            // tTotalVenta
+            // textBox1
             // 
-            tTotalVenta.BackColor = Color.FromArgb(255, 255, 192);
-            tTotalVenta.Location = new Point(512, 146);
-            tTotalVenta.Margin = new Padding(4, 3, 4, 3);
-            tTotalVenta.Name = "tTotalVenta";
-            tTotalVenta.Size = new Size(208, 23);
-            tTotalVenta.TabIndex = 26;
-            tTotalVenta.TextChanged += tTotalVenta_TextChanged;
+            textBox1.BackColor = Color.White;
+            textBox1.Location = new Point(135, 57);
+            textBox1.Margin = new Padding(4, 3, 4, 3);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(208, 23);
+            textBox1.TabIndex = 27;
+            // 
+            // LNombreClienteVenta
+            // 
+            LNombreClienteVenta.AutoSize = true;
+            LNombreClienteVenta.BackColor = Color.Transparent;
+            LNombreClienteVenta.Font = new Font("Sitka Banner", 12F);
+            LNombreClienteVenta.Location = new Point(41, 83);
+            LNombreClienteVenta.Margin = new Padding(4, 0, 4, 0);
+            LNombreClienteVenta.Name = "LNombreClienteVenta";
+            LNombreClienteVenta.Size = new Size(64, 23);
+            LNombreClienteVenta.TabIndex = 28;
+            LNombreClienteVenta.Text = "Nombre:";
+            // 
+            // tNombreClienteVenta
+            // 
+            tNombreClienteVenta.BackColor = Color.White;
+            tNombreClienteVenta.Location = new Point(135, 86);
+            tNombreClienteVenta.Margin = new Padding(4, 3, 4, 3);
+            tNombreClienteVenta.Name = "tNombreClienteVenta";
+            tNombreClienteVenta.Size = new Size(208, 23);
+            tNombreClienteVenta.TabIndex = 29;
+            // 
+            // BLimpiarCampos
+            // 
+            BLimpiarCampos.BackColor = Color.Transparent;
+            BLimpiarCampos.BorderColor = Color.WhiteSmoke;
+            BLimpiarCampos.BorderRadius = 20;
+            BLimpiarCampos.BorderThickness = 3;
+            BLimpiarCampos.CustomizableEdges = customizableEdges1;
+            BLimpiarCampos.DisabledState.BorderColor = Color.DarkGray;
+            BLimpiarCampos.DisabledState.CustomBorderColor = Color.DarkGray;
+            BLimpiarCampos.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            BLimpiarCampos.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            BLimpiarCampos.FillColor = SystemColors.ControlDark;
+            BLimpiarCampos.Font = new Font("Segoe UI", 9F);
+            BLimpiarCampos.ForeColor = Color.White;
+            BLimpiarCampos.HoverState.FillColor = SystemColors.ControlDarkDark;
+            BLimpiarCampos.Image = Properties.Resources.icons8_limpiar_30;
+            BLimpiarCampos.Location = new Point(334, 177);
+            BLimpiarCampos.Name = "BLimpiarCampos";
+            BLimpiarCampos.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            BLimpiarCampos.Size = new Size(78, 45);
+            BLimpiarCampos.TabIndex = 40;
+            // 
+            // BEliminarVenta
+            // 
+            BEliminarVenta.BackColor = Color.Transparent;
+            BEliminarVenta.BorderColor = Color.WhiteSmoke;
+            BEliminarVenta.BorderRadius = 20;
+            BEliminarVenta.BorderThickness = 3;
+            BEliminarVenta.CustomizableEdges = customizableEdges3;
+            BEliminarVenta.DisabledState.BorderColor = Color.DarkGray;
+            BEliminarVenta.DisabledState.CustomBorderColor = Color.DarkGray;
+            BEliminarVenta.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            BEliminarVenta.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            BEliminarVenta.FillColor = SystemColors.ControlDark;
+            BEliminarVenta.Font = new Font("Segoe UI", 9F);
+            BEliminarVenta.ForeColor = Color.White;
+            BEliminarVenta.HoverState.FillColor = SystemColors.ControlDarkDark;
+            BEliminarVenta.Image = Properties.Resources.icons8_eliminar_30;
+            BEliminarVenta.Location = new Point(610, 177);
+            BEliminarVenta.Name = "BEliminarVenta";
+            BEliminarVenta.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            BEliminarVenta.Size = new Size(78, 45);
+            BEliminarVenta.TabIndex = 39;
+            // 
+            // BModificarVenta
+            // 
+            BModificarVenta.BackColor = Color.Transparent;
+            BModificarVenta.BorderColor = Color.WhiteSmoke;
+            BModificarVenta.BorderRadius = 20;
+            BModificarVenta.BorderThickness = 3;
+            BModificarVenta.CustomizableEdges = customizableEdges5;
+            BModificarVenta.DisabledState.BorderColor = Color.DarkGray;
+            BModificarVenta.DisabledState.CustomBorderColor = Color.DarkGray;
+            BModificarVenta.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            BModificarVenta.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            BModificarVenta.FillColor = SystemColors.ControlDark;
+            BModificarVenta.Font = new Font("Segoe UI", 9F);
+            BModificarVenta.ForeColor = Color.White;
+            BModificarVenta.HoverState.FillColor = SystemColors.ControlDarkDark;
+            BModificarVenta.Image = Properties.Resources.edicion__1_;
+            BModificarVenta.Location = new Point(476, 177);
+            BModificarVenta.Name = "BModificarVenta";
+            BModificarVenta.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            BModificarVenta.Size = new Size(78, 45);
+            BModificarVenta.TabIndex = 38;
+            // 
+            // BConfirmarVenta
+            // 
+            BConfirmarVenta.BackColor = Color.Gold;
+            BConfirmarVenta.BorderColor = Color.SeaGreen;
+            BConfirmarVenta.BorderRadius = 20;
+            BConfirmarVenta.BorderThickness = 3;
+            BConfirmarVenta.CustomizableEdges = customizableEdges7;
+            BConfirmarVenta.DisabledState.BorderColor = Color.DarkGray;
+            BConfirmarVenta.DisabledState.CustomBorderColor = Color.DarkGray;
+            BConfirmarVenta.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            BConfirmarVenta.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            BConfirmarVenta.FillColor = Color.Green;
+            BConfirmarVenta.Font = new Font("Sitka Banner", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BConfirmarVenta.ForeColor = SystemColors.ActiveCaptionText;
+            BConfirmarVenta.HoverState.FillColor = SystemColors.ControlDarkDark;
+            BConfirmarVenta.Location = new Point(574, 453);
+            BConfirmarVenta.Name = "BConfirmarVenta";
+            BConfirmarVenta.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            BConfirmarVenta.Size = new Size(98, 45);
+            BConfirmarVenta.TabIndex = 37;
+            BConfirmarVenta.Text = "Confirmar Venta";
+            // 
+            // BBuscarCliente
+            // 
+            BBuscarCliente.BackColor = Color.Transparent;
+            BBuscarCliente.BorderColor = Color.WhiteSmoke;
+            BBuscarCliente.BorderRadius = 5;
+            BBuscarCliente.BorderThickness = 3;
+            BBuscarCliente.CustomizableEdges = customizableEdges9;
+            BBuscarCliente.DisabledState.BorderColor = Color.DarkGray;
+            BBuscarCliente.DisabledState.CustomBorderColor = Color.DarkGray;
+            BBuscarCliente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            BBuscarCliente.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            BBuscarCliente.FillColor = SystemColors.ControlDark;
+            BBuscarCliente.Font = new Font("Segoe UI", 9F);
+            BBuscarCliente.ForeColor = Color.White;
+            BBuscarCliente.HoverState.FillColor = SystemColors.ControlDarkDark;
+            BBuscarCliente.Image = Properties.Resources.icons8_buscar_301;
+            BBuscarCliente.Location = new Point(350, 51);
+            BBuscarCliente.Name = "BBuscarCliente";
+            BBuscarCliente.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            BBuscarCliente.Size = new Size(35, 35);
+            BBuscarCliente.TabIndex = 41;
+            // 
+            // bCargarProdVenta
+            // 
+            bCargarProdVenta.BackColor = Color.Transparent;
+            bCargarProdVenta.BorderColor = Color.WhiteSmoke;
+            bCargarProdVenta.BorderRadius = 20;
+            bCargarProdVenta.BorderThickness = 3;
+            bCargarProdVenta.CustomizableEdges = customizableEdges11;
+            bCargarProdVenta.DisabledState.BorderColor = Color.DarkGray;
+            bCargarProdVenta.DisabledState.CustomBorderColor = Color.DarkGray;
+            bCargarProdVenta.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            bCargarProdVenta.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            bCargarProdVenta.FillColor = Color.DarkGray;
+            bCargarProdVenta.Font = new Font("Segoe UI", 9F);
+            bCargarProdVenta.ForeColor = Color.White;
+            bCargarProdVenta.HoverState.FillColor = SystemColors.ControlDarkDark;
+            bCargarProdVenta.Image = Properties.Resources.icons8_carrito_de_compras_30;
+            bCargarProdVenta.ImageSize = new Size(25, 25);
+            bCargarProdVenta.Location = new Point(202, 177);
+            bCargarProdVenta.Name = "bCargarProdVenta";
+            bCargarProdVenta.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            bCargarProdVenta.Size = new Size(78, 45);
+            bCargarProdVenta.TabIndex = 42;
+            // 
+            // dgvRegistroVenta
+            // 
+            dgvRegistroVenta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvRegistroVenta.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
+            dgvRegistroVenta.BackgroundColor = Color.Gold;
+            dgvRegistroVenta.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvRegistroVenta.GridColor = Color.FromArgb(255, 255, 192);
+            dgvRegistroVenta.Location = new Point(13, 262);
+            dgvRegistroVenta.Margin = new Padding(4, 3, 4, 3);
+            dgvRegistroVenta.Name = "dgvRegistroVenta";
+            dgvRegistroVenta.Size = new Size(805, 248);
+            dgvRegistroVenta.TabIndex = 43;
+            // 
+            // bCancelarVenta
+            // 
+            bCancelarVenta.BackColor = Color.Gold;
+            bCancelarVenta.BorderColor = Color.Firebrick;
+            bCancelarVenta.BorderRadius = 20;
+            bCancelarVenta.BorderThickness = 3;
+            bCancelarVenta.CustomizableEdges = customizableEdges13;
+            bCancelarVenta.DisabledState.BorderColor = Color.DarkGray;
+            bCancelarVenta.DisabledState.CustomBorderColor = Color.DarkGray;
+            bCancelarVenta.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            bCancelarVenta.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            bCancelarVenta.FillColor = Color.Red;
+            bCancelarVenta.Font = new Font("Sitka Banner", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bCancelarVenta.ForeColor = SystemColors.ActiveCaptionText;
+            bCancelarVenta.HoverState.FillColor = SystemColors.ControlDarkDark;
+            bCancelarVenta.Location = new Point(694, 453);
+            bCancelarVenta.Name = "bCancelarVenta";
+            bCancelarVenta.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            bCancelarVenta.Size = new Size(98, 45);
+            bCancelarVenta.TabIndex = 44;
+            bCancelarVenta.Text = "Cancelar Venta";
+            // 
+            // dgvFacturaVenta
+            // 
+            dgvFacturaVenta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvFacturaVenta.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
+            dgvFacturaVenta.BackgroundColor = Color.Gold;
+            dgvFacturaVenta.BorderStyle = BorderStyle.None;
+            dgvFacturaVenta.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvFacturaVenta.GridColor = Color.FromArgb(255, 255, 192);
+            dgvFacturaVenta.Location = new Point(15, 265);
+            dgvFacturaVenta.Margin = new Padding(4, 3, 4, 3);
+            dgvFacturaVenta.Name = "dgvFacturaVenta";
+            dgvFacturaVenta.Size = new Size(800, 180);
+            dgvFacturaVenta.TabIndex = 45;
+            // 
+            // dtpFechaNacCliente
+            // 
+            dtpFechaNacCliente.CalendarFont = new Font("Segoe UI", 12F);
+            dtpFechaNacCliente.Font = new Font("Segoe UI", 12F);
+            dtpFechaNacCliente.Format = DateTimePickerFormat.Short;
+            dtpFechaNacCliente.Location = new Point(512, 115);
+            dtpFechaNacCliente.Name = "dtpFechaNacCliente";
+            dtpFechaNacCliente.Size = new Size(208, 29);
+            dtpFechaNacCliente.TabIndex = 46;
+            dtpFechaNacCliente.Value = new DateTime(2025, 9, 18, 17, 32, 0, 0);
             // 
             // fGestionVentas
             // 
@@ -331,28 +460,35 @@
             BackgroundImage = Properties.Resources.Fondo;
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(890, 522);
-            Controls.Add(tTotalVenta);
-            Controls.Add(lTotalVenta);
+            Controls.Add(dtpFechaNacCliente);
+            Controls.Add(dgvFacturaVenta);
+            Controls.Add(bCancelarVenta);
+            Controls.Add(BConfirmarVenta);
+            Controls.Add(dgvRegistroVenta);
+            Controls.Add(bCargarProdVenta);
+            Controls.Add(BBuscarCliente);
+            Controls.Add(BLimpiarCampos);
+            Controls.Add(BEliminarVenta);
+            Controls.Add(BModificarVenta);
+            Controls.Add(tNombreClienteVenta);
+            Controls.Add(LNombreClienteVenta);
+            Controls.Add(textBox1);
+            Controls.Add(lFechaVenta);
             Controls.Add(PBLogo);
             Controls.Add(bVolverMenu);
-            Controls.Add(cClienteVenta);
             Controls.Add(LGestionVentas);
             Controls.Add(LListadoVentas);
-            Controls.Add(bEliminarVenta);
-            Controls.Add(bEditarVenta);
             Controls.Add(tPrecioVenta);
             Controls.Add(tCantidadVenta);
             Controls.Add(cProductoVenta);
-            Controls.Add(BLimpiarCampos);
-            Controls.Add(BCargarVenta);
             Controls.Add(LPrecioUnitarioVenta);
             Controls.Add(LCantidadVenta);
             Controls.Add(LProductoVenta);
-            Controls.Add(LClienteVenta);
+            Controls.Add(LClienteDniVenta);
             Controls.Add(dgListadoVentas);
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ForeColor = Color.Black;
-            FormBorderStyle = FormBorderStyle.Fixed3D;
+            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 3, 4, 3);
             Name = "fGestionVentas";
@@ -360,6 +496,8 @@
             TransparencyKey = Color.FromArgb(255, 255, 192);
             Load += FormNuevaVenta_Load;
             ((System.ComponentModel.ISupportInitialize)dgListadoVentas).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvRegistroVenta).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvFacturaVenta).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -367,32 +505,30 @@
         #endregion
 
         private DataGridView dgListadoVentas;
-        private Button buttonAgregarArticuloVenta;
-        private Button buttonEliminarArticuloVenta;
         private Label LGestionVentas;
-        private Label LClienteVenta;
+        private Label LClienteDniVenta;
         private Label LProductoVenta;
         private Label LCantidadVenta;
         private Label LPrecioUnitarioVenta;
-        private Button BCargarVenta;
-        private Button BLimpiarCampos;
         private ComboBox cProductoVenta;
         private TextBox tCantidadVenta;
         private TextBox tPrecioVenta;
-        private Button bEditarVenta;
-        private Button bEliminarVenta;
         private Label LListadoVentas;
-        private ComboBox cClienteVenta;
         private Button bVolverMenu;
         private Button PBLogo;
-        private DataGridViewTextBoxColumn id_venta;
-        private DataGridViewTextBoxColumn id_cliente;
-        private DataGridViewTextBoxColumn id_producto;
-        private DataGridViewTextBoxColumn Cantidad;
-        private DataGridViewTextBoxColumn precio;
-        private DataGridViewTextBoxColumn total_venta;
-        private DataGridViewTextBoxColumn id_usuario;
-        private Label lTotalVenta;
-        private TextBox tTotalVenta;
+        private Label lFechaVenta;
+        private TextBox textBox1;
+        private Label LNombreClienteVenta;
+        private TextBox tNombreClienteVenta;
+        private Guna.UI2.WinForms.Guna2Button BLimpiarCampos;
+        private Guna.UI2.WinForms.Guna2Button BEliminarVenta;
+        private Guna.UI2.WinForms.Guna2Button BModificarVenta;
+        private Guna.UI2.WinForms.Guna2Button BConfirmarVenta;
+        private Guna.UI2.WinForms.Guna2Button BBuscarCliente;
+        private Guna.UI2.WinForms.Guna2Button bCargarProdVenta;
+        private DataGridView dgvRegistroVenta;
+        private Guna.UI2.WinForms.Guna2Button bCancelarVenta;
+        private DataGridView dgvFacturaVenta;
+        private DateTimePicker dtpFechaNacCliente;
     }
 }
