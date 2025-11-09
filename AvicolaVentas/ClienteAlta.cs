@@ -6,7 +6,8 @@ namespace AvicolaVentas
 {
     public partial class fGestionClientes : Form
     {
-        private readonly string cadenaConexion = @"Data Source=FERNANDO\SQLEXPRESS02;Initial Catalog=AvicolaSantaAna1;Integrated Security=True;TrustServerCertificate=True;";
+        private readonly string cadenaConexion = @"Data Source=localhost\SQLEXPRESS02;Initial Catalog=AvicolaSantaAna1;Integrated Security=True;TrustServerCertificate=True;";
+
 
         public fGestionClientes()
         {

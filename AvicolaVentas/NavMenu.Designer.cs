@@ -34,12 +34,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             panelMenu = new Panel();
             BBackUp = new Button();
@@ -59,11 +59,11 @@
             PBLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             panelApp = new Panel();
             panelContenedor = new Panel();
+            dtpHoraMenu = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            dtpFechaMenu = new Guna.UI2.WinForms.Guna2DateTimePicker();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             labelUsuarioBienvenido = new Label();
             LMBienvenido = new Label();
-            dtpFechaMenu = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            dtpHoraMenu = new Guna.UI2.WinForms.Guna2DateTimePicker();
             panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PBLogoUsuario).BeginInit();
             panelLogo.SuspendLayout();
@@ -358,6 +358,46 @@
             panelContenedor.Size = new Size(880, 541);
             panelContenedor.TabIndex = 2;
             // 
+            // dtpHoraMenu
+            // 
+            dtpHoraMenu.BackColor = Color.Transparent;
+            dtpHoraMenu.Checked = true;
+            dtpHoraMenu.CustomizableEdges = customizableEdges7;
+            dtpHoraMenu.Enabled = false;
+            dtpHoraMenu.FillColor = Color.Transparent;
+            dtpHoraMenu.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpHoraMenu.Format = DateTimePickerFormat.Time;
+            dtpHoraMenu.Location = new Point(255, 504);
+            dtpHoraMenu.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            dtpHoraMenu.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            dtpHoraMenu.Name = "dtpHoraMenu";
+            dtpHoraMenu.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            dtpHoraMenu.Size = new Size(149, 36);
+            dtpHoraMenu.TabIndex = 10;
+            dtpHoraMenu.TextAlign = HorizontalAlignment.Center;
+            dtpHoraMenu.UseTransparentBackground = true;
+            dtpHoraMenu.Value = new DateTime(2025, 10, 27, 23, 30, 45, 541);
+            // 
+            // dtpFechaMenu
+            // 
+            dtpFechaMenu.BackColor = Color.Transparent;
+            dtpFechaMenu.Checked = true;
+            dtpFechaMenu.CustomizableEdges = customizableEdges9;
+            dtpFechaMenu.Enabled = false;
+            dtpFechaMenu.FillColor = Color.Transparent;
+            dtpFechaMenu.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpFechaMenu.Format = DateTimePickerFormat.Long;
+            dtpFechaMenu.Location = new Point(-1, 504);
+            dtpFechaMenu.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            dtpFechaMenu.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            dtpFechaMenu.Name = "dtpFechaMenu";
+            dtpFechaMenu.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            dtpFechaMenu.Size = new Size(250, 36);
+            dtpFechaMenu.TabIndex = 9;
+            dtpFechaMenu.TextAlign = HorizontalAlignment.Center;
+            dtpFechaMenu.UseTransparentBackground = true;
+            dtpFechaMenu.Value = new DateTime(2025, 10, 27, 23, 30, 45, 541);
+            // 
             // guna2PictureBox1
             // 
             guna2PictureBox1.BackColor = Color.Transparent;
@@ -397,46 +437,6 @@
             LMBienvenido.Text = "BIENVENIDO/A";
             LMBienvenido.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // dtpFechaMenu
-            // 
-            dtpFechaMenu.BackColor = Color.Transparent;
-            dtpFechaMenu.Checked = true;
-            dtpFechaMenu.CustomizableEdges = customizableEdges9;
-            dtpFechaMenu.Enabled = false;
-            dtpFechaMenu.FillColor = Color.Transparent;
-            dtpFechaMenu.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtpFechaMenu.Format = DateTimePickerFormat.Long;
-            dtpFechaMenu.Location = new Point(-1, 504);
-            dtpFechaMenu.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            dtpFechaMenu.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            dtpFechaMenu.Name = "dtpFechaMenu";
-            dtpFechaMenu.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            dtpFechaMenu.Size = new Size(250, 36);
-            dtpFechaMenu.TabIndex = 9;
-            dtpFechaMenu.TextAlign = HorizontalAlignment.Center;
-            dtpFechaMenu.UseTransparentBackground = true;
-            dtpFechaMenu.Value = new DateTime(2025, 10, 27, 23, 30, 45, 541);
-            // 
-            // dtpHoraMenu
-            // 
-            dtpHoraMenu.BackColor = Color.Transparent;
-            dtpHoraMenu.Checked = true;
-            dtpHoraMenu.CustomizableEdges = customizableEdges7;
-            dtpHoraMenu.Enabled = false;
-            dtpHoraMenu.FillColor = Color.Transparent;
-            dtpHoraMenu.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtpHoraMenu.Format = DateTimePickerFormat.Time;
-            dtpHoraMenu.Location = new Point(255, 504);
-            dtpHoraMenu.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            dtpHoraMenu.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            dtpHoraMenu.Name = "dtpHoraMenu";
-            dtpHoraMenu.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            dtpHoraMenu.Size = new Size(149, 36);
-            dtpHoraMenu.TabIndex = 10;
-            dtpHoraMenu.TextAlign = HorizontalAlignment.Center;
-            dtpHoraMenu.UseTransparentBackground = true;
-            dtpHoraMenu.Value = new DateTime(2025, 10, 27, 23, 30, 45, 541);
-            // 
             // FormMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -452,6 +452,7 @@
             Name = "FormMenu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu";
+            FormClosed += FormMenu_FormClosed;
             Load += FormMenu_Load;
             panelMenu.ResumeLayout(false);
             panelMenu.PerformLayout();

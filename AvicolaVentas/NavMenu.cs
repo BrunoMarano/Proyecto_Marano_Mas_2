@@ -208,16 +208,25 @@ namespace AvicolaVentas
         private void BCerrarSesion_Click(object sender, EventArgs e)
         {
             DialogResult preguntarCierre = MessageBox.Show(
-                "¿Estas seguro que deseas cerrar sesión?", 
+                "¿Estas seguro que deseas cerrar sesión?",
                 "Cerrar sesión",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
 
-            if(preguntarCierre == DialogResult.Yes) { 
+            if (preguntarCierre == DialogResult.Yes)
+            {
+                this.Hide();
                 FLogin loginForm = new FLogin();
-                loginForm.Show();
-                this.Close();
+                loginForm.ShowDialog(); // Bloquea hasta que cierre el login
+                this.Close(); // ahora sí, cierra correctamente
             }
+
+        }
+
+        private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
+
 }

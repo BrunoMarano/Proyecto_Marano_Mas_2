@@ -9,7 +9,7 @@ namespace AvicolaVentas
 {
     public partial class fGestionUsuarios : Form
     {
-        private readonly string cadenaConexion = @"Data Source=FERNANDO\SQLEXPRESS02;Initial Catalog=AvicolaSantaAna1;Integrated Security=True;TrustServerCertificate=True;";
+        private readonly string cadenaConexion = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=AvicolaSantaAna1;Integrated Security=True;TrustServerCertificate=True;";
 
         public fGestionUsuarios()
         {
@@ -79,38 +79,83 @@ namespace AvicolaVentas
         //AGREGAR USUARIO A LA BASE DE DATOS
         private void AgregarUsuario()
         {
+            // Validar campos vacíos
+            if (string.IsNullOrWhiteSpace(tDniUsuario.Text) ||
+                string.IsNullOrWhiteSpace(tNombreUsuario.Text) ||
+                string.IsNullOrWhiteSpace(tApellidoUsuario.Text) ||
+                string.IsNullOrWhiteSpace(tEmailUsuario.Text) ||
+                string.IsNullOrWhiteSpace(tContraseñaUsuario.Text))
+            {
+                MessageBox.Show("Por favor, complete todos los campos obligatorios.");
+                return;
+            }
+
+            // Validar fecha de nacimiento
+            if (dtpFechaNacUsuario.Value.Date >= DateTime.Today)
+            {
+                MessageBox.Show("La fecha de nacimiento no puede ser mayor o igual a la actual.");
+                return;
+            }
+
+            // Calcular el hash de la contraseña
+            string hashContraseña = HashPassword(tContraseñaUsuario.Text);
+
             using (SqlConnection conn = new SqlConnection(cadenaConexion))
             {
-                string query = "INSERT INTO Usuario (Dni, Nombre, Apellido, Correo, Telefono, Sexo, Fecha_Nacimiento, contraseña,baja, id_rol, direccion, id_ciudad) " +
-                    "VALUES (@Dni, @Nombre, @Apellido, @Correo, @Telefono, @Sexo, @Fecha_Nacimiento, @Contraseña, @baja, @Rol, @direccion, @id_ciudad)";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                if (dtpFechaNacUsuario.Value.Date < DateTime.Today)
+                try
                 {
-                    cmd.Parameters.AddWithValue("@Nombre", tNombreUsuario.Text);
-                    cmd.Parameters.AddWithValue("@Apellido", tApellidoUsuario.Text);
-                    cmd.Parameters.AddWithValue("@Correo", tEmailUsuario.Text);
-                    cmd.Parameters.AddWithValue("@Dni", int.Parse(tDniUsuario.Text));
-                    cmd.Parameters.AddWithValue("@Telefono", tCelularUsuario.Text);
-                    cmd.Parameters.AddWithValue("@direccion", tDireccionUsuario.Text);
-                    cmd.Parameters.AddWithValue("@Sexo", cbSexoUsuario.Text);
-                    cmd.Parameters.Add("@Fecha_Nacimiento", SqlDbType.Date).Value = dtpFechaNacUsuario.Value.Date;
-                    cmd.Parameters.AddWithValue("@Contraseña", tContraseñaUsuario.Text);
-                    cmd.Parameters.AddWithValue("@baja", 0); // por defecto activo
-                    cmd.Parameters.Add("@Rol", SqlDbType.Int).Value = cbRolUsuario.SelectedValue;
-                    cmd.Parameters.AddWithValue("@id_ciudad", cbCiudadUsuario.SelectedValue);
-
                     conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
+
+                    // 🔍 Verificar si ya existe el usuario (por DNI o correo)
+                    string checkQuery = @"SELECT COUNT(*) FROM Usuario 
+                                  WHERE Dni = @Dni OR Correo = @Correo";
+                    using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@Dni", int.Parse(tDniUsuario.Text));
+                        checkCmd.Parameters.AddWithValue("@Correo", tEmailUsuario.Text.Trim());
+
+                        int existe = (int)checkCmd.ExecuteScalar();
+                        if (existe > 0)
+                        {
+                            MessageBox.Show("El usuario con ese DNI o correo ya existe.");
+                            return;
+                        }
+                    }
+
+                    // 🧩 Si no existe, insertar
+                    string insertQuery = @"INSERT INTO Usuario 
+                (Dni, Nombre, Apellido, Correo, Telefono, Sexo, Fecha_Nacimiento, contraseña, baja, id_rol, direccion, id_ciudad)
+                VALUES 
+                (@Dni, @Nombre, @Apellido, @Correo, @Telefono, @Sexo, @Fecha_Nacimiento, @Contraseña, @Baja, @Rol, @Direccion, @Id_Ciudad)";
+
+                    using (SqlCommand cmd = new SqlCommand(insertQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Dni", int.Parse(tDniUsuario.Text));
+                        cmd.Parameters.AddWithValue("@Nombre", tNombreUsuario.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Apellido", tApellidoUsuario.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Correo", tEmailUsuario.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Telefono", tCelularUsuario.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Direccion", tDireccionUsuario.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Sexo", cbSexoUsuario.Text);
+                        cmd.Parameters.Add("@Fecha_Nacimiento", SqlDbType.Date).Value = dtpFechaNacUsuario.Value.Date;
+                        cmd.Parameters.AddWithValue("@Contraseña", hashContraseña);
+                        cmd.Parameters.AddWithValue("@Baja", 0);
+                        cmd.Parameters.Add("@Rol", SqlDbType.Int).Value = Convert.ToInt32(cbRolUsuario.SelectedValue);
+                        cmd.Parameters.Add("@Id_Ciudad", SqlDbType.Int).Value = Convert.ToInt32(cbCiudadUsuario.SelectedValue);
+
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Usuario cargado correctamente.");
+                    }
                 }
-                else
+                catch (SqlException ex)
                 {
-                    MessageBox.Show("Error al cargar la fecha");
+                    MessageBox.Show($"Error al insertar en la base de datos: {ex.Message}");
                 }
             }
 
             LimpiarCampos();
         }
+
 
         // OBTENER PROVINCIAS DESDE LA BASE DE DATOS
         private void ObtenerProvincia()
@@ -171,9 +216,22 @@ namespace AvicolaVentas
             }
         }
 
+        private string HashPassword(string password)
+        {
+            // Implementación de hashing de contraseña (por ejemplo, usando SHA256)
+            using (var sha256 = System.Security.Cryptography.SHA256.Create())
+            {
+                byte[] bytes = System.Text.Encoding.UTF8.GetBytes(password);
+                byte[] hash = sha256.ComputeHash(bytes);
+                return Convert.ToBase64String(hash);
+            }
+        }
+
         //CARGAR USUARIO EN EL DATAGRIDVIEW DESDE LA BASE DE DATOS
         private void CargarUsuario()
         {
+            
+
             // Implementación para cargar usuarios desde la base de datos en el dataGridView
             using (SqlConnection conexion = new SqlConnection(cadenaConexion))
             {
@@ -285,6 +343,11 @@ namespace AvicolaVentas
                     CargarCiudades(id_provincia);
                 }
             }
+        }
+
+        private void dgvListadoUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

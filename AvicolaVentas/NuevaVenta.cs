@@ -9,7 +9,8 @@ namespace AvicolaVentas
     public partial class fGestionVentas : Form
     {
         // Cadena de conexión como variable de instancia
-        private readonly string cadenaConexion = @"Data Source=FERNANDO\SQLEXPRESS02;Initial Catalog=AvicolaSantaAna1;Integrated Security=True;TrustServerCertificate=True;";
+        private readonly string cadenaConexion = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=AvicolaSantaAna1;Integrated Security=True;TrustServerCertificate=True;";
+
 
         public fGestionVentas()
         {

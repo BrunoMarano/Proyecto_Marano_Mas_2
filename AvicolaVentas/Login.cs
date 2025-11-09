@@ -10,7 +10,7 @@ namespace AvicolaVentas
 
     {
 
-        string connectionString = @"Data Source=FERNANDO\SQLEXPRESS02;Initial Catalog=AvicolaSantaAna1;Integrated Security=True;TrustServerCertificate=True;";
+        string connectionString = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=AvicolaSantaAna1;Integrated Security=True;TrustServerCertificate=True;";
         public FLogin()
         {
             InitializeComponent();

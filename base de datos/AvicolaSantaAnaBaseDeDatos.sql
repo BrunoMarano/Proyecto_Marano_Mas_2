@@ -295,7 +295,17 @@ ALTER TABLE Usuario
 ADD direccion VARCHAR(200);
 
 ALTER TABLE Usuario
-ADD id_ciudad INT NOT NULL;
+ADD id_ciudad INT;
+
+ALTER TABLE Usuario
+ADD CONSTRAINT FK_Ciudad_Usuario 
+FOREIGN KEY(id_ciudad) 
+REFERENCES Ciudad(id_ciudad);
+
+ALTER TABLE nombre_tabla_hija
+ADD CONSTRAINT nombre_fk
+FOREIGN KEY (columna_hija)
+REFERENCES nombre_tabla_padre(columna_padre);
 
 ALTER TABLE Venta
 ADD CONSTRAINT FK_Venta_Usuario
