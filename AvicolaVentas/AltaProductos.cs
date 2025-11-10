@@ -24,37 +24,38 @@ namespace AvicolaVentas
         private void AltaProductos_Load(object sender, EventArgs e)
         {
             CargarCombos();
-            
         }
 
         //VALIDACIONES DE CAMPOS
-        private void tPrecioProd_TextChanged(object sender, EventArgs e)
+        private void tPrecioProd_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!decimal.TryParse(tPrecioProd.Text, out decimal precio) || precio < 0)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
             {
-                MessageBox.Show("El precio debe ser un número positivo.");
-                tPrecioProd.Text = string.Empty;
-                return;
+                e.Handled = true;
             }
         }
 
-        private void tStockProd_TextChanged(object sender, EventArgs e)
+        private void tStockProd_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!int.TryParse(tStockProd.Text, out int stock) || stock < 0)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                MessageBox.Show("El stock debe ser un número entero positivo.");
-                tStockProd.Text = string.Empty;
-                return;
+                e.Handled = true;
             }
         }
 
-        private void tCostoProducto_TextChanged(object sender, EventArgs e)
+        private void tStockMinimo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!decimal.TryParse(tCostoProducto.Text, out decimal costo) || costo < 0)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                MessageBox.Show("El costo debe ser un número positivo.");
-                tCostoProducto.Text = string.Empty;
-                return;
+                e.Handled = true;
+            }
+        }
+
+        private void tCostoProducto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
 
@@ -305,22 +306,20 @@ namespace AvicolaVentas
             using (SqlConnection conexion = new SqlConnection(cadenaConexion))
             {
                 conexion.Open();
-                string consulta = "UPDATE Producto SET Nombre = @Nombre, Direccion = @Direccion, cuit = @cuit, telefono = @telefono, fecha_registro = @fecha_registro, email = @email, id_ciudad = @id_ciudad WHERE cuit = @cuit";
+                string consulta = "UPDATE Producto SET precio = @precio, stock = @stock, stock_minimo = @stock_minimo, estado = @estado, id_tipo = @id_tipo";
                 using (SqlCommand comando = new SqlCommand(consulta, conexion))
                 {
-                    comando.Parameters.AddWithValue("@cuit", tCuitProveedor.Text);
-                    comando.Parameters.AddWithValue("@Nombre", tNombreProveedor.Text);
-                    comando.Parameters.AddWithValue("@Direccion", tDireccionProveedor.Text);
-                    comando.Parameters.AddWithValue("@fecha_registro", dtpFechaRegProv.Value);
-                    comando.Parameters.AddWithValue("@email", tEmailProveedor.Text);
-                    comando.Parameters.AddWithValue("@telefono", tTelefonoProveedor.Text);
-                    comando.Parameters.AddWithValue("@id_ciudad", cbCiudadProveedores.SelectedValue);
+                    comando.Parameters.AddWithValue("@precio", Convert.ToDecimal(tPrecioProd.Text));
+                    comando.Parameters.AddWithValue("@stock", Convert.ToInt32(tStockProd.Text));
+                    comando.Parameters.AddWithValue("@stock_minimo", Convert.ToInt32(tStockMinimo.Text));
+                    comando.Parameters.AddWithValue("@estado", 1);
+                    comando.Parameters.AddWithValue("@id_tipo", Convert.ToInt32(cbTipoProducto.SelectedValue));
                     comando.ExecuteNonQuery();
                 }
             }
             MessageBox.Show("Cliente modificado exitosamente.");
 
-            CargarProveedores("");
+            CargarProductos("");
             BLimpiarCampos_Click(sender, e);
         }
 
@@ -339,6 +338,49 @@ namespace AvicolaVentas
                 CargarCategorias();
                 CargarProveedores();
 
+            }
+        }
+
+        private void BEliminarProducto_Click(object sender, EventArgs e)
+        {
+            //Si presionas el botón eliminar cliente sin seleccionar un cliente, te avisa
+            if (dgvListadoProductos.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Por favor, seleccione un producto para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            //Si seleccionas al cliente, te pide confirmación
+            int id_proveedor = Convert.ToInt32(dgvListadoProductos.SelectedRows[0].Cells["Id_producto"].Value);
+
+            DialogResult confirmar = MessageBox.Show(
+                $"¿Está seguro de que desea eliminar este producto'?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question
+            );
+
+            //Eliminar productos
+            try
+            {
+                if (confirmar == DialogResult.Yes)
+                {
+                    using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                    {
+                        conexion.Open();
+                        string consulta = "UPDATE Producto SET estado = 0 WHERE id_producto = @id_producto";
+                        using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                        {
+                            comando.Parameters.AddWithValue("@id_producto", id_proveedor);
+                            comando.ExecuteNonQuery();
+                        }
+                    }
+                    MessageBox.Show("Proveedor eliminado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarProductos("");
+                    BLimpiarCampos_Click(sender, e);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar el producto: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

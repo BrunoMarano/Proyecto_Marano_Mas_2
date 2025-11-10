@@ -119,7 +119,7 @@
             tPrecioProd.Name = "tPrecioProd";
             tPrecioProd.Size = new Size(166, 28);
             tPrecioProd.TabIndex = 6;
-            tPrecioProd.TextChanged += tPrecioProd_TextChanged;
+            tPrecioProd.KeyPress += tPrecioProd_KeyPress;
             // 
             // tStockProd
             // 
@@ -128,7 +128,7 @@
             tStockProd.Name = "tStockProd";
             tStockProd.Size = new Size(166, 28);
             tStockProd.TabIndex = 5;
-            tStockProd.TextChanged += tStockProd_TextChanged;
+            tStockProd.KeyPress += tStockProd_KeyPress;
             // 
             // LGestionClientes
             // 
@@ -190,6 +190,7 @@
             tStockMinimo.Name = "tStockMinimo";
             tStockMinimo.Size = new Size(166, 28);
             tStockMinimo.TabIndex = 33;
+            tStockMinimo.KeyPress += tStockMinimo_KeyPress;
             // 
             // BLimpiarCampos
             // 
@@ -235,6 +236,7 @@
             BEliminarProducto.ShadowDecoration.CustomizableEdges = customizableEdges6;
             BEliminarProducto.Size = new Size(78, 45);
             BEliminarProducto.TabIndex = 39;
+            BEliminarProducto.Click += BEliminarProducto_Click;
             // 
             // BModificarProducto
             // 
@@ -324,7 +326,7 @@
             tCostoProducto.Name = "tCostoProducto";
             tCostoProducto.Size = new Size(166, 28);
             tCostoProducto.TabIndex = 44;
-            tCostoProducto.TextChanged += tCostoProducto_TextChanged;
+            tCostoProducto.KeyPress += tCostoProducto_KeyPress;
             // 
             // lProveedorProd
             // 

@@ -232,29 +232,6 @@ namespace AvicolaVentas
             BLimpiarCampos_Click(sender, e);
             tDni.Focus();
 
-            // Suponiendo que ya cargaste los datos
-            int maxId = 0;
-
-            // Buscar el Id_cliente máximo
-            foreach (DataGridViewRow row in dgvListadoClientes.Rows)
-            {
-                if (!row.IsNewRow)
-                {
-                    int id = Convert.ToInt32(row.Cells["Id_cliente"].Value);
-                    if (id > maxId)
-                        maxId = id;
-                }
-            }
-
-            // Colorear la fila con el Id_cliente máximo
-            foreach (DataGridViewRow row in dgvListadoClientes.Rows)
-            {
-                if (!row.IsNewRow && Convert.ToInt32(row.Cells["Id_cliente"].Value) == maxId)
-                {
-                    row.DefaultCellStyle.BackColor = Color.LightGreen; // el color que quieras
-                    row.DefaultCellStyle.ForeColor = Color.Black;      // opcional: color de texto
-                }
-            }
 
         }
 
@@ -333,6 +310,8 @@ namespace AvicolaVentas
                 CargarCiudades(idProvincia);
                 cbCiudadCliente.SelectedValue = idCiudad;
             }
+
+            ResaltarFilaSeleccionada();
         }
 
         private void BModificarCliente_Click(object sender, EventArgs e)
@@ -364,6 +343,7 @@ namespace AvicolaVentas
             MessageBox.Show("Cliente modificado exitosamente.");
 
             CargarClientes();
+            ResaltarFilaGrabada();
             BLimpiarCampos_Click(sender, e);
         }
 
@@ -424,6 +404,41 @@ namespace AvicolaVentas
             catch (Exception ex)
             {
                 MessageBox.Show("Error al eliminar el cliente: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ResaltarFilaSeleccionada()
+        {
+            if (e.RowIndex >= 0)
+            {
+                dgvListadoClientes.Rows[e.RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.LightBlue;
+            }
+        }
+
+        private void ResaltarFilaGrabada()
+        {
+            // Suponiendo que ya cargaste los datos
+            int maxId = 0;
+
+            // Buscar el Id_cliente máximo
+            foreach (DataGridViewRow row in dgvListadoClientes.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    int id = Convert.ToInt32(row.Cells["Id_cliente"].Value);
+                    if (id > maxId)
+                        maxId = id;
+                }
+            }
+
+            // Colorear la fila con el Id_cliente máximo
+            foreach (DataGridViewRow row in dgvListadoClientes.Rows)
+            {
+                if (!row.IsNewRow && Convert.ToInt32(row.Cells["Id_cliente"].Value) == maxId)
+                {
+                    row.DefaultCellStyle.BackColor = Color.LightGreen; // el color que quieras
+                    row.DefaultCellStyle.ForeColor = Color.Black;      // opcional: color de texto
+                }
             }
         }
     }

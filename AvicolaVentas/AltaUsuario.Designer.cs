@@ -433,7 +433,7 @@
             dgvListadoUsuarios.GridColor = Color.DimGray;
             dgvListadoUsuarios.Location = new Point(27, 343);
             dgvListadoUsuarios.Name = "dgvListadoUsuarios";
-            dgvListadoUsuarios.Size = new Size(818, 217);
+            dgvListadoUsuarios.Size = new Size(818, 206);
             dgvListadoUsuarios.TabIndex = 59;
             dgvListadoUsuarios.CellContentClick += dgvListadoUsuarios_CellContentClick;
             // 

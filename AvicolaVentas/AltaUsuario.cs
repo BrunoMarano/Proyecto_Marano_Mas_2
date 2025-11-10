@@ -1,9 +1,10 @@
-﻿using System.Data;
+﻿using Google.Protobuf.WellKnownTypes;
+using System.Data;
 using System.Data.Sql;
-using System.Windows.Forms;
-using System.Text.RegularExpressions;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace AvicolaVentas
 {
@@ -331,6 +332,29 @@ namespace AvicolaVentas
         {
             AgregarUsuario();
             CargarUsuario();
+
+            // Suponiendo que ya cargaste los datos
+            int maxId = 0;
+
+            // Buscar el Id_cliente máximo
+            foreach (DataGridViewRow row in dgvListadoUsuarios.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    int id = Convert.ToInt32(row.Cells["Id_usuario"].Value);
+                    if (id > maxId)
+                        maxId = id;
+                }
+            }
+
+            foreach (DataGridViewRow row in dgvListadoUsuarios.Rows)
+            {
+                if (!row.IsNewRow && Convert.ToInt32(row.Cells["Id_usuario"].Value) == maxId)
+                {
+                    row.DefaultCellStyle.BackColor = Color.LightGreen; // el color que quieras
+                    row.DefaultCellStyle.ForeColor = Color.Black;      // opcional: color de texto
+                }
+            }
         }
 
         private void cbProvinciaUsuario_SelectedIndexChanged(object sender, EventArgs e)
