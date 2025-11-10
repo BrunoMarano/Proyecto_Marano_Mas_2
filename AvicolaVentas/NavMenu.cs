@@ -217,8 +217,8 @@ namespace AvicolaVentas
             {
                 this.Hide();
                 FLogin loginForm = new FLogin();
-                loginForm.ShowDialog(); // Bloquea hasta que cierre el login
-                this.Close(); // ahora sí, cierra correctamente
+                //loginForm.ShowDialog(); // Bloquea hasta que cierre el login
+                //this.Close(); // ahora sí, cierra correctamente
             }
 
         }

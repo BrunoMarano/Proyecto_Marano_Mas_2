@@ -10,7 +10,7 @@ namespace AvicolaVentas
 
     {
 
-        string connectionString = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=AvicolaSantaAna1;Integrated Security=True;TrustServerCertificate=True;";
+        string connectionString = @"Data Source=localhost\SQLEXPRESS02;Initial Catalog=AvicolaSantaAna1;Integrated Security=True;TrustServerCertificate=True;";
         public FLogin()
         {
             InitializeComponent();
@@ -19,6 +19,7 @@ namespace AvicolaVentas
             this.Visible = true;
             this.ShowInTaskbar = true;
             this.Opacity = 1;
+            this.AcceptButton = BIniciarSesion;
         }
 
         private void label1_Click(object sender, EventArgs e)

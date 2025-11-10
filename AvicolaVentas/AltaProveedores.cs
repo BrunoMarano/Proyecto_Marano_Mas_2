@@ -109,11 +109,9 @@ namespace AvicolaVentas
                         {
                             DataTable tablaCiudades = new DataTable();
                             tablaCiudades.Load(lector);
-
                             cbCiudadProveedores.DataSource = tablaCiudades;
                             cbCiudadProveedores.DisplayMember = "ciudad";
                             cbCiudadProveedores.ValueMember = "id_ciudad";
-                            //#pragma warning restore CA1416
                         }
                     }
                 }
@@ -224,6 +222,165 @@ namespace AvicolaVentas
         private void cbFiltroEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarProveedores(cbFiltroEstado.SelectedItem.ToString());
+        }
+
+        private void cbProvinciaProveedores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbProvinciaProveedores.SelectedValue != null)
+            {
+                int id_provincia;
+                if (int.TryParse(cbProvinciaProveedores.SelectedValue.ToString(), out id_provincia))
+                {
+                    CargarCiudades(id_provincia);
+                }
+            }
+        }
+
+        private void BGrabarCliente_Click(object sender, EventArgs e)
+        {
+            GuardarProveedores();
+            CargarProveedores("");
+            BLimpiarCampos_Click(sender, e);
+            tNombreProveedor.Focus();
+        }
+
+        private void BLimpiarCampos_Click(object sender, EventArgs e)
+        {
+            tNombreProveedor.Clear();
+            tCuitProveedor.Clear();
+            tDireccionProveedor.Clear();
+            tTelefonoProveedor.Clear();
+            tEmailProveedor.Clear();
+            dtpFechaRegProv.Value = DateTime.Now;
+            cbProvinciaProveedores.SelectedIndex = -1;
+            cbCiudadProveedores.SelectedIndex = -1;
+        }
+
+        private void BModificarCliente_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(tCuitProveedor.Text))
+            {
+                MessageBox.Show("Por favor, ingrese el CUIT del proveedor a modificar.");
+                return;
+            }
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            {
+                conexion.Open();
+                string consulta = "UPDATE Proveedor SET Nombre = @Nombre, Direccion = @Direccion, cuit = @cuit, telefono = @telefono, fecha_registro = @fecha_registro, email = @email, id_ciudad = @id_ciudad WHERE cuit = @cuit";
+                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@cuit", tCuitProveedor.Text);
+                    comando.Parameters.AddWithValue("@Nombre", tNombreProveedor.Text);
+                    comando.Parameters.AddWithValue("@Direccion", tDireccionProveedor.Text);
+                    comando.Parameters.AddWithValue("@fecha_registro", dtpFechaRegProv.Value);
+                    comando.Parameters.AddWithValue("@email", tEmailProveedor.Text);
+                    comando.Parameters.AddWithValue("@telefono", tTelefonoProveedor.Text);
+                    comando.Parameters.AddWithValue("@id_ciudad", cbCiudadProveedores.SelectedValue);
+                    comando.ExecuteNonQuery();
+                }
+            }
+            MessageBox.Show("Cliente modificado exitosamente.");
+
+            CargarProveedores("");
+            BLimpiarCampos_Click(sender, e);
+        }
+
+        private void BEliminarCliente_Click(object sender, EventArgs e)
+        {
+            //Si presionas el botón eliminar cliente sin seleccionar un cliente, te avisa
+            if (dgvListadoProveedores.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Por favor, seleccione un proveedor para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            //Si seleccionas al cliente, te pide confirmación
+            int id_proveedor = Convert.ToInt32(dgvListadoProveedores.SelectedRows[0].Cells["id_proveedor"].Value);
+            string nombreProveedor = dgvListadoProveedores.SelectedRows[0].Cells["nombre"].Value?.ToString() ?? "";
+
+            DialogResult confirmar = MessageBox.Show(
+                $"¿Está seguro de que desea eliminar al proveedor '{nombreProveedor}'?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question
+            );
+
+            //Eliminar cliente
+            try
+            {
+                if (confirmar == DialogResult.Yes)
+                {
+                    using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                    {
+                        conexion.Open();
+                        string consulta = "UPDATE Proveedor SET estado = 0 WHERE id_proveedor = @id_proveedor";
+                        using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                        {
+                            comando.Parameters.AddWithValue("@id_proveedor", id_proveedor);
+                            comando.ExecuteNonQuery();
+                        }
+                    }
+                    MessageBox.Show("Proveedor eliminado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarProveedores("");
+                    BLimpiarCampos_Click(sender, e);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar el proveedor: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BBuscarProveedor_Click(object sender, EventArgs e)
+        {
+            string cuit = tCuitProveedor.Text.Trim();
+            if (string.IsNullOrEmpty(cuit))
+            {
+                MessageBox.Show("Por favor, ingrese un CUIT para buscar.");
+                return;
+            }
+
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            {
+                conexion.Open();
+                string consulta = "SELECT * FROM Proveedor WHERE cuit = @cuit";
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@cuit", cuit);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        dgvListadoProveedores.DataSource = dt;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontró ningún proveedor con el CUIT proporcionado.");
+                    }
+                }
+            }
+        }
+
+        private void dgvListadoProveedores_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow filaSeleccionada = dgvListadoProveedores.Rows[e.RowIndex];
+                tCuitProveedor.Text = filaSeleccionada.Cells["cuit"].Value.ToString();
+                tNombreProveedor.Text = filaSeleccionada.Cells["Nombre"].Value.ToString();
+                tDireccionProveedor.Text = filaSeleccionada.Cells["Direccion"].Value.ToString();
+                tEmailProveedor.Text = filaSeleccionada.Cells["email"].Value.ToString();
+                dtpFechaRegProv.Value = Convert.ToDateTime(filaSeleccionada.Cells["fecha_registro"].Value);
+                tTelefonoProveedor.Text = filaSeleccionada.Cells["telefono"].Value.ToString();
+                int idProvincia = Convert.ToInt32(filaSeleccionada.Cells["id_provincia"].Value);
+                int idCiudad = Convert.ToInt32(filaSeleccionada.Cells["id_ciudad"].Value);
+
+                cbProvinciaProveedores.SelectedValue = idProvincia; // Selecciona la provincia
+
+                //Cargar las ciudades de esa provincia antes de seleccionar la ciudad
+                CargarCiudades(idProvincia);
+                cbCiudadProveedores.SelectedValue = idCiudad;
+            }
         }
     }
 }

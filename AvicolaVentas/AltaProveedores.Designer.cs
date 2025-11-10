@@ -40,6 +40,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             LGestionClientes = new Guna.UI2.WinForms.Guna2HtmlLabel();
             bVolverMenu = new Button();
             PBLogo = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -66,6 +68,7 @@
             LListadoProveedores = new Label();
             dgvListadoProveedores = new DataGridView();
             cbFiltroEstado = new Guna.UI2.WinForms.Guna2ComboBox();
+            BBuscarProveedor = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)PBLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvListadoProveedores).BeginInit();
             SuspendLayout();
@@ -203,6 +206,7 @@
             cbProvinciaProveedores.Name = "cbProvinciaProveedores";
             cbProvinciaProveedores.Size = new Size(201, 31);
             cbProvinciaProveedores.TabIndex = 44;
+            cbProvinciaProveedores.SelectedIndexChanged += cbProvinciaProveedores_SelectedIndexChanged;
             // 
             // cbCiudadProveedores
             // 
@@ -299,6 +303,7 @@
             BLimpiarCampos.ShadowDecoration.CustomizableEdges = customizableEdges4;
             BLimpiarCampos.Size = new Size(78, 45);
             BLimpiarCampos.TabIndex = 52;
+            BLimpiarCampos.Click += BLimpiarCampos_Click;
             // 
             // BEliminarCliente
             // 
@@ -321,6 +326,7 @@
             BEliminarCliente.ShadowDecoration.CustomizableEdges = customizableEdges6;
             BEliminarCliente.Size = new Size(78, 45);
             BEliminarCliente.TabIndex = 51;
+            BEliminarCliente.Click += BEliminarCliente_Click;
             // 
             // BModificarCliente
             // 
@@ -343,6 +349,7 @@
             BModificarCliente.ShadowDecoration.CustomizableEdges = customizableEdges8;
             BModificarCliente.Size = new Size(78, 45);
             BModificarCliente.TabIndex = 50;
+            BModificarCliente.Click += BModificarCliente_Click;
             // 
             // BGrabarCliente
             // 
@@ -365,6 +372,7 @@
             BGrabarCliente.ShadowDecoration.CustomizableEdges = customizableEdges10;
             BGrabarCliente.Size = new Size(78, 45);
             BGrabarCliente.TabIndex = 49;
+            BGrabarCliente.Click += BGrabarCliente_Click;
             // 
             // LListadoProveedores
             // 
@@ -388,6 +396,7 @@
             dgvListadoProveedores.Name = "dgvListadoProveedores";
             dgvListadoProveedores.Size = new Size(818, 200);
             dgvListadoProveedores.TabIndex = 54;
+            dgvListadoProveedores.CellClick += dgvListadoProveedores_CellClick;
             // 
             // cbFiltroEstado
             // 
@@ -412,12 +421,36 @@
             cbFiltroEstado.TabIndex = 55;
             cbFiltroEstado.SelectedIndexChanged += cbFiltroEstado_SelectedIndexChanged;
             // 
+            // BBuscarProveedor
+            // 
+            BBuscarProveedor.BackColor = Color.Transparent;
+            BBuscarProveedor.BorderColor = Color.WhiteSmoke;
+            BBuscarProveedor.BorderRadius = 5;
+            BBuscarProveedor.BorderThickness = 3;
+            BBuscarProveedor.CustomizableEdges = customizableEdges13;
+            BBuscarProveedor.DisabledState.BorderColor = Color.DarkGray;
+            BBuscarProveedor.DisabledState.CustomBorderColor = Color.DarkGray;
+            BBuscarProveedor.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            BBuscarProveedor.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            BBuscarProveedor.FillColor = SystemColors.ControlDark;
+            BBuscarProveedor.Font = new Font("Segoe UI", 9F);
+            BBuscarProveedor.ForeColor = Color.White;
+            BBuscarProveedor.HoverState.FillColor = SystemColors.ControlDarkDark;
+            BBuscarProveedor.Image = Properties.Resources.icons8_buscar_301;
+            BBuscarProveedor.Location = new Point(357, 92);
+            BBuscarProveedor.Name = "BBuscarProveedor";
+            BBuscarProveedor.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            BBuscarProveedor.Size = new Size(35, 35);
+            BBuscarProveedor.TabIndex = 56;
+            BBuscarProveedor.Click += BBuscarProveedor_Click;
+            // 
             // fGestionProveedores
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Fondo;
             ClientSize = new Size(894, 526);
+            Controls.Add(BBuscarProveedor);
             Controls.Add(cbFiltroEstado);
             Controls.Add(dgvListadoProveedores);
             Controls.Add(LListadoProveedores);
@@ -482,5 +515,6 @@
         private Label LListadoProveedores;
         private DataGridView dgvListadoProveedores;
         private Guna.UI2.WinForms.Guna2ComboBox cbFiltroEstado;
+        private Guna.UI2.WinForms.Guna2Button BBuscarProveedor;
     }
 }
