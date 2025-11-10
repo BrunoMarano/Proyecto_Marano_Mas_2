@@ -33,12 +33,10 @@
             lPrecioProd = new Label();
             lStockProd = new Label();
             lCategoriaProd = new Label();
-            lFechaAltaProd = new Label();
             lDescripcionProd = new Label();
             cbCategoriaProd = new ComboBox();
             tPrecioProd = new TextBox();
             tStockProd = new TextBox();
-            dtpFechaAltaProd = new DateTimePicker();
             LGestionClientes = new Guna.UI2.WinForms.Guna2HtmlLabel();
             PBLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             bVolverMenu = new Button();
@@ -93,17 +91,6 @@
             lCategoriaProd.TabIndex = 15;
             lCategoriaProd.Text = "Categoria:";
             // 
-            // lFechaAltaProd
-            // 
-            lFechaAltaProd.AutoSize = true;
-            lFechaAltaProd.BackColor = Color.Transparent;
-            lFechaAltaProd.Font = new Font("Sitka Banner", 12F);
-            lFechaAltaProd.Location = new Point(72, 153);
-            lFechaAltaProd.Name = "lFechaAltaProd";
-            lFechaAltaProd.Size = new Size(96, 23);
-            lFechaAltaProd.TabIndex = 14;
-            lFechaAltaProd.Text = "Fecha de alta:";
-            // 
             // lDescripcionProd
             // 
             lDescripcionProd.AutoSize = true;
@@ -142,17 +129,6 @@
             tStockProd.Size = new Size(166, 28);
             tStockProd.TabIndex = 5;
             tStockProd.TextChanged += tStockProd_TextChanged;
-            // 
-            // dtpFechaAltaProd
-            // 
-            dtpFechaAltaProd.CalendarFont = new Font("Segoe UI", 12F);
-            dtpFechaAltaProd.DropDownAlign = LeftRightAlignment.Right;
-            dtpFechaAltaProd.Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtpFechaAltaProd.Format = DateTimePickerFormat.Short;
-            dtpFechaAltaProd.Location = new Point(172, 150);
-            dtpFechaAltaProd.Name = "dtpFechaAltaProd";
-            dtpFechaAltaProd.Size = new Size(166, 28);
-            dtpFechaAltaProd.TabIndex = 4;
             // 
             // LGestionClientes
             // 
@@ -236,6 +212,7 @@
             BLimpiarCampos.ShadowDecoration.CustomizableEdges = customizableEdges4;
             BLimpiarCampos.Size = new Size(78, 45);
             BLimpiarCampos.TabIndex = 40;
+            BLimpiarCampos.Click += BLimpiarCampos_Click;
             // 
             // BEliminarProducto
             // 
@@ -280,6 +257,7 @@
             BModificarProducto.ShadowDecoration.CustomizableEdges = customizableEdges8;
             BModificarProducto.Size = new Size(78, 45);
             BModificarProducto.TabIndex = 38;
+            BModificarProducto.Click += BModificarProducto_Click;
             // 
             // BGrabarProducto
             // 
@@ -326,6 +304,7 @@
             dgvListadoProductos.Name = "dgvListadoProductos";
             dgvListadoProductos.Size = new Size(818, 243);
             dgvListadoProductos.TabIndex = 42;
+            dgvListadoProductos.CellClick += dgvListadoProductos_CellClick;
             // 
             // lCostoProducto
             // 
@@ -422,12 +401,10 @@
             Controls.Add(bVolverMenu);
             Controls.Add(PBLogo);
             Controls.Add(LGestionClientes);
-            Controls.Add(dtpFechaAltaProd);
             Controls.Add(tStockProd);
             Controls.Add(tPrecioProd);
             Controls.Add(cbCategoriaProd);
             Controls.Add(lDescripcionProd);
-            Controls.Add(lFechaAltaProd);
             Controls.Add(lCategoriaProd);
             Controls.Add(lStockProd);
             Controls.Add(lPrecioProd);
@@ -447,12 +424,10 @@
         private Label lPrecioProd;
         private Label lStockProd;
         private Label lCategoriaProd;
-        private Label lFechaAltaProd;
         private Label lDescripcionProd;
         private ComboBox cbCategoriaProd;
         private TextBox tPrecioProd;
         private TextBox tStockProd;
-        private DateTimePicker dtpFechaAltaProd;
         private Guna.UI2.WinForms.Guna2HtmlLabel LGestionClientes;
         private Guna.UI2.WinForms.Guna2PictureBox PBLogo;
         private Button bVolverMenu;

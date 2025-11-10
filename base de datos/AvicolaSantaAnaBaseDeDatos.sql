@@ -294,18 +294,8 @@ SELECT * FROM Cliente ORDER BY Id_cliente DESC;
 ALTER TABLE Usuario
 ADD direccion VARCHAR(200);
 
-ALTER TABLE Usuario
-ADD id_ciudad INT;
-
-ALTER TABLE Usuario
-ADD CONSTRAINT FK_Ciudad_Usuario 
-FOREIGN KEY(id_ciudad) 
-REFERENCES Ciudad(id_ciudad);
-
-ALTER TABLE nombre_tabla_hija
-ADD CONSTRAINT nombre_fk
-FOREIGN KEY (columna_hija)
-REFERENCES nombre_tabla_padre(columna_padre);
+ALTER TABLE Proveedor
+ADD estado DATE NOT NULL;
 
 ALTER TABLE Venta
 ADD CONSTRAINT FK_Venta_Usuario
@@ -325,10 +315,6 @@ INSERT INTO Categoria (descripcion, activo) VALUES
 ('Aves frescas', 1),
 ('Procesados avicolas', 1),
 ('Lacteos y fiambres', 1);
-
-SELECT * FROM Categoria;
-
-SELECT * FROM Producto;
 
 CREATE TABLE TipoProducto (
 id_tipo INT PRIMARY KEY IDENTITY(1,1),
@@ -356,13 +342,62 @@ INSERT INTO Categoria (nombre) VALUES
 ('Lácteos');
 
 -- PRODUCTOS SEGÚN CATEGORÍA
-INSERT INTO TipoProducto (nombre, id_categoria) VALUES
-('Pollo entero fresco', 1),
-('Pechuga de pollo', 1),
-('Muslo de pollo', 1),
-('Huevo blanco docena', 2),
-('Huevo colorado docena', 2),
-('Queso cremoso', 4),
-('Queso rallado', 4),
-('Salame milán', 3),
-('Jamón cocido', 3);
+INSERT INTO TipoProducto (nombre, id_categoria, estado) VALUES
+('Pollo entero fresco', 1, 1),
+('Pechuga de pollo', 1, 1),
+('Muslo de pollo', 1, 1),
+('Huevo blanco docena', 2, 1),
+('Huevo colorado docena', 2, 1),
+('Queso cremoso', 4, 1),
+('Queso rallado', 4, 1),
+('Salame milán', 3, 1),
+('Jamón cocido', 3, 1);
+
+EXEC sp_rename 'Categoria.activo', 'estado', 'COLUMN';
+DELETE FROM TipoProducto;
+SELECT * FROM Categoria;
+
+ALTER TABLE TipoProducto
+ADD estado BIT NOT NULL DEFAULT 1;
+
+SELECT * FROM TipoProducto;
+SELECT * FROM Categoria;
+
+ALTER TABLE Proveedor
+DROP COLUMN estado;
+
+ALTER TABLE Proveedor
+ADD estado BIT NOT NULL DEFAULT 1;
+
+INSERT INTO Proveedor (nombre, cuit, direccion, telefono, email, fecha_registro, id_ciudad, estado)
+VALUES
+('Distribuciones Avícolas Corrientes S.A.', '30123456789', 'Av. Independencia 1023', '3794441122', 'contacto@davicor.com.ar', GETDATE(), 1, 1),
+('Proveedora El Pollo Feliz', '30876543210', 'Ruta 12 km 45', '3795553344', 'ventas@pollofeliz.com.ar', GETDATE(), 2, 1),
+('Alimentos del Norte S.R.L.', '30112233445', 'B° Industrial', '3796667788', 'info@alimentosdelnorte.com.ar', GETDATE(), 3, 1),
+('Insumos Avícolas del Litoral', '30556677881', 'Acceso Sur 760', '3797779900', 'contacto@insumoslitoral.com.ar', GETDATE(), 1, 1),
+('Fríos & Procesados del Sur S.A.', '30998877663', 'Ruta 12 km 10', '3798881100', 'ventas@friosyprocesados.com.ar', GETDATE(), 2, 1),
+('Huevo Premium Corrientes', '30443322116', 'Av. Maipú 4500', '3799992233', 'info@huevopremium.com.ar', GETDATE(), 3, 1),
+('Cárnicos Tropicales S.A.', '30667788992', 'Ruta 12 km 60', '3793334455', 'ventas@carnicostropicales.com.ar', GETDATE(), 1, 1),
+('Góndola Selecta Corrientes', '30224466884', 'Av. 9 de Julio 520', '3792223344', 'info@gondolaselecta.com.ar', GETDATE(), 2, 1),
+('Distribuidora de Embutidos del Norte', '30445566770', 'B° Gomez', '3797772233', 'contacto@embutidosnorte.com.ar', GETDATE(), 3, 1),
+('Proveedor Integral Avícola S.A.', '30889900118', 'Zona Franca Corrientes', '3791116655', 'info@proveedorintegral.com.ar', GETDATE(), 2, 1);
+
+ALTER TABLE Producto
+ADD CONSTRAINT FK_id_tipo
+FOREIGN KEY (id_tipo)
+REFERENCES tipoProducto(id_tipo);
+
+INSERT INTO Producto (precio, stock, stock_minimo, estado, id_tipo)
+VALUES 
+(2200, 50, 15, 1, 1),
+(2300, 80, 150, 1, 2),
+(1800, 20, 8, 1, 3),
+(2500, 35, 10, 1, 4),
+(2700, 40, 20, 1, 5),
+(2000, 25, 15, 1, 1),
+(2600, 60, 150, 1, 2),
+(2100, 18, 8, 1, 3),
+(3000, 45, 10, 1, 4),
+(3200, 55, 20, 1, 5);
+
+

@@ -24,6 +24,7 @@ namespace AvicolaVentas
         private void AltaProductos_Load(object sender, EventArgs e)
         {
             CargarCombos();
+            
         }
 
         //VALIDACIONES DE CAMPOS
@@ -110,13 +111,16 @@ namespace AvicolaVentas
 
         private void BGrabarProducto_Click(object sender, EventArgs e)
         {
-
+            GuardarProductos();
+            CargarProductos("");
+            BLimpiarCampos_Click(sender, e);
         }
 
         private void CargarCombos()
         {
             CargarCategorias();
-            CargarProveedores();
+            CargarProveedoresEnCombo();
+            CargarProductos("");
         }
 
         private void CargarCategorias()
@@ -134,6 +138,22 @@ namespace AvicolaVentas
                 cbCategoriaProd.DataSource = dt;
                 cbCategoriaProd.DisplayMember = "descripcion";
                 cbCategoriaProd.ValueMember = "id_categoria";
+            }
+        }
+
+        private void CargarProveedoresEnCombo()
+        {
+            string consulta = "SELECT id_proveedor, Nombre FROM Proveedor WHERE estado = 1";
+            using (SqlConnection conn = new SqlConnection(cadenaConexion))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(consulta, conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(dr);
+                cbProveedorProd.DataSource = dt;
+                cbProveedorProd.DisplayMember = "Nombre";
+                cbProveedorProd.ValueMember = "id_proveedor";
             }
         }
 
@@ -170,6 +190,155 @@ namespace AvicolaVentas
                 cbProveedorProd.DataSource = dt;
                 cbProveedorProd.DisplayMember = "nombre";
                 cbProveedorProd.ValueMember = "id_proveedor";
+            }
+        }
+
+        private void GuardarProductos()
+        {
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+
+                    // 1️⃣ Insertar en la tabla Productos
+                    string insertarProducto = @"INSERT INTO Producto (precio, stock, stock_minimo, estado, id_categoria, id_tipo)
+                                        OUTPUT INSERTED.id_producto
+                                        VALUES (@precio, @stock, @stock_minimo, @estado, @id_categoria, @id_tipo)";
+
+                    int idProductoGenerado;
+
+                    using (SqlCommand comando = new SqlCommand(insertarProducto, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@precio", Convert.ToDecimal(tPrecioProd.Text));
+                        comando.Parameters.AddWithValue("@stock", Convert.ToInt32(tStockProd.Text));
+                        comando.Parameters.AddWithValue("@stock_minimo", Convert.ToInt32(tStockMinimo.Text));
+                        comando.Parameters.AddWithValue("@estado", 1);
+                        comando.Parameters.AddWithValue("@id_categoria", Convert.ToInt32(cbCategoriaProd.SelectedValue));
+                        comando.Parameters.AddWithValue("@id_tipo", Convert.ToInt32(cbTipoProducto.SelectedValue));
+
+                        idProductoGenerado = (int)comando.ExecuteScalar(); // Devuelve el ID generado
+                    }
+
+                    // 2️⃣ Insertar en la tabla Producto_Proveedor
+                    string insertarRelacion = @"INSERT INTO Producto_Proveedor (costo, id_proveedor, id_producto)
+                                        VALUES (@costo, @id_proveedor, @id_producto)";
+
+                    using (SqlCommand comando2 = new SqlCommand(insertarRelacion, conexion))
+                    {
+                        comando2.Parameters.AddWithValue("@costo", Convert.ToDecimal(tCostoProducto.Text));
+                        comando2.Parameters.AddWithValue("@id_proveedor", Convert.ToInt32(cbProveedorProd.SelectedValue));
+                        comando2.Parameters.AddWithValue("@id_producto", idProductoGenerado);
+
+                        comando2.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("✅ Producto guardado correctamente");
+                    CargarProductos(""); // Recarga el DataGridView
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("❌ Error al guardar el producto: " + ex.Message);
+            }
+        }
+        // CARGAR PROVEEDORES EN EL DATAGRIDVIEW
+        private void CargarProductos(string filtroEstado)
+        {
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+
+                    string consulta = @"
+                SELECT 
+                    p.id_producto AS id_producto,
+                    p.precio AS Precio,
+                    p.stock AS Stock,
+                    p.stock_minimo AS [Stock Mínimo],
+                    CASE 
+                        WHEN p.estado = 1 THEN 'Activo'
+                        WHEN p.estado = 0 THEN 'Inactivo'
+                        ELSE 'Desconocido'
+                    END AS Estado,
+                    t.nombre AS TipoProducto,
+                    pr.nombre AS Proveedor,
+                    pp.costo AS Costo
+                FROM Producto p
+                INNER JOIN TipoProducto t ON p.id_tipo = t.id_tipo
+                INNER JOIN Producto_Proveedor pp ON p.id_producto = pp.id_producto
+                INNER JOIN Proveedor pr ON pp.id_proveedor = pr.id_proveedor
+                ORDER BY p.id_producto DESC";
+
+                    SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
+                    DataTable tabla = new DataTable();
+                    adaptador.Fill(tabla);
+
+                    dgvListadoProductos.AutoGenerateColumns = true;
+                    dgvListadoProductos.DataSource = tabla;
+
+                    // Opcional: ajustar encabezados y tamaño de columnas
+                    dgvListadoProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dgvListadoProductos.Columns["id_producto"].Width = 60;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("❌ Error al cargar los productos: " + ex.Message);
+            }
+        }
+
+        private void BLimpiarCampos_Click(object sender, EventArgs e)
+        {
+            cbCategoriaProd.SelectedIndex = -1;
+            cbTipoProducto.DataSource = null;
+            cbProveedorProd.SelectedIndex = -1;
+            tPrecioProd.Clear();
+            tStockProd.Clear();
+            tStockMinimo.Clear();
+            tCostoProducto.Clear();
+        }
+
+        private void BModificarProducto_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            {
+                conexion.Open();
+                string consulta = "UPDATE Producto SET Nombre = @Nombre, Direccion = @Direccion, cuit = @cuit, telefono = @telefono, fecha_registro = @fecha_registro, email = @email, id_ciudad = @id_ciudad WHERE cuit = @cuit";
+                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@cuit", tCuitProveedor.Text);
+                    comando.Parameters.AddWithValue("@Nombre", tNombreProveedor.Text);
+                    comando.Parameters.AddWithValue("@Direccion", tDireccionProveedor.Text);
+                    comando.Parameters.AddWithValue("@fecha_registro", dtpFechaRegProv.Value);
+                    comando.Parameters.AddWithValue("@email", tEmailProveedor.Text);
+                    comando.Parameters.AddWithValue("@telefono", tTelefonoProveedor.Text);
+                    comando.Parameters.AddWithValue("@id_ciudad", cbCiudadProveedores.SelectedValue);
+                    comando.ExecuteNonQuery();
+                }
+            }
+            MessageBox.Show("Cliente modificado exitosamente.");
+
+            CargarProveedores("");
+            BLimpiarCampos_Click(sender, e);
+        }
+
+        private void dgvListadoProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow filaSeleccionada = dgvListadoProductos.Rows[e.RowIndex];
+                cbTipoProducto.Text = filaSeleccionada.Cells["TipoProducto"].Value.ToString();
+                tPrecioProd.Text = filaSeleccionada.Cells["Precio"].Value.ToString();
+                tCostoProducto.Text = filaSeleccionada.Cells["Costo"].Value.ToString();
+                tStockProd.Text = filaSeleccionada.Cells["Stock"].Value.ToString();
+                tStockMinimo.Text = filaSeleccionada.Cells["Stock Mínimo"].Value.ToString();
+                cbProveedorProd.Text = filaSeleccionada.Cells["Proveedor"].Value.ToString();
+
+                CargarCategorias();
+                CargarProveedores();
+
             }
         }
     }
