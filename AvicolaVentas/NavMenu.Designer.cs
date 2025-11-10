@@ -115,6 +115,7 @@
             BBackUp.Text = "BackUps";
             BBackUp.TextAlign = ContentAlignment.BottomCenter;
             BBackUp.UseVisualStyleBackColor = false;
+            BBackUp.Click += BBackUp_Click;
             // 
             // BMisVentas
             // 

@@ -13,6 +13,8 @@
     <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.7" />
     <PackageReference Include="MaterialSkin" Version="0.2.1" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.2" />
+    <PackageReference Include="MySqlBackup.NET" Version="2.6.5" />
+    <PackageReference Include="MySqlBackup.NET.MySqlConnector.SignedJanith" Version="2.3.8" />
     <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
   </ItemGroup>
 

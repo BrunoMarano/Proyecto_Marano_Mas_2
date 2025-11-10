@@ -227,6 +227,17 @@ namespace AvicolaVentas
         {
             Application.Exit();
         }
+
+        private void BBackUp_Click(object sender, EventArgs e)
+        {
+            panelContenedor.Controls.Clear(); // Limpiar panel
+            FRespaldo respaldoForm = new FRespaldo();
+            respaldoForm.TopLevel = false; // Para poder mostrarlo dentro del panel
+            respaldoForm.Dock = DockStyle.Fill; // Que ocupe todo el panel
+            respaldoForm.FormBorderStyle = FormBorderStyle.None;
+            panelContenedor.Controls.Add(respaldoForm);
+            respaldoForm.Show();
+        }
     }
 
 }
